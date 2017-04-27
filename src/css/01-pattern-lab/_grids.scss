@@ -1,0 +1,139 @@
+/// The following setting are solely intended to display a demo of the Grid.
+.grid-demo {
+  clear: both;
+  @extend %container;
+  // Be sure to enable debug mode for your grid visualization so show up:
+  @include sgs-change('debug', true);
+  @include background-grid($color: rgba(255, 150, 150, 0.25));
+
+  margin-bottom: 20px;
+
+  div {
+    margin-bottom: 1rem;
+    text-align: center;
+    background: rgba(150, 150, 255, 0.5);
+  }
+  > div {
+    &:nth-child(odd) {
+      background: rgba(150, 150, 255, 0.5);
+    }
+    &:nth-child(even) {
+      background: rgba(150, 255, 150, 0.5);
+    }
+
+    > div {
+      &:nth-child(odd) {
+        background: rgba(255, 150, 150, 0.5);
+      }
+      &:nth-child(even) {
+        background: rgba(255, 255, 150, 0.5);
+      }
+
+      > div {
+        &:nth-child(odd) {
+          background: rgba(150, 255, 255, 0.5);
+        }
+        &:nth-child(even) {
+          background: rgba(255, 150, 255, 0.5);
+        }
+      }
+    }
+  }
+
+  &-1 {
+    @for $i from 1 through 4 {
+      .grid-demo-1-#{$i} {
+        @include grid-span($i, 1);
+        clear: both;
+      }
+    }
+
+    @for $i from 5 through 12 {
+      .grid-demo-1-#{$i} {
+        @include grid-span(4, 1);
+        clear: both;
+      }
+    }
+
+    .grid-demo-1-1a {
+      @include grid-span(1, 2);
+    }
+    .grid-demo-1-2a {
+      @include grid-span(2, 3);
+    }
+
+    @include breakpoint($bp--tablet) {
+      @for $i from 1 through 8 {
+        .grid-demo-1-#{$i} {
+          @include grid-span($i, 1);
+          clear: both;
+        }
+      }
+
+      @for $i from 9 through 12 {
+        .grid-demo-1-#{$i} {
+          @include grid-span(8, 1);
+          clear: both;
+        }
+      }
+
+      .grid-demo-1-1a {
+        @include grid-span(1, 2);
+      }
+      .grid-demo-1-2a {
+        @include grid-span(2, 3);
+      }
+    }
+
+    @include breakpoint($bp--desktop) {
+      @for $i from 1 through 12 {
+        .grid-demo-1-#{$i} {
+          @include grid-span($i, 1);
+          clear: both;
+        }
+      }
+
+      .grid-demo-1-1a {
+        @include grid-span(1, 2);
+      }
+      .grid-demo-1-2a {
+        @include grid-span(2, 3);
+      }
+    }
+  }
+
+  @include breakpoint($bp--desktop) {
+    &-2 {
+      &-1 {
+        @include grid-span(4, 1);
+      }
+      &-2 {
+        @include grid-span(6, 5);
+      }
+      &-3 {
+        @include grid-span(2, 11);
+      }
+      &-4 {
+        @include grid-span(2, 1, 6);
+      }
+      &-5 {
+        @include grid-span(2, 3, 6);
+      }
+      &-6 {
+        @include grid-span(2, 5, 6);
+      }
+      &-7 {
+        @include grid-span(6, 1, 6);
+      }
+      &-8 {
+        @include grid-span(2, 1, 6);
+      }
+      &-9 {
+        @include grid-span(4, 3, 6);
+      }
+      &-10 {
+        clear: both;
+      }
+    }
+  }
+}

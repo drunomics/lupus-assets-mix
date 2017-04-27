@@ -1,0 +1,24 @@
+.footer {
+  background-color: $c--secondary;
+  color: $c--white;
+  @extend %font-size-base;
+
+  &__wrapper {
+    @extend .outer-container;
+    overflow: hidden;
+  }
+
+  h2 {
+    @extend %font-size-base;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    color: $c--white;
+  }
+}

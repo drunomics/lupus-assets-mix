@@ -1,0 +1,22 @@
+<section class="header">
+  <div class="header__wrapper">
+    <div class="header__left">
+      {% block header_menu %}
+        {% include '@site-elements/logo/logo.twig' %}
+        {% include '@site-elements/main-menu/main-menu.twig' %}
+      {% endblock %}
+    </div>
+    <div class="header__right">
+      {% block header_language %}
+        {% include '@site-elements/navigation-profile/navigation-profile.twig' %}
+        {% include '@site-elements/language-switcher/language-switcher.twig' %}
+      {% endblock %}
+    </div>
+  </div>
+  <div class="header__wrapper">
+    {% block header_search %}
+      {% include '@site-elements/search-bar/search-bar.twig' %}
+      {% include '@site-elements/info-links/info-links.twig' %}
+    {% endblock %}
+  </div>
+</section>

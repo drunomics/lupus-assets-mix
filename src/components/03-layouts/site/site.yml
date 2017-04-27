@@ -1,0 +1,8 @@
+notifications: '<div class="pl-region-with-borders-dark">notifications</div>'
+header: '<div class="pl-region-with-borders-dark">header</div>'
+breadcrumb: '<div class="pl-region-with-borders-dark">breadcrumb</div>'
+content_top: '<div class="pl-region-with-borders-dark">content top</div>'
+content: '<div class="pl-region-with-borders-dark">content</div>'
+sidebar_first: '<div class="pl-region-with-borders-dark">sidebar first</div>'
+sidebar_second: '<div class="pl-region-with-borders-dark">sidebar second</div>'
+footer: '<div class="pl-region-with-borders-dark">footer</div>'

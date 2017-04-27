@@ -1,0 +1,23 @@
+{#
+/**
+ * @file
+ * A link optionally with an icon as defined in our icon scss.
+ * By using the class 'link--tag' you can create tag links and additionally use
+ * the 'active' class to give the link a solid background - ie an active look.
+ *
+ * Variables:
+ * - title: The link title.
+ * - url: The link's url.
+ * - icon: Optional. The part of the css class for the given icon without 'icon--'
+ *
+ */
+#}
+{% spaceless %}
+  {% if icon %}
+    {% set classes = classes|merge(['link--icon']) %}
+  {% endif %}
+  <a{% if classes %} class="{{ classes|join(' ') }}"{% endif %}{% if(url) %} href="{{ url }}"{% endif %}>
+    {% if icon %}<span class="link__icon icon--{{ icon }}"></span>{% endif %}
+    {% if(title) %}{{ title }}{% endif %}
+  </a>
+{% endspaceless %}

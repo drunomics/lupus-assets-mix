@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;
+}
+
+// Remove outlines when element becomes focus, like input fields.
+*:focus {
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+body {
+  background-color: #e8f1f7;
+}

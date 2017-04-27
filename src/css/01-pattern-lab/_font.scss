@@ -1,0 +1,16 @@
+.sg-font-sizes {
+  thead {
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: 2px solid black;
+  }
+  th,
+  td {
+    text-align: left;
+    white-space: nowrap;
+    line-height: 1.5em;
+    &:first-child {
+      padding-right: 12px;
+    }
+  }
+}

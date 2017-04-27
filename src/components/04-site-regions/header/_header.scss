@@ -1,0 +1,12 @@
+.header {
+  @include clearfix();
+  background-color: $c--white;
+
+  @include breakpoint($bp--tablet) {
+    height: $spacing--large * 2;
+  }
+
+  &__wrapper {
+    @extend .outer-container;
+  }
+}
