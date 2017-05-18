@@ -107,3 +107,6 @@ See https://github.com/creationix/nvm
   * Watch - with Patternlab
   
     `npm run dev:pl`
+
+## Todos
+- Add html-loader and load images from twig templates.

@@ -1,5 +1,5 @@
 v: 2.6.0
-overrideConfig: q
+overrideConfig: false
 ie:
     - DS_Store
     - less
@@ -30,7 +30,7 @@ lineageMatch: '{%([ ]+)?include( |\()[&quot;\&#039;]([A-Za-z0-9-_]+)[&quot;\&#03
 lineageMatchKey: 3
 patternExtension: twig
 twigDebug: false
-twigAutoescape: html
+twigAutoescape: false
 twigDefaultDateFormat: ''
 twigDefaultIntervalFormat: ''
 twigMacroExt: macro.twig
