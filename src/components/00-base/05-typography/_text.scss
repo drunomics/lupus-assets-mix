@@ -35,11 +35,9 @@ label {
 .label-above {
   display: block;
   @extend %font-bold--base;
-  margin-bottom: 1.5 * $lh--base;
 }
 .label-inline {
   display: inline;
-  margin-right: 0.2 * $lh--base;
 }
 
 th {
@@ -69,7 +67,7 @@ cite {
   &:before {
     content: "\201C"; /*Unicode for Left Double Quote*/
     font-family: $ff--base;
-    font-size: 6 * $fs--base;
+    font-size: 6 * getFontPropertyValue('base', 'font-size');
     font-weight: $fw--base;
     position: absolute;
     left: $spacing--small;

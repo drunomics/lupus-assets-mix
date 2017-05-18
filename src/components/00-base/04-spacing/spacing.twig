@@ -1,0 +1,12 @@
+<section class="spacing__container">
+  {% for item in items %}
+    <article class="spacing">
+      <h6 class="spacing__title">{{ item.name }}</h6>
+      <div class="spacing__example {{ item.name|trim('$') }}-example"></div>
+    </article>
+  {% endfor %}
+</section>
+
+{% if meta %}
+  <p> <small>{{ meta.description }}</small> </p>
+{% endif %}

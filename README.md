@@ -82,16 +82,28 @@ See https://github.com/creationix/nvm
 
 ## Usage
 
-* Compile assets
-`npm run dev`
+* Build assets and pattern-lab
+
+  `./scripts/build.sh`
+  
+* Clean build
+
+  `./scripts/clean-build.sh`
+
+* Compile assets only
+
+  * Make sure to build at least once first
+  * Run `npm run build`
 
 * Compile assets (production mode)
-`npm run production`
+
+  * Make sure to build at least once first
+  * Run `npm run production`
 
 * Development:
   * Watch (assets only)
   
-  `npm run watch`
+    `npm run dev`
   * Watch - with Patternlab
   
-  `npm run watch:pl`
+    `npm run dev:pl`

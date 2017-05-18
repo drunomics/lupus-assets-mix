@@ -1,5 +1,5 @@
-h1.page-title {
-  font-size: $fs--xlarge;
+.page-title {
+  @extend %font-size-xxlarge;
   font-weight: $fw--base;
   margin: 0 0 $spacing--half * 2;
 }

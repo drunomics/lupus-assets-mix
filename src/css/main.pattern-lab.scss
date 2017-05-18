@@ -1,3 +1,5 @@
+// Pattern-lab specific styles - see folder ./01-pattern-lab.
+
 // Some libs.
 @import "../../node_modules/normalize.scss/normalize.scss";
 // Grid system, https://github.com/at-import/Singularity
@@ -9,8 +11,8 @@
 @import "../../node_modules/bourbon/app/assets/stylesheets/bourbon";
 // End libs.
 
-@import "_00-variables.scss";
-@import "_01-global.scss";
+@import "_config-global.scss";
+@import "_defaults.scss";
 @import "00-utilities/*.scss";
 
 @import "../components/**/*.scss";

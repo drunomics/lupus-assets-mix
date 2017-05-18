@@ -2,8 +2,8 @@
 
 cd `dirname $0`/..
 NODE_MAJOR_VERSION=6
-# Either "dev" or "production".
-BUILD_MODE=${BUILD_MODE:-dev}
+# The npm script to run.
+SCRIPT=${SCRIPT:-build}
 
 #Try loading nvm.
 export NVM_DIR="$HOME/.nvm"
@@ -34,4 +34,4 @@ fi
 # Finally start with the real work.
 composer install -d pattern-lab --no-interaction
 npm install
-npm run $BUILD_MODE
+npm run $SCRIPT

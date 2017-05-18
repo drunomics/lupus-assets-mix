@@ -1,82 +1,91 @@
+$site-main-navigation__fs: 1.9rem;
+$site-main-navigation__lh: 1.8;
+$site-navigation__width: 360px;
+
 .site {
-  &__notifications {
-    @extend %container;
-    max-width: 100%;
+  @include applyGutterSpan('margin-right', 0.5);
+  @include applyGutterSpan('margin-left', 0.5);
+  @include breakpoint($bp--desktop) {
+    margin: 0;
+  }
+
+  &__main,
+  &__content-bottom {
+    @include grid-row;
+  }
+
+  &__content,
+  &__sidebar,
+  &__content-top,
+  &__content-bottom {
+    @include applyGutterSpan('margin-bottom');
+  }
+
+  &__main,
+  &__content-top,
+  &__content-bottom {
+    clear: both;
   }
 
   &__main {
-    @extend %container;
-    max-width: 100%;
-    margin-bottom: $spacing--base;
 
-    &--sidebar {
-      @extend %container;
-      max-width: 100%;
-
-      .site__content {
-        @include breakpoint($bp--mobile $bp--desktop) {
-          @include clearfix();
-        }
-
-        @include breakpoint($bp--desktop) {
-          @include grid-span(9, 1);
-        }
-      }
-
-      .site__second-sidebar {
-        @include breakpoint($bp--mobile $bp--desktop) {
-          @include clearfix();
-        }
-
-        @include breakpoint($bp--desktop) {
-          @include grid-span(3, 10);
-        }
-      }
-    }
-  }
-
-  &__breadcrumb {
-    @extend %container;
-    max-width: 100%;
-    margin-top: $spacing--half;
-    margin-bottom: $spacing--half;
-  }
-
-  &__content {
-    background: $c--white;
-    padding: $spacing--big;
-
-    &--sidebar {
-      @extend %container;
-      max-width: 100%;
-
-      .site__first-sidebar {
-        @include breakpoint($bp--mobile $bp--desktop) {
-          @include clearfix();
-        }
-
-        @include breakpoint($bp--desktop) {
-          @include grid-span(3.5, 1);
-        }
-      }
-
-      .site__content-main {
-        @include breakpoint($bp--mobile $bp--desktop) {
-          @include clearfix();
-        }
-
-        @include breakpoint($bp--desktop) {
-          @include grid-span(8.25, 4.75);
-        }
-      }
-    }
-  }
-
-  &--section-front {
+    .site__content-top,
+    .site__sidebar,
     .site__content {
-      margin-top: $spacing--big;
-      margin-bottom: $spacing--big;
-      background: none;
+      @include grid-row();
+    }
+
+    &--sidebar {
+      @include breakpoint($bp--tablet) {
+        .site__content-top {
+          @include grid-span(4, 1);
+        }
+
+        .site__content {
+          @include grid-span(4, 1);
+          clear: left;
+        }
+
+        .site__sidebar {
+          @include grid-span(4, 5);
+        }
+
+        // When content top is wide.
+        &.site__main--top-wide {
+          .site__content-top {
+            @include grid-span(8, 1);
+          }
+          .site__content {
+            clear: none;
+          }
+        }
+      }
+
+      @include breakpoint($bp--desktop) {
+        .site__content-top {
+          @include grid-span(8, 1);
+        }
+
+        .site__content {
+          @include grid-span(8, 1);
+          clear: left;
+        }
+
+        .site__sidebar {
+          @include grid-span(4, 9);
+        }
+
+        // When content top is wide.
+        &.site__main--top-wide {
+          .site__content-top {
+            @include grid-span(12, 1);
+          }
+          .site__content {
+            clear: none;
+          }
+        }
+      }
     }
   }
+
 }

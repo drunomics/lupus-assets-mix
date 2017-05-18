@@ -10,98 +10,82 @@
  *   component. This will be merged with the classes given/set else.
  *
  * Component-specific variables:
- * - notifications: Items for notifications region.
+ * - modifier: Site modifier.
+ * - main_navigation: Main navigation region.
  * - header: Items for the header region.
  * - content_top: The content top area of the current page.
  * - content: The main content of the current page.
- * - sidebar_first: Items for the sidebar_first region.
- * - sidebar_second: Items for the sidebar_second region.
- * - footer: Items for the footer region.
+ * - sidebar: Items for the sidebar region.
+ * - content_bottom: Items for the content_bottom region.
+ * - content_top_wide: Whether content top region is wide.
+ * - navigation: Navigation bar region.
  */
 #}
-{% set classes = classes|default([])|merge([
-  'site',
-  modifier ? 'site--' ~ modifier,
-]) %}
+<div id="site" class="site{{ modifier ? ' site__' ~ modifier }}">
 
-{# @todo: Handle attributes like this.
-{% set attributes = attribtues|default(create_attributes()) %}
-{% set attributes = attribtues.addClass(classes).addAttribute('id', 'site') %}
-#}
-
-{% set notifications2 %}
-  {% block notifications2 %}
-    {{ notifications2 }}
-  {% endblock %}
-{% endset %}
-
-<div {{ attributes }}>
-
-  {% if block("notifications") %}
-    {% block notifications %}
-    <section class="site__notifications">
-      {{ notifications }}
-    </section>
-    {% endblock %}
-  {% endif %}
-
-  {# Header #}
-  {% block header %}
-    {{ header }}
-  {% endblock %}
-
-  {# Breadcrumb #}
-  <section class="site__breadcrumb">
-    {% block breadcrumb %}
-      {{ breadcrumb }}
-    {% endblock %}
+  {# Navigation #}
+  <section id="site__navigation" class="site__navigation" role="navigation">
+    <div class="site__navigation-content">
+      {% block navigation %}
+        {{ navigation|raw }}
+      {% endblock %}
+    </div>
   </section>
 
-  <div class="site__main{{ sidebar_second ? ' site__main--sidebar' : '' }}">
+  {# Page wrapper #}
+  <section id="site__page" class="site__page">
+
+    {# Header #}
+    {% include '@site-regions/header/header.twig' with {
+      header: header,
+      main_navigation: main_navigation,
+    }%}
 
     {# Content wrapper #}
-    <div class="site__content{{ sidebar_first ? ' site__content--sidebar' : '' }}">
+    <div class="site__main {{ sidebar ? 'site__main--sidebar' }}{{ content_top_wide ? ' site__main--top-wide' }}">
 
       {# Content top #}
       {% if content_top %}
         <section class="site__content-top">
           {% block content_top %}
-            {{ content_top }}
+            {{ content_top|raw }}
+          {% endblock %}
+        </section>
+      {% endif %}
+
+      {# Sidebar #}
+      {% if sidebar %}
+        <section class="site__sidebar">
+          {% block sidebar %}
+            {{ sidebar|raw }}
           {% endblock %}
         </section>
       {% endif %}
 
       {# Main content #}
-      <main class="site__content-main" role="main">
-        <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
-        {% block content %}
-          {{ content }}
-        {% endblock %}
-      </main>
-
-      {# Sidebar first #}
-      {% if sidebar_first %}
-        <section class="site__first-sidebar">
-          {% block sidebar_first %}
-            {{ sidebar_first }}
+      {% if content %}
+        <main class="site__content" role="main">
+          <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+          {% block content %}
+            {{ content|raw }}
           {% endblock %}
-        </section>
+        </main>
       {% endif %}
 
     </div>
 
-    {# Sidebar second #}
-    {% if sidebar_second %}
-      <section class="site__second-sidebar">
-      {% block sidebar_second %}
-        {{ sidebar_second }}
-      {% endblock %}
+    {# Content bottom #}
+    {% if content_bottom %}
+      <section class="site__content-bottom">
+        {% block content_bottom %}
+          {{ content_bottom|raw }}
+        {% endblock %}
       </section>
     {% endif %}
-  </div>
 
-  {# Footer #}
-  {% block footer %}
-    {{ footer }}
-  {% endblock %}
+  </section>
+
+  {# Site overlay for navigation #}
+  <section id="site__overlay" class="site__overlay"></section>
+
 </div>

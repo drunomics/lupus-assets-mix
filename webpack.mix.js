@@ -11,11 +11,14 @@ var project = 'NAME';
  */
 
 mix.js('src/js/main.js', '.')
-   .sass('src/css/main.scss', '.')
-   .sass('src/css/main.pattern-lab.scss', '.')
-   .setPublicPath('assets')
-   .setResourceRoot('/assets/')
-   .sourceMaps();
+  .sass('src/css/main.scss', '.')
+  .sass('src/css/main.pattern-lab.scss', '.')
+  .setPublicPath('assets')
+  .setResourceRoot('/assets/');
+// @todo Find a way to properly enable source maps. Scripts with source maps
+//   are excluded in Drupal when aggregation is enabled.
+//   @see \Drupal\Core\Asset\JsOptimizer::clean()
+//.sourceMaps();
 
 mix.options({
   extractVueStyles: false,
@@ -32,27 +35,29 @@ var webpack_extra_config = {
       // Add support for sass import globbing.
       {
         test: /\.scss/,
-      enforce: "pre",
-      loader: "import-glob-loader"
+        enforce: "pre",
+        loader: "import-glob-loader"
       },
       // Add support for icon fonts.
       {
         test: /\.font\.js/,
         exclude: ['node_modules', 'bower_components'],
         loader: ExtractTextPlugin.extract({
-        fallback: 'style-loader',
-        use: [
-          'css-loader?importLoaders=1',
-          'webfonts-loader'
-        ]
-      })
+          fallback: 'style-loader',
+          use: [
+            'css-loader?importLoaders=1',
+            'webfonts-loader'
+          ]
+        })
       }
     ]
   },
   plugins: []
 };
 
-
+/**
+ * Builds pattern-lab.
+ */
 function buildPatternLab() {
   exec('php pattern-lab/core/console --generate --patterns-only', (error, stdout, stderr) => {
     console.log(`${stdout}`);

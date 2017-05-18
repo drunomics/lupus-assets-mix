@@ -1,0 +1,57 @@
+$spacing--tiny: rem(2);
+$spacing--small: rem(4);
+$spacing--half: rem(8);
+$spacing--base: rem(10);
+$spacing--medium: rem(12);
+$spacing--gutter: rem(20);
+$spacing--big: rem(24);
+$spacing--double: rem(32);
+$spacing--large: rem(64);
+
+$spacing-map: (
+  tiny: $spacing--tiny,
+  small: $spacing--small,
+  half: $spacing--half,
+  base: $spacing--base,
+  medium: $spacing--medium,
+  big: $spacing--big,
+  double: $spacing--double,
+  large: $spacing--large,
+);
+
+.spacing {
+  float: left;
+  display: inline-block;
+  box-sizing: border-box;
+  padding-left: $spacing--half;
+  padding-right: $spacing--half;
+  margin-bottom: $spacing--base;
+
+  &__container {
+    @include clearfix();
+  }
+
+  &__title {
+    padding-right: 0.5em;
+  }
+
+  &__example {
+    height: 3em;
+    background-color: $c--primary;
+  }
+
+  @each $name, $distance in $spacing-map {
+    &__#{$name}-example {
+      position: relative;
+      width: $distance;
+
+      &:after {
+        @include position(absolute, spacing() null null calc(100% + 0.5em));
+        content: quote(inspect($distance));
+
+        font-size: 1rem;
+        font-style: italic;
+      }
+    }
+  }
+}

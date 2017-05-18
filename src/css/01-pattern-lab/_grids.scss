@@ -1,7 +1,7 @@
 /// The following setting are solely intended to display a demo of the Grid.
 .grid-demo {
   clear: both;
-  @extend %container;
+  @include grid-row;
   // Be sure to enable debug mode for your grid visualization so show up:
   @include sgs-change('debug', true);
   @include background-grid($color: rgba(255, 150, 150, 0.25));

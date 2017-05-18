@@ -1,0 +1,12 @@
+{
+  "items": [
+    {
+      "name": "$c--primary",
+      "value": "red",
+      "comment": ""
+    }
+  ],
+  "meta": {
+    "description": "The project's main colors."
+  }
+}

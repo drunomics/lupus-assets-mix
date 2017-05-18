@@ -1,0 +1,5 @@
+{% set button_classes = ['button'] | merge( button_classes|default([]) ) %}
+
+<a href="{{ button_url }}" class="{{ button_classes|join(' ') }}">{{ button_text }}</a>
+<br/>
+<input type="submit" class="{{ button_classes|join(' ') }}" value="{{ button_text }}"/>

@@ -9,8 +9,8 @@
 @import "../../node_modules/bourbon/app/assets/stylesheets/bourbon";
 // End libs.
 
-@import "_00-variables.scss";
-@import "_01-global.scss";
+@import "_config-global.scss";
+@import "_defaults.scss";
 @import "00-utilities/*.scss";
 
 @import "../components/**/*.scss";

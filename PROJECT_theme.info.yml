@@ -8,13 +8,12 @@ libraries:
 
 regions:
   header: 'Kopfbereich'
-  primary_menu: 'Hauptmenü'
-  secondary_menu: 'Untermenü'
-  page_top: 'Seite oben'
-  page_bottom: 'Seite unten'
-  breadcrumb: Breadcrumb
+  main_navigation: 'Main navigation'
+  content_top: 'Inhalt oben'
   content: 'Inhalt'
-  footer: 'Fussbereich'
+  content_bottom: 'Inhalt unten'
+  sidebar: 'Seitenleiste'
+  navigation: 'Navigation'
 
 # For compatibility with Pattern Lab templates; this list must always be the
 # folders immediately under src/components.
