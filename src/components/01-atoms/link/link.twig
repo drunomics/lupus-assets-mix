@@ -1,9 +1,7 @@
 {#
-  Component for buttons.
+  Component for links.
 
   Component variables:
-   - button_url
-   - button_text
    - variant: (optional) Name of the component variant to use.
    - classes: (optional) Array of additional classes to set on the component.
    - attributes: (optional) Attributes to set for the component.
@@ -11,10 +9,10 @@
 
 {# Handle component classes and attribtues #}
 {% set classes = classes|default([])|
-    merge(['button' ~ (variant ? ' button--' ~ variant)]) %}
+    merge(['link' ~ (variant ? ' link--' ~ variant)]) %}
 {% set attributes = attributes|default(create_attribute()).
     addClass(classes).
-    setAttribute('href', button_url|default('#'))
+    setAttribute('href', url|default('#'))
 %}
 
-<a{{ attributes }}>{{ button_text }}</a>
+<a{{ attributes }}>{{ text }}</a>
