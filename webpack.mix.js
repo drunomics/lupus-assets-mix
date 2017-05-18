@@ -12,7 +12,7 @@ var project = 'NAME';
 
 mix.js('src/js/main.js', '.')
   .sass('src/css/main.scss', '.')
-  .sass('src/css/main.pattern-lab.scss', '.')
+  .sass('src/css/pattern-lab.scss', '.')
   .setPublicPath('assets')
   .setResourceRoot('/assets/');
 // @todo Find a way to properly enable source maps. Scripts with source maps

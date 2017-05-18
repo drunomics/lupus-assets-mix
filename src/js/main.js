@@ -7,4 +7,4 @@
 
 require('./bootstrap');
 // Load icon-font css.
-//require('../icons/00-icon.font.js');
+// require('../icons/00-icon.font.js');
