@@ -110,3 +110,5 @@ See https://github.com/creationix/nvm
 
 ## Todos
 - Add html-loader and load images from twig templates.
+- Complete icon font handling
+- More docs.
