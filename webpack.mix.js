@@ -74,6 +74,7 @@ var browser_sync_options = {
   port: 8123,
   files: [{
     match: [
+      'src/components/**/*.md',
       'src/components/**/*.twig',
       'src/components/**/*.yml',
       'src/components/**/*.json',
