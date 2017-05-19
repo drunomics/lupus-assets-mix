@@ -1,10 +1,10 @@
-name: {{ project_name}}
+name: {{ project}}
 type: theme
 base theme: stable
-description: '{{ project_name }} theme.'
+description: '{{ project }} theme.'
 core: 8.x
 libraries:
- - {{ project_name}}_theme/global-styling
+ - {{ project}}_theme/global-styling
 
 regions:
   header: 'Kopfbereich'
