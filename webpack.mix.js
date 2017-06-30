@@ -2,7 +2,7 @@ const { mix } = require('laravel-mix');
 const browser_support = ['last 2 versions', 'IE >= 10', 'Safari >= 8'];
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
-const exec = require('child_process').execSync;
+const child_process = require('child_process');
 
 var project = 'NAME';
 
@@ -59,10 +59,17 @@ var webpack_extra_config = {
  * Builds pattern-lab.
  */
 function buildPatternLab() {
-  exec('php pattern-lab/core/console --generate --patterns-only', (error, stdout, stderr) => {
-    console.log(`${stdout}`);
-    console.log(`${stderr}`);
-  })
+  var result = child_process.spawnSync('php ' + __dirname + '/pattern-lab/core/console --generate --patterns-only', [], {
+    shell: true,
+    stdio: 'inherit'
+  });
+  if (result.status !== 0) {
+    var red = '\x1b[31m';
+    var bold = '\033[1m';
+    var reset = '\x1b[0m';
+    var resetBold = '\x1b[21m';
+    console.log(red + bold + '%s ' + resetBold + '%s' + reset, '[ERROR]', 'Pattern-lab build failed.', "\n\n");
+  }
 }
 
 /**
