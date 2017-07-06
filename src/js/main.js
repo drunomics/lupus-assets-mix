@@ -8,3 +8,9 @@
 require('./bootstrap');
 // Load icon-font css.
 // require('../icons/00-icon.font.js');
+
+Vue.component('example', require('./Example.vue'));
+
+const app = new Vue({
+  el: '#vue-app'
+});

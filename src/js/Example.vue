@@ -12,3 +12,11 @@
         }
     }
 </script>
+
+<style lang="scss" scoped>
+  .container {
+    h3 {
+      color: blue;
+    }
+  }
+</style>
