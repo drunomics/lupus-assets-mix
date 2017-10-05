@@ -1,0 +1,32 @@
+<footer class="footer">
+  <section class="footer__wrapper">
+    <section class="footer__item">
+    {% block footer_first %}
+        <h2>{{ title }}</h2>
+        <p>{{ excerpt.short }}</p>
+        {% include '@site-components/social-icons/social-icons.twig' %}
+    {% endblock %}
+    </section>
+
+    <section class="footer__item">
+    {% block footer_second %}
+        {% include '@site-components/footer-menu/footer-menu.twig' %}
+        {% include '@site-components/footer-menu/footer-menu.twig' %}
+    {% endblock %}
+    </section>
+
+    <section class="footer__item">
+    {% block footer_third %}
+        <h2>{{ title }}</h2>
+        <p>{{ excerpt.short }}</p>
+        <a href="{{ link_url }}">{{ subtitle }}</a>
+    {% endblock %}
+    </section>
+
+    <section class="footer__item">
+    {% block footer_fourth %}
+        {% include '@site-components/footer-menu/footer-menu.twig' %}
+    {% endblock %}
+    </section>
+  </section>
+</footer>

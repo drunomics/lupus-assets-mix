@@ -1,0 +1,18 @@
+news:
+  tags:
+    -
+      title: Events
+      url: '#'
+      classes: ['link--tag']
+    -
+      title: Corporate
+      url: '#'
+      classes: ['link--tag']
+    -
+      title: News
+      url: '#'
+      classes: ['link--tag']
+    -
+      title: Awesome
+      url: '#'
+      classes: ['link--tag']

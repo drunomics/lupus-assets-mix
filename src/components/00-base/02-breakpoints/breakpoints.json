@@ -1,19 +1,47 @@
 {
   "items": [
     {
-      "name": "$bp--mobile",
+      "name": "$bp--min",
       "value": "320px",
       "comment": ""
     },
     {
-      "name": "$bp--tablet",
-      "value": "534px",
+      "name": "$bp--mobile",
+      "value": "480px",
       "comment": ""
     },
     {
-      "name": "$bp--desktop",
-      "value": "1021px",
+      "name": "$bp--tablet-small",
+      "value": "600px",
+      "comment": ""
+    },
+    {
+      "name": "$bp--tablet-large",
+      "value": "768px",
+      "comment": ""
+    },
+    {
+      "name": "$bp--desktop-small",
+      "value": "960px",
+      "comment": ""
+    },
+    {
+      "name": "$bp--desktop-large",
+      "value": "1024px",
+      "comment": ""
+    },
+    {
+      "name": "$bp--less-than-max",
+      "value": "max-width 1200px",
+      "comment": ""
+    },
+    {
+      "name": "$bp--max",
+      "value": "1420px",
       "comment": ""
     }
-  ]
+  ],
+  "meta": {
+    "description": "To add to these items, use Sass variables that start with <code>$bp--</code> in <code>source/_patterns/00-base/02-breakpoints/_01-breakpoints.scss</code>"
+  }
 }

@@ -62,7 +62,7 @@
       @include grid-span(2, 3);
     }
 
-    @include breakpoint($bp--tablet) {
+    @include breakpoint($bp--tablet-small) {
       @for $i from 1 through 8 {
         .grid-demo-1-#{$i} {
           @include grid-span($i, 1);
@@ -85,7 +85,7 @@
       }
     }
 
-    @include breakpoint($bp--desktop) {
+    @include breakpoint($bp--desktop-small) {
       @for $i from 1 through 12 {
         .grid-demo-1-#{$i} {
           @include grid-span($i, 1);
@@ -102,7 +102,7 @@
     }
   }
 
-  @include breakpoint($bp--desktop) {
+  @include breakpoint($bp--desktop-small) {
     &-2 {
       &-1 {
         @include grid-span(4, 1);

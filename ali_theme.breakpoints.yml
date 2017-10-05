@@ -1,0 +1,43 @@
+ali_theme.min:
+  label: Minimum
+  mediaQuery: '(max-width: 479px)'
+  weight: 0
+  multipliers:
+   - 1x
+ali_theme.mobile:
+  label: Mobile
+  mediaQuery: 'all and (min-width: 480px)'
+  weight: 1
+  multipliers:
+    - 1x
+ali_theme.tablet_small:
+  label: Tablet small
+  mediaQuery: 'all and (min-width: 600px)'
+  weight: 1
+  multipliers:
+    - 1x
+ali_theme.tablet_large:
+  label: Tablet large
+  mediaQuery: 'all and (min-width: 768px)'
+  weight: 1
+  multipliers:
+    - 1x
+ali_theme.desktop_small:
+  label: Desktop small
+  mediaQuery: 'all and (min-width: 960px)'
+  weight: 1
+  multipliers:
+    - 1x
+ali_theme.desktop_large:
+  label: Desktop large
+  mediaQuery: 'all and (min-width: 1024px)'
+  weight: 1
+  multipliers:
+    - 1x
+ali_theme.max:
+  label: Maximum
+  mediaQuery: 'all and (min-width: 1420px)'
+  weight: 2
+  multipliers:
+    - 1x
+

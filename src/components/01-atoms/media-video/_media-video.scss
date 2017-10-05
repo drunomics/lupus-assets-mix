@@ -1,0 +1,19 @@
+$media-video-width-height-ratio: 9 / 16 * 100%; // 16:9 == 56.25%
+
+.media-video {
+  position: relative;
+  // This is needed to center the video vertically inside a video teaser.
+  height: 100%;
+  // This is needed to set a height and make it visible when shown outside a video teaser.
+  padding-bottom: $media-video-width-height-ratio;
+  border-top: rem(16) transparent solid;
+  border-bottom: rem(16) transparent solid;
+
+  &__iframe {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+}

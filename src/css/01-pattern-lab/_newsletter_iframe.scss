@@ -1,0 +1,278 @@
+/// @file
+/// Newsletter iframe used in LeadGen.
+$newsletter_iframe_domain: 'https://www.haus.de';
+$newsletter_iframe__bg: $newsletter_iframe_domain + "/assets/pattern-lab-images/newsletter.png";
+$nersletter_iframe__logo: $newsletter_iframe_domain + "/assets/pattern-lab-images/newsletter_title.png";
+$nersletter_iframe__logo_mobile: $newsletter_iframe_domain + "/assets/pattern-lab-images/newsletter_title_mobile.png";
+$nersletter_iframe__headline: 'Anmelden zum Haus.de-Newsletter';
+$nersletter_iframe__text: 'Melden Sie sich einfach an und schon sind Sie rund um das Thema Haus immer bestens informiert – natürlich kostenlos und unverbindlich!';
+$nersletter_iframe__submit_text: "Anmelden";
+$nersletter_iframe__desktop_bp: 800px;
+
+#content {
+  position: relative;
+  background: url($newsletter_iframe__bg) no-repeat 0 0;
+  font-family: Lato, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.13;
+  min-height: 300px;
+  max-width: 1000px;
+  padding: 22px 0;
+  background-size: auto 100%;
+
+  &, a {
+    color: #333333;
+    text-decoration: none;
+  }
+
+  .container-fluid {
+    width: auto;
+    background: rgba(255, 255, 255, 0.9);
+    margin: 0 auto;
+    padding: 0;
+    min-height: 255px;
+    max-width: 320px !important;
+
+    @include breakpoint($bp--tablet) {
+      max-width: 534px !important;
+    }
+
+    @include breakpoint($nersletter_iframe__desktop_bp) {
+      max-width: $nersletter_iframe__desktop_bp !important;
+    }
+  }
+
+  #raffle_form {
+    position: relative;
+    text-align: center;
+    padding: 14px $spacing--block;
+
+    @include breakpoint($bp--tablet) {
+      padding: 14px 30px;
+    }
+
+    @include breakpoint($nersletter_iframe__desktop_bp) {
+      padding: 14px 50px;
+    }
+
+    &::before {
+      content: url($nersletter_iframe__logo_mobile);
+      display: block;
+      height: 26px;
+
+      @include breakpoint($bp--tablet) {
+        height: 31px;
+        content: url($nersletter_iframe__logo);
+      }
+    }
+
+    .form-group {
+      text-align: left;
+      margin: 0;
+
+      // Hide unnecessary elements.
+      .pull-right,
+      label[for="email"] {
+        display: none;
+      }
+
+      &:first-child {
+        &::before {
+          content: $nersletter_iframe__text;
+          display: block;
+          text-align: center;
+          margin: 10px 0 15px;
+          line-height: 16px;
+        }
+
+        & > div {
+          padding: 0 145px 0 0;
+        }
+
+        .help-block {
+          display: none;
+        }
+      }
+
+      & > div {
+        margin: 0;
+        padding: 0;
+        position: static;
+        width: 100%;
+      }
+
+      &.agreement {
+        margin-top: 10px;
+      }
+    }
+
+    #email {
+      border: solid 1px #e0e0e0;
+      line-height: 46px;
+      font-size: 16px;
+      width: 100%;
+      text-align: center;
+      padding: 0;
+      margin: 0;
+      border-radius: 0;
+      box-shadow: none;
+      height: 49px;
+
+      @include placeholder() {
+        text-transform: uppercase;
+        color: #848484;
+      }
+
+      @include breakpoint($bp--tablet) {
+        font-size: 18px;
+      }
+    }
+
+    .has-error #email {
+      border: solid 1px $c--primary;
+    }
+
+    // "Anmelden" button.
+    button.btn {
+      background: $c--dark_grey;
+      text-transform: uppercase;
+      font-size: 16px;
+      line-height: 48px;
+      color: #fff;
+      text-indent: 128px;
+      overflow: hidden;
+      position: absolute;
+      right: $spacing--block;
+      width: 128px;
+      top: 130px;
+      border: none;
+      border-radius: 0;
+      text-shadow: none;
+      box-shadow: none;
+      padding: 0;
+      margin: 0;
+
+      @include breakpoint($bp--tablet) {
+        right: 30px;
+        top: 102px;
+        font-size: 18px;
+      }
+
+      @include breakpoint($nersletter_iframe__desktop_bp) {
+        right: 50px;
+      }
+
+      &::before {
+        content: $nersletter_iframe__submit_text;
+        text-indent: 0;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        border: 0;
+        text-align: center;
+      }
+    }
+
+    .checkbox {
+      line-height: 1;
+      padding: 0;
+
+      // Reserve place for a scroll bar when text is expanded.
+      margin-right: -15px;
+      // Limit text height when it is expanded.
+      overflow: auto;
+      height: 148px;
+      @include breakpoint($bp--tablet) {
+        height: 93px;
+      }
+      @include breakpoint($nersletter_iframe__desktop_bp) {
+        height: 75px;
+      }
+
+      label {
+        padding: 0;
+        display: block;
+
+        // Limit text width when text is expanded.
+        max-width: 280px;
+        @include breakpoint($bp--tablet) {
+          max-width: 474px;
+        }
+        @include breakpoint($nersletter_iframe__desktop_bp) {
+          max-width: 560px;
+        }
+      }
+
+      .text-hidden-toggle {
+        font-weight: bold;
+      }
+
+      strong {
+        font-weight: normal;
+      }
+
+      input[type="checkbox"] {
+        position: static;
+        margin-right: 7px;
+        margin-top: 0;
+        margin-left: 0;
+        vertical-align: middle;
+      }
+
+      .control-label {
+        padding: 0;
+        margin: 0;
+      }
+    }
+
+    .text-hidden {
+      display: none;
+    }
+  }
+
+  .success_message {
+    text-align: center;
+    background: #e0e0e0;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 140px $spacing--block;
+
+    &::before {
+      content: url($nersletter_iframe__logo_mobile);
+      display: block;
+      margin-bottom: 40px;
+
+      @include breakpoint($bp--tablet) {
+        content: url($nersletter_iframe__logo);
+      }
+    }
+
+    &::after {
+      content: $nersletter_iframe__headline;
+      text-transform: uppercase;
+      font-weight: bold;
+      position: absolute;
+      top: 182px;
+      left: 0;
+      right: 0;
+    }
+
+    @include breakpoint($bp--tablet) {
+      padding: 96px 100px;
+
+      &:after {
+        top: 140px;
+      }
+    }
+
+    @include breakpoint($nersletter_iframe__desktop_bp) {
+      padding: 100px 120px;
+    }
+
+  }
+}

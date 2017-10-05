@@ -1,0 +1,104 @@
+// Configuration variables.
+// They equal colors from warning-messages/_warning-messages.scss.
+$warning-states: (
+  1: $c--cardinal,
+  2: $c--cardinal, // Error.
+  3: $c--jaffa, // Warning.
+  4: $c--secondary, // Status.
+) !default;
+
+.info-links {
+  &__navigation {
+    @include clearfix();
+    padding: 0;
+    position: relative;
+
+    &__item {
+      list-style: none;
+      float: right;
+      position: relative;
+      display: block;
+      overflow: hidden;
+      color: $c--primary;
+
+      &--is-active {
+
+      }
+    }
+
+    &__toggle {
+      cursor: not-allowed;
+      border: none;
+      border-radius: 0;
+      padding: $spacing--half 0;
+      position: relative;
+      font-size: $fs--large;
+      width: $spacing--large;
+
+      @each $status, $color in $warning-states {
+        .info-links--lowest-status-#{$status} & {
+          cursor: pointer;
+          @include icon("angle-down", "after") {
+            position: absolute;
+            right: 0;
+            top: $spacing--half;
+            z-index: 0;
+          };
+        }
+      }
+
+      &, &:focus, &:hover {
+        color: $c--text__light;
+        background-color: transparent;
+      }
+
+      @each $status, $color in $warning-states {
+        .info-links--lowest-status-#{$status} &,
+        .info-links--lowest-status-#{$status} &:focus,
+        .info-links--lowest-status-#{$status} &:hover {
+          color: $color;
+        }
+      }
+
+      &--warningmessages {
+        @include icon('exclamation-triangle');
+      }
+    }
+  }
+
+  &__list {
+    @include clearfix();
+    padding: 0;
+    margin: 0;
+  }
+
+  &__list-item {
+    list-style: none;
+    display: none;
+
+    @include breakpoint($bp--mobile) {
+      position: absolute;
+      right: 0;
+      z-index: 2500;
+      top: 100%;
+      box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.3);
+      max-width: 40rem;
+      width: 100%;
+    }
+
+    @include breakpoint($bp--max) {
+      @include grid-span(6, 7);
+      max-width: none;
+    }
+
+    &--is-active {
+      display: block;
+    }
+
+    &:hover {
+      // Keep showing the info links when hovering them. Without this they get
+      // removed when moving the cursor away from the info links icon.
+      display: block;
+    }
+  }
+}

@@ -29,6 +29,9 @@ mix.options({
   clearConsole: false
 });
 
+// Copy pattern-lab images.
+mix.copy('src/pattern-lab/_images', 'assets/images');
+
 var webpack_extra_config = {
   module: {
     rules: [

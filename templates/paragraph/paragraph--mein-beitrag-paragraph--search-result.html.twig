@@ -1,0 +1,22 @@
+{#
+/**
+ * @file
+ * Mein Beitrag paragraph search result template.
+ *
+ * Available variables:
+ */
+#}
+
+{% embed '@content/mein-beitrag-teaser/mein-beitrag-teaser.twig' with {
+date: date,
+url: url,
+subject: content.field_subject,
+answer: content.field_antwort,
+tags: departments,
+} %}
+
+  {% block image %}
+    {{ image }}
+  {% endblock %}
+
+{% endembed %}

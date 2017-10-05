@@ -1,0 +1,30 @@
+// Helper classes for pattern-lab styleguide.
+.font {
+  &-normal {
+    &--base {
+      @extend %font-normal--base;
+
+      &-italic {
+        @extend %font-normal--base-italic;
+      }
+    }
+    &--mono,
+    &--mono-italic {
+      @extend %font-base--mono;
+    }
+  }
+
+  &-bold {
+    &--base {
+      @extend %font-bold--base;
+
+      &-italic {
+        @extend %font-bold--base-italic;
+      }
+    }
+    &--mono,
+    &--mono-italic {
+      @extend %font-base--mono;
+    }
+  }
+}

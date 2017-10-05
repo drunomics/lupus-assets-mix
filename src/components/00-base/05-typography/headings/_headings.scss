@@ -1,0 +1,23 @@
+h1, .h1 {
+  @extend %font-size-xlarge;
+}
+
+h2, .h2 {
+  @extend %font-size-large;
+}
+
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  @extend %font-size-base;
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @extend %font-bold--base;
+
+  a {
+    text-decoration: none;
+  }
+}

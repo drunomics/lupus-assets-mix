@@ -1,0 +1,69 @@
+{#
+/**
+ * @file
+ * A list of links. By default each link is in a single line. If you set class to 'list-links--tags' the links will be
+ * shown in a single line.
+ *
+ * Available variables:
+ * - links: An array of link objects which are handed over to the link atom.
+ * - class: An optional additional class name added to the list and its items.
+ * - single_line: If set to true, show this list in single line and add a more link if necessary.
+ */
+#}
+{% spaceless %}
+  {% set list_classes = ['list-links'] %}
+  {% set item_classes = [] %}
+  {% set link_base_classes = [] %}
+
+  {% if single_line %}
+    {% set list_classes = list_classes|merge(['list-links--single-line']) %}
+  {% endif %}
+
+  {% if classes is iterable %}
+    {% set list_classes = list_classes|merge(classes) %}
+  {% endif %}
+
+  {% for list_class in list_classes %}
+    {% set item_classes = item_classes|merge([list_class ~ '__item']) %}
+    {% set link_base_classes = link_base_classes|merge([list_class ~ '__link']) %}
+  {% endfor %}
+
+  <ul class="{{ list_classes|join(' ') }}">
+    {% for link in links %}
+      <li class="{{ item_classes|join(' ') }}">{% spaceless %}
+        {% if link.classes is iterable %}
+          {% set link_classes = link_base_classes|merge(link.classes) %}
+        {% else %}
+          {% set link_classes = link_base_classes %}
+        {% endif %}
+        {% if link.url %}
+          {% set url = link.url %}
+        {% else %}
+          {% set url = link['#url'].toString() %}
+        {% endif %}
+        {% if link.title %}
+          {% set title = link.title %}
+        {% else %}
+          {% set title = link['#title'] %}
+        {% endif %}
+        {% if link.icon %}
+          {% set icon = link.icon %}
+        {% else %}
+          {% set icon = link_icon %}
+        {% endif %}
+        {% include '@atoms/link/link.twig' with {
+          title: title,
+          url: url,
+          icon: icon,
+          classes: link_classes,
+          new_window: link.new_window,
+        } %}
+      {% endspaceless %}</li>
+    {% endfor %}
+    {% if single_line %}
+      <li class="list-links__more">
+        <a class="list-links__more-link" title="{{ 'more Tags'|t }}">&hellip;</a>
+      </li>
+    {% endif %}
+  </ul>
+{% endspaceless %}

@@ -1,6 +1,0 @@
-header: '<div class="pl-region-with-borders-dark">header</div>'
-content_top: '<div class="pl-region-with-borders-dark">content top</div>'
-content: '<div class="pl-region-with-borders-dark">content</div>'
-sidebar: ''
-content_bottom: '<div class="pl-region-with-borders-dark">content bottom</div>'
-content_top_wide: true

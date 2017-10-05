@@ -1,0 +1,30 @@
+{#
+/**
+@file
+ * Teaser template.
+ */
+#}
+{%- macro stringMaxLength(str, maxLength) -%}
+  {%- if str | length < maxLength -%}
+    {{ str }}
+  {%- else -%}
+    {{ str|slice(0, maxLength) }}&hellip;
+  {%- endif -%}
+{%- endmacro -%}
+{% set title = content.field_teaser_title %}
+{% set text = content.field_teaser_text %}
+{% set url = paragraph.field_teaser_link.0.url %}
+{% embed '@content/short-news/short-news--image.twig' with {
+  'teaser': {
+    'view_mode': default,
+    'headline': _self.stringMaxLength(title, 50),
+    'text': text,
+    'url': url
+  },
+  'link_display': false
+} %}
+  {% block image %}
+    <div class="teaser-box__image teaser-box-image__image"><a href="{{ url }}">{{ content.field_teaser_image }}</a></div>
+  {% endblock %}
+
+{% endembed %}

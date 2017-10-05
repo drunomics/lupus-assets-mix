@@ -1,0 +1,47 @@
+{#
+/**
+ * @file
+ * A news entry's header consisting of the node title, date, likes, comment count and tags.
+ *
+ * Available variables:
+ * - ali: An associative array or object with the following keys:
+ */
+#}
+{% spaceless %}
+  <article class="news-teaser{% if has_image %} news-teaser--image{% endif %}">
+    {% block image %}
+      {% if has_image %}
+        <a href="{{ url }}" class="news-teaser__image-link">{{ image }}</a>
+      {% endif %}
+    {% endblock %}
+
+    <div class="news-teaser__right">
+      <ul class="news-teaser__items">
+        <li class="news-teaser__item news-teaser__item-submitted">{{ date }}</li>
+        <li class="news-teaser__item news-teaser__item-likes">
+          <span class="news-teaser__item-icon icon--heart-o"></span>
+          {{ likes }}
+        </li>
+        {% if comments_open %}
+          <li class="news-teaser__item news-teaser__item-comments">
+            <span class="news-teaser__item-link-icon icon--commenting-o"></span>{{ comments }}
+          </li>
+        {% endif %}
+      </ul>
+
+      {% if language_available_translation_notice %}
+        <div class="news-teaser__messages content__messages">
+          {{ language_available_translation_notice }}
+        </div>
+      {% endif %}
+
+      <a class="news-teaser__title" href="{{ url }}">{{ title }}</a>
+      <div class="news-teaser__content">{{ content }}</div>
+
+      {% include '@content/list-links/list-links.twig' with {
+        links: tags,
+        classes: ['list-links--tags'],
+      } %}
+    </div>
+  </article>
+{% endspaceless %}

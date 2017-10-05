@@ -1,0 +1,81 @@
+.main-menu-lowlevel {
+  margin-bottom: gutter-span() * 4; // Same distance as between main and sidebar.
+
+  &__trigger {
+    @include icon('angle-down');
+    width: $spacing--large;
+    height: 100%;
+    display: block;
+    position: absolute;
+    right: 0;
+    border-left: 1px solid $c--white__light;
+    top: 0;
+    overflow: hidden;
+    border-right: 0;
+    border-bottom: 0;
+    border-top: 0;
+    border-radius: 0;
+
+    &, &:focus, &:hover {
+      background-color: transparent;
+    }
+
+    span {
+      display: none;
+    }
+
+    &--is-active {
+      @include icon('angle-up');
+    }
+  }
+
+  .menu {
+    padding: 0;
+    margin: 0;
+  }
+
+  .menu__item {
+    border-top: solid $c--white 1px;
+
+    &:first-of-type {
+      border-top: none;
+    }
+
+    a {
+      position: relative;
+      display: block;
+      padding: $spacing--base $spacing--big;
+      background-color: $c--kasmir-blue;
+
+      &, &.is-active {
+        color: $c--white;
+      }
+    }
+
+    ul.menu {
+      a {
+        background-color: $c--kasmir-blue--75;
+      }
+
+      ul.menu {
+        a {
+          background-color: $c--kasmir-blue--50;
+        }
+
+        ul.menu {
+          a {
+            background-color: $c--kasmir-blue--25;
+          }
+        }
+      }
+    }
+  }
+
+  .menu__item--expanded {
+    list-style: none;
+
+    ul.menu {
+      display: none;
+    }
+  }
+}

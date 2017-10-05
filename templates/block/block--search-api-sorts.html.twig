@@ -1,0 +1,13 @@
+{#
+/**
+ * @file
+ * Sorts block template.
+ */
+#}
+{% embed '@site-components/sorts/sorts.twig' with {
+  title: label,
+} %}
+  {% block content %}
+    {{ content }}
+  {% endblock %}
+{% endembed %}

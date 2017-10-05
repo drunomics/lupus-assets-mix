@@ -1,0 +1,63 @@
+.sorts {
+  margin-bottom: $spacing__double;
+
+  &__title {
+    font-size: $fs--base;
+    font-family: $ff--base-bold;
+    color: $c--grey;
+    line-height: $lh--large;
+    border-bottom: 1px solid $c--white__dark;
+  }
+
+  // Reset Drupal styles. The facets are rendered as #item_list in Drupal.
+  .item-list ul,
+  .item-list li {
+    margin: 0;
+    padding: 0;
+    list-style: none outside none;
+  }
+
+  &__toggle {
+    margin-left: $spacing--small;
+  }
+
+  &--collapsed {
+    .sorts__toggle {
+      @include icon('angle-down');
+    }
+  }
+
+  &--expanded {
+    .sorts__toggle {
+      @include icon('angle-up');
+    }
+  }
+
+  &--collapsed,
+  &--expanded {
+    .sorts__title {
+      cursor: pointer;
+    }
+  }
+
+  &__link {
+    position: relative;
+    padding-left: $spacing--big;
+    margin-bottom: $spacing--half;
+    display: inline-block;
+
+    &.is-active {
+      color: $c--grey__light;
+
+      &:hover,
+      &:active,
+      &:focus {
+        $color: $c--grey__light;
+      }
+    }
+  }
+
+  &__indicator {
+    display: none;
+  }
+}

@@ -1,0 +1,15 @@
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  ]
+%}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes).setAttribute('id', 'paragraph-reference-' ~ paragraph.id()) }}>
+    {% block content %}
+      <h2>{{ content.field_subtitle }}</h2>
+      {{ content|without('field_subtitle') }}
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

@@ -1,0 +1,14 @@
+{% embed '@site-components/navigation-profile/navigation-profile.twig' with {
+  profile_name: name,
+  profile_classes: classes
+}%}
+
+    {% block image %}
+        {{ image }}
+    {% endblock %}
+
+    {% block links %}
+        {{ links }}
+    {% endblock %}
+
+{% endembed %}

@@ -1,0 +1,10 @@
+/*.pl-font-sizes {
+  @each $font, $font-value in $fonts {
+
+    .pl-font_size--#{$font} {
+      @include applyFontProperty($font, 'font-size');
+      @include applyFontProperty($font, 'line-height');
+    }
+  }
+}
+*/

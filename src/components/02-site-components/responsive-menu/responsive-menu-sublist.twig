@@ -1,0 +1,16 @@
+<div class="responsive-menu-sublist">
+  <div class="responsive-menu-sublist__header">{{ header }}</div>
+
+  {% if children is not empty %}
+    <ul class="responsive-menu-sublist__list">
+      {% block sublist_children %}
+        <li class="responsive-menu-sublist__list-item">
+          {% include '@site-components/block/block.twig' with {
+            label: block.label,
+            content: block.content
+          }%}
+        </li>
+      {% endblock %}
+    </ul>
+  {% endif %}
+</div>

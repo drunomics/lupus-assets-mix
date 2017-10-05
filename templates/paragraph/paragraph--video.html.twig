@@ -1,0 +1,11 @@
+{#
+/**
+ * @file
+ * Media paragraph.
+ */
+#}
+{% spaceless %}
+  {% include '@site-components/media-item/media-item.twig' with {
+    media_item: content,
+  } %}
+{% endspaceless %}

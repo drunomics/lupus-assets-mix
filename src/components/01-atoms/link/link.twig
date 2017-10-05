@@ -1,18 +1,27 @@
 {#
-  Component for links.
-
-  Component variables:
-   - variant: (optional) Name of the component variant to use.
-   - classes: (optional) Array of additional classes to set on the component.
-   - attributes: (optional) Attributes to set for the component.
+/**
+ * @file
+ * A link optionally with an icon as defined in our icon scss.
+ * By using the class 'link--tag' you can create tag links and additionally use
+ * the 'active' class to give the link a solid background - ie an active look.
+ *
+ * Variables:
+ * - title: The link title.
+ * - url: The link's url.
+ * - icon: Optional. The part of the css class for the given icon without 'icon--'
+ *
+ */
 #}
-
-{# Handle component classes and attribtues #}
-{% set classes = classes|default([])|
-    merge(['link' ~ (variant ? ' link--' ~ variant)]) %}
-{% set attributes = attributes|default(create_attribute()).
-    addClass(classes).
-    setAttribute('href', url|default('#'))
-%}
-
-<a{{ attributes }}>{{ text }}</a>
+{% spaceless %}
+  {% if icon %}
+    {% set classes = classes|merge(['link--icon']) %}
+  {% endif %}
+  <a
+      {%- if classes %} class="{{ classes|join(' ') }}"{% endif -%}
+      {%- if(url) %} href="{{ url }}"{% endif -%}
+      {%- if new_window %} target="_blank"{% endif -%}
+  >
+    {% if icon %}<span class="link__icon icon--{{ icon }}"></span>{% endif %}
+    {% if(title) %}{{ title }}{% endif %}
+  </a>
+{% endspaceless %}

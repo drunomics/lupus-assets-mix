@@ -1,0 +1,12 @@
+"title": "Sprache"
+"links":
+  - "is_active": true
+    "value": "Deutsch"
+    "count": 12
+    "show_count": true
+  - "value": "English"
+    "count": 7
+    "show_count": true
+  - "value": "Französisch"
+    "count": 1
+    "show_count": true

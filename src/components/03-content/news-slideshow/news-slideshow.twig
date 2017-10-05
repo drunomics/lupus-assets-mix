@@ -1,0 +1,15 @@
+{%
+set classes = [
+  'news-slideshow',
+]
+%}
+<section{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {% if label %}
+    <h2 class="news-slideshow__title">{{ label }}</h2>
+  {% endif %}
+  {{ title_suffix }}
+  {% block content %}
+    {{ content }}
+  {% endblock %}
+</section>

@@ -1,0 +1,11 @@
+social_icons_title: Folgen Sie uns
+social_icons:
+  - url: http://twitter.com/test
+    title: Twitter
+    class: icon--twitter
+  - url: http://facebook.com/test
+    title: Facebook
+    class: icon--facebook
+  - url: http://instagram.com/test
+    title: Instagram
+    class: icon--instagram

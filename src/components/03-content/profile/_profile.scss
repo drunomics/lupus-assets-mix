@@ -1,0 +1,70 @@
+.profile {
+  background-color: $c--white;
+
+  padding: $spacing--big;
+
+  @include breakpoint($bp--tablet-large $bp--desktop-small) {
+    padding-left: ($spacing--large * 2);
+  }
+
+  @include breakpoint($bp--desktop-small) {
+    padding-left: ($spacing--large * 3 + $spacing--big);
+  }
+
+  &__content-main {
+    @include clearfix();
+  }
+
+  &__image {
+    @include breakpoint($bp--tablet-small) {
+      float: left;
+    }
+
+    margin: 0 $spacing--big $spacing--big 0;
+
+    .use-ajax {
+      @extend .button--clear;
+      margin-top: $spacing--base;
+    }
+  }
+
+  &__main {
+    clear: left;
+  }
+
+  &__password-reset {
+    display: inline-block;
+    margin-bottom: $spacing--half;
+  }
+
+  &__name {
+    @extend .h1;
+    font-weight: $fw--base;
+    margin: 0;
+    padding: 0;
+
+    div {
+      display: inline;
+      margin-right: rem(12);
+    }
+  }
+
+  &__position,
+  &__language {
+    margin: 0;
+  }
+
+  &__links {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  &__workplace,
+  &__employer {
+    @include clearfix();
+
+    &-title {
+      border-bottom: 1px solid $c--grey__lighter;
+    }
+  }
+}

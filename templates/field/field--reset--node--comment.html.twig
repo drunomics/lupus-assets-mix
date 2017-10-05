@@ -1,0 +1,26 @@
+{#
+/**
+ * @file
+ * Template to reset all HTML for the field.
+ *
+ * Available variables:
+ * - element: The field element.
+ * - label: The label of the field.
+ * - show_colon: TRUE if colon should be displayed after label.
+ * - items: List of all the field items. Each item contains:
+ *   - attributes: List of HTML attributes for each item.
+ *   - content: The field item's content.
+ */
+#}
+{% if not label_hidden %}
+  {% set comments_count = element['#object'].get('ali_comments_count').value.value %}
+  <div class="comment-headline">
+    <span class="comment-headline__label" id="comments">{{ label }}</span>
+    {{ comments_count ? " (#{comments_count})" : '' }}{{ show_colon ? ':' : '' }}
+  </div>
+{% endif %}
+
+{% for item in items %}
+  {{ item.content.comment_form }}
+  {{ item.content|without('comment_form') }}
+{% endfor %}

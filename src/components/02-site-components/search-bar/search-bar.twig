@@ -1,0 +1,12 @@
+<section class="search-bar">
+  {{ search_form }}
+  {% block form %}
+    <form>
+      <label class="search-bar__label" for="edit-text">Search</label>
+      <input class="search-bar__input" type="text" id="edit-text" size="30" placeholder="Suche">
+      <div class="search-bar__submit">
+        <input type="submit" value="Apply" class="search-bar__submit--button">
+      </div>
+    </form>
+  {% endblock %}
+</section>

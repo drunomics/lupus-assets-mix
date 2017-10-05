@@ -1,0 +1,18 @@
+{#
+/**
+ * @file
+ * Home page template.
+#}
+{% extends "@layouts/site/site.twig" %}
+
+{% block header %}
+  {% include '@site-components/header/header.twig' %}
+{% endblock %}
+
+{% block content %}
+  {{ html.text1 }}
+{% endblock %}
+
+{% block footer %}
+  {% include '@site-components/footer/footer.twig' %}
+{% endblock %}

@@ -1,0 +1,47 @@
+.facet-select-search {
+  position: relative;
+
+  &__options {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    background: $c--white;
+    padding: 0 $spacing--half;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+
+    .facet-link:first-child {
+      padding-top: $spacing--half;
+    }
+  }
+
+  &__selected {
+    background: $c--denim__5;
+    color: $c--denim;
+    padding: $spacing--half $spacing--half 0;
+    cursor: text;
+
+    .facet-link {
+      &--is_active {
+        display: inline-block;
+        margin: 0 $spacing--half $spacing--half 0;
+      }
+
+      &__value {
+        @include icon('cross', 'after');
+
+        &::after {
+          margin-left: $spacing--half;
+          font-size: $spacing--medium;
+          color: $c--vanilla-ice;
+        }
+      }
+    }
+  }
+
+  &__text-field {
+    background: none;
+    min-width: 65px;
+    max-width:100%;
+  }
+}

@@ -1,0 +1,8 @@
+<ul style="list-style: none;">
+  {% for item in sizes %}
+    <p>
+      <div style="font-size: {{ item.value|trim(' !default') }};">{{ headline.short }}</div>
+      <div><code>{{item.name}}: {{item.value}}</code></div>
+    </p>
+  {% endfor %}
+</ul>

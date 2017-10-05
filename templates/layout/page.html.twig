@@ -42,12 +42,57 @@
  * @see html.html.twig
  */
 #}
-{% include '@layouts/site/site.twig' with {
-  header: page.header,
-  main_navigation: page.main_navigation,
+{% embed '@layouts/site/site.twig' with {
+  sidebar_first: page.sidebar_first,
+  sidebar_second: page.sidebar_second,
+  notifications: page.notifications,
+  breadcrumb: page.breadcrumb,
   content_top: page.content_top,
-  sidebar: page.sidebar,
   content: page.content,
-  content_bottom: page.content_bottom,
-  navigation: page.navigation,
 } %}
+  {% block header %}
+
+    {% embed '@site-components/header/header.twig' %}
+
+      {% block header_menu %}
+        {{ page.header_menu }}
+      {% endblock %}
+
+      {% block header_language %}
+        {{ page.header_language }}
+      {% endblock %}
+
+      {% block header_search %}
+        {{ page.header_search }}
+        {{ page.info_links }}
+      {% endblock %}
+
+    {% endembed %}
+
+  {% endblock %}
+
+  {% block footer %}
+
+    {% embed '@site-components/footer/footer.twig' %}
+
+      {% block footer_first %}
+        {{ page.footer_first }}
+      {% endblock %}
+
+      {% block footer_second %}
+        {{ page.footer_second }}
+      {% endblock %}
+
+      {% block footer_third %}
+        {{ page.footer_third }}
+      {% endblock %}
+
+      {% block footer_fourth %}
+        {{ page.footer_fourth }}
+      {% endblock %}
+
+    {%  endembed %}
+
+  {% endblock %}
+
+{% endembed %}

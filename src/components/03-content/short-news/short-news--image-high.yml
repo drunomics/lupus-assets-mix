@@ -1,0 +1,11 @@
+teaser:
+  view_mode: "high"
+  img:
+    image_desktop: ""
+    image_tablet: ""
+    image_mobile: ""
+    image_title: "Mein Bild"
+    image_alt: "Mein Bild Alt"
+  url: "http://test.at"
+  headline: "My image teaser"
+  text: "Lorem ipsum"

@@ -1,0 +1,20 @@
+{#
+/**
+ * @file
+ * Display a tool.
+ *
+ * Available variables:
+ * - tool: A tool object with the following properties:
+ *   - classname: Class name.
+ *   - url: The url to link to.
+ *   - title: The tools name
+ */
+#}
+<div class="tool tool--{{ tool.classname }}">
+    <a class="tool__link use-ajax" href="{{ tool.url }}" {{ tool.attributes }}>
+        <div class="tool__text-container tool__text-container--{{ tool.classname }}">
+            <div class="tool__icon"></div>
+            <div class="tool__title">{{ tool.title }}</div>
+        </div>
+    </a>
+</div>

@@ -1,0 +1,27 @@
+$mein-beitrag__paragraph-list: basis private_vorsorge mobilitaet kleinunternehmen unternehmen qualitaet daten_analytics partnerschaftsfahigkeit digitale_losungen fokus_vereinfachung;
+
+.mein-beitrag {
+
+  &__title {
+    @extend %font-size-xlarge;
+  }
+
+  &__paragraphs {
+    width: 80%;
+    border: dotted 1px $c--black;
+    margin: 0 auto;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  @each $paragraph in $mein-beitrag__paragraph-list {
+    &-field__field_#{$paragraph} {
+      .paragraph-mein-beitrag__image:before {
+        content: url('/assets/images/#{$paragraph}.png');
+      }
+    }
+  }
+}
+

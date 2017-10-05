@@ -1,0 +1,14 @@
+.footer-menu {
+  &__title {
+    @extend %font-size-base;
+    border-bottom: 1px solid $c--white__light;
+  }
+
+  &__list {
+    list-style-type: none;
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+}

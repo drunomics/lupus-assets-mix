@@ -1,0 +1,15 @@
+{#
+/**
+ * @file
+ * Display enabled user tools
+ *
+ * Available variables:
+ * - tool_displays: An array of tools to be displayed
+ * - classname: The name converted to be used in css-classes
+ * - configuration_link: A link to the configuration page
+ */
+#}
+{% include '@content/tools/tools.twig' with {
+  "tools": tool_displays,
+  "configlink": configuration_link,
+} %}

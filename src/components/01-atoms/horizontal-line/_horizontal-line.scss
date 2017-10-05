@@ -1,0 +1,10 @@
+$content--margin: ($spacing--base * 2);
+
+.horizontal-line {
+  margin: $spacing--big 0;
+  margin-left: -$content--margin;
+  margin-right: -$content--margin;
+  height: $spacing--half;
+  background-color: $c--background;
+  display: block;
+}

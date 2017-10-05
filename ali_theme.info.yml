@@ -1,0 +1,61 @@
+name: Allianz theme
+type: theme
+base theme: classy
+description: 'The base theme for the Allianz website.'
+alt text: 'Allianz theme for Drupal 8.'
+tags: 'multi-column, fluid, responsive, sans-serif, accessible'
+version: 0.2
+core: 8.x
+
+libraries:
+  - ali_theme/styles
+  - ali_theme/global-styling
+
+stylesheets-remove:
+  - '@classy/css/components/pager.css'
+  - '@classy/css/components/breadcrumb.css'
+
+ckeditor_stylesheets:
+  - assets/main.css
+
+regions:
+  notifications: 'Notifications'
+  header_menu: 'Header: Logo & Menu'
+  header_language: 'Header: Language & Profile'
+  header_search: 'Header: Search & Information'
+  primary_menu: 'Primary menu'
+  secondary_menu: 'Secondary menu'
+  info_links: 'Info Links'
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+  breadcrumb: Breadcrumb
+  content_top: 'Content: Top'
+  content: Content
+  sidebar_first: 'Sidebar first'
+  sidebar_second: 'Sidebar second'
+  footer_first: 'Footer first'
+  footer_second: 'Footer second'
+  footer_third: 'Footer third'
+  footer_fourth: 'Footer fourth'
+
+# For compatibility with Pattern Lab templates; this list must always be the
+# folders immediately under src/components.
+component-libraries:
+  base:
+    paths:
+      - src/components/00-base
+  atoms:
+    paths:
+      - src/components/01-atoms
+  site-components:
+    paths:
+      - src/components/02-site-components
+  content:
+    paths:
+      - src/components/03-content
+  layouts:
+    paths:
+      - src/components/04-layouts
+  pages:
+    paths:
+      - src/components/05-pages

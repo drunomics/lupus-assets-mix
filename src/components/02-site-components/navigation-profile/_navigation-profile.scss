@@ -1,0 +1,72 @@
+.navigation-profile {
+  @include clearfix();
+  position: relative;
+
+  &__image {
+    background-color: $c--grey__light;
+    border-radius: 50%;
+    border-color: $c--white;
+    border-width: 1px;
+    width: ($spacing--double + $spacing--base);
+    height: ($spacing--double + $spacing--base);
+    float: right;
+    margin: $spacing--small 0 0 $spacing--half;
+    overflow: hidden;
+  }
+
+  &__name {
+    @extend %font-size-small;
+    display: none;
+    color: $c--primary;
+    white-space: nowrap;
+    margin-right: $spacing--large;
+  }
+
+  &__links {
+    display: none;
+    position: absolute;
+    right: 0;
+    z-index: 210;
+    width: 10rem;
+    padding: $spacing--half;
+    background: $c--white;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.3); // Copied from _info-links.scss for consistency.
+    top: 100%;
+
+    a {
+      display: block;
+      color: $c--primary;
+      padding: $spacing--small $spacing--medium;
+    }
+  }
+
+  &__link-list {
+    margin: 0;
+    padding: 0;
+
+    li {
+      list-style: none;
+      border-top: 1px solid $c--jagged-ice;
+    }
+  }
+
+  .menu {
+    margin: 0;
+    padding: 0;
+  }
+
+  .menu__item {
+    list-style: none;
+  }
+
+  &--anonymous {
+    .navigation-profile__name {
+      display: block;
+      margin-right: 0;
+    }
+
+    .navigation-profile__image {
+      background-color: transparent;
+    }
+  }
+}

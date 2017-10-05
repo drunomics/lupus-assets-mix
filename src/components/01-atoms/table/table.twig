@@ -1,0 +1,37 @@
+{#
+/**
+ * @file
+ * Table color variations.
+ */
+#}
+{% for variant in variants %}
+  {% for zebra in { 0: '', 1: 'zebra' } %}
+    <table class="table--{{ variant }}{{ zebra ? '-zebra' }}" style="width: 500px;">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Product A</td>
+          <td>100.00$</td>
+        </tr>
+        <tr>
+          <td>Product B</td>
+          <td>200.00$</td>
+        </tr>
+        <tr>
+          <td>Product C</td>
+          <td>150.00$</td>
+        </tr>
+        <tr>
+          <td>Product D</td>
+          <td>300.00$</td>
+      </tr>
+      </tbody>
+    </table>
+  {% endfor %}
+{% endfor %}
+

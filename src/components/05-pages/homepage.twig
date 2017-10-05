@@ -1,0 +1,51 @@
+{#
+/**
+ * @file
+ * Home page template.
+#}
+{% extends "@layouts/site/site.twig" %}
+
+{% block header %}
+  {% include '@site-components/header/header.twig' %}
+{% endblock %}
+
+{% block content %}
+  {% embed '@layouts/startpage/startpage.twig' %}
+    {# @todo: Re-factor this HTML #}
+    {% block header %}
+      <div class="row">
+        <div class="content-top col-md-9">
+          <div class="content">Top News</div>
+        </div>
+        <div class="widgets col-md-3">
+          <div class="content">Tools</div>
+        </div>
+      </div>
+    {% endblock %}
+
+    {% block content %}
+      {% embed '@content/content/content.twig' %}
+
+        {% block tags %}
+          {% include '@site-components/list-links/list-links.twig' with {
+            single_line: true,
+            links: news.tags,
+            classes: ['list-links--tags'],
+          } %}
+        {% endblock %}
+      {% endembed %}
+    {% endblock %}
+
+    {% block teaser %}
+      <div class="teasers col-md-6">
+        <div class="content">
+          {% include '@content/list-news-connect/list-news-connect.twig' %}
+        </div>
+      </div>
+    {% endblock %}
+  {% endembed %}
+{% endblock %}
+
+{% block footer %}
+  {% include '@site-components/footer/footer.twig' %}
+{% endblock %}

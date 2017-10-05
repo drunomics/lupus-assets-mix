@@ -1,0 +1,16 @@
+{#
+/**
+ * @file
+ * Node news teaser template.
+ *
+ * Available variables:
+ * @see core/themes/bartik/templates/node.html.twig
+ */
+#}
+{% include '@content/news-teaser/news-teaser.twig' with {
+  title: title,
+  date: date,
+  url: url,
+  content: content,
+  tags: [],
+} %}

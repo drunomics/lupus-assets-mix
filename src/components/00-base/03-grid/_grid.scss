@@ -1,0 +1,141 @@
+/// Container.
+%container {
+  @include clearfix;
+  position: relative;
+  box-sizing: border-box;
+  min-width: $bp--min;
+  width: $bp--max;
+  max-width: 98.597%;
+  margin: {
+    left: auto !important;
+    right: auto !important;
+  }
+}
+
+.outer-container {
+  @extend %container;
+}
+
+/// Grid.
+/// Define the grid to fit the following specification:
+/// Example width: 1420
+/// Grid columns: 12 columns
+///   add-grid(6)
+///
+/// Gutter width: 20
+/// Column width: 100
+///   add-gutter(20/100) or
+///   add-gutter(1/5)
+@include add-grid(12);
+@include add-gutter(1/5);
+
+.columns-21 {
+  @include grid-span(6, 1);
+}
+
+.columns-22 {
+  @include grid-span(6, 7);
+}
+
+.columns-31 {
+  @include grid-span(4, 1);
+}
+
+.columns-32 {
+  @include grid-span(4, 5);
+}
+
+.columns-33 {
+  @include grid-span(4, 9);
+}
+
+@include breakpoint(0 $bp--mobile) {
+  .columns-21,
+  .columns-22,
+  .columns-31,
+  .columns-32,
+  .columns-33 {
+    @include grid-span(12, 1);
+  }
+}
+
+/// The following setting are solely intended to display a demo of the Grid.
+.grid-demo {
+  @extend %container;
+  background-image: url("/assets/images/1420px-12col-100w-20gut.png");
+  background-repeat: repeat-y;
+  background-size: 100%;
+  height: rem(300);
+
+  div {
+    margin-bottom: 1rem;
+    padding: 3px;
+  }
+  > div {
+    &:nth-child(odd) {
+      border: dashed 1px red;
+    }
+    &:nth-child(even) {
+      border: dashed 1px orange;
+    }
+
+    > div {
+      &:nth-child(odd) {
+        border: dashed 1px blue;
+      }
+      &:nth-child(even) {
+        border: dashed 1px violet;
+      }
+
+      > div {
+        &:nth-child(odd) {
+          border: dashed 1px white;
+        }
+        &:nth-child(even) {
+          border: dashed 1px grey;
+        }
+      }
+    }
+  }
+}
+
+.grid-demo-1 {
+  @include grid-span(4, 1);
+}
+.grid-demo-2 {
+  @include grid-span(6, 5);
+}
+.grid-demo-3 {
+  @include grid-span(2, 11);
+}
+.grid-demo-4 {
+  @include grid-span(2, 1, 6);
+}
+.grid-demo-5 {
+  @include grid-span(2, 3, 6);
+}
+.grid-demo-6 {
+  @include grid-span(2, 5, 6);
+}
+.grid-demo-7 {
+  @include grid-span(6, 1, 6);
+}
+.grid-demo-8 {
+  @include grid-span(2, 1, 6);
+}
+.grid-demo-9 {
+  @include grid-span(4, 3, 6);
+}
+.grid-demo-10 {
+  clear: both;
+}
+
+.grid-demo-panel-1 {
+  @include grid-span(4, 1);
+}
+.grid-demo-panel-2 {
+  @include grid-span(4, 5);
+}
+.grid-demo-panel-3 {
+  @include grid-span(4, 9);
+}

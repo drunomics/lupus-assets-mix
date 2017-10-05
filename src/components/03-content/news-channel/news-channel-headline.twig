@@ -1,0 +1,8 @@
+<section class="news-channel news-channel__headline">
+  {% if not news_label_hidden %}
+    <span class="news-channel__label">{{ label }}</span>
+  {% endif %}
+  {% for item in news_items %}
+    {{ item.content['#title'] }}
+  {% endfor %}
+</section>

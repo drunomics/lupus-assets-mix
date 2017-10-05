@@ -1,0 +1,186 @@
+$font-family: 'Allianz Sans';
+
+@font-face {
+  font-family: $font-family;
+  src: url('fonts/AllianzSans.eot');
+  src: url('fonts/AllianzSans.eot?#iefix') format('embedded-opentype'),
+  url('fonts/AllianzSans.woff') format('woff'),
+  url('fonts/AllianzSans.ttf') format('truetype'),
+  url('fonts/AllianzSans.svg#AllianzSans') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $font-family;
+  src: url('fonts/AllianzSans-Light.eot');
+  src: url('fonts/AllianzSans-Light.eot?#iefix') format('embedded-opentype'),
+  url('fonts/AllianzSans-Light.woff') format('woff'),
+  url('fonts/AllianzSans-Light.ttf') format('truetype'),
+  url('fonts/AllianzSans-Light.svg#AllianzSans-Light') format('svg');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $font-family;
+  src: url('fonts/AllianzSans-Italic.eot');
+  src: url('fonts/AllianzSans-Italic.eot?#iefix') format('embedded-opentype'),
+  url('fonts/AllianzSans-Italic.woff') format('woff'),
+  url('fonts/AllianzSans-Italic.ttf') format('truetype'),
+  url('fonts/AllianzSans-Italic.svg#AllianzSans-Italic') format('svg');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: $font-family;
+  src: url('fonts/AllianzSans-LightItalic.eot');
+  src: url('fonts/AllianzSans-LightItalic.eot?#iefix') format('embedded-opentype'),
+  url('fonts/AllianzSans-LightItalic.woff') format('woff'),
+  url('fonts/AllianzSans-LightItalic.ttf') format('truetype'),
+  url('fonts/AllianzSans-LightItalic.svg#AllianzSans-LightItalic') format('svg');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: $font-family;
+  src: url('fonts/AllianzSans-Bold.eot');
+  src: url('fonts/AllianzSans-Bold.eot?#iefix') format('embedded-opentype'),
+  url('fonts/AllianzSans-Bold.woff') format('woff'),
+  url('fonts/AllianzSans-Bold.ttf') format('truetype'),
+  url('fonts/AllianzSans-Bold.svg#AllianzSans-Bold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $font-family;
+  src: url('fonts/AllianzSans-BoldItalic.eot');
+  src: url('fonts/AllianzSans-BoldItalic.eot?#iefix') format('embedded-opentype'),
+  url('fonts/AllianzSans-BoldItalic.woff') format('woff'),
+  url('fonts/AllianzSans-BoldItalic.ttf') format('truetype'),
+  url('fonts/AllianzSans-BoldItalic.svg#AllianzSans-BoldItalic') format('svg');
+  font-weight: bold;
+  font-style: italic;
+}
+
+// Normal font size is 16px.
+$fs--html: 100% !default;
+$lh--html: modular-scale(1, $fs--html) !default;
+
+// Base font: RAllianz Sans, 16px, no letter spacing.
+// Normal font for use in:
+// - body text
+// - buttons
+// - main menu
+// - footer menu
+$ff--base: 'Allianz Sans', Arial, sans-serif !default;
+$fw--base: 400 !default;
+$fs--base: 1rem;
+$lh--base: 1.5rem;
+$ls--base: 0 !default;
+
+// Bold font for use in:
+// - headlines
+$ff--base-bold: $ff--base !default;
+$fw--base-bold: 700 !default;
+
+// Mono font currently not in use.
+$ff--mono: 'Source Code Pro' !default;
+$fs--mono: $fs--base;
+$lh--mono: $lh--base;
+$ls--mono: $ls--base;
+
+// Font sizes:
+// - Small:  14px
+// - Base:   16px
+// - Large:  22px
+// - xLarge: 35px
+$fs--small: 0.875rem;
+$fs--base: 1rem;
+$fs--large: 1.375rem;
+$fs--larger: 1.85rem;
+$fs--xlarge: 2.188rem;
+
+// Line heights:
+$lh--small: 1rem;
+$lh--base: 1.5rem;
+$lh--large: 2rem;
+$lh--xlarge: 2.5rem;
+
+// Hides text. Useful for image-buttons.
+%hide-text {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+// Normal font size: ~16x.
+%font-size-normal {
+  font-size: $fs--base;
+  line-height: $lh--base;
+  letter-spacing: $ls--base;
+}
+
+%font-normal--base {
+  @extend %font-size-normal;
+  font-family: $ff--base;
+  font-weight: $fw--base;
+  font-style: normal;
+}
+
+%font-normal--base-italic {
+  @extend %font-normal--base;
+  font-style: italic;
+}
+
+%font-bold--base {
+  font-family: $ff--base-bold;
+  font-weight: $fw--base-bold;
+  font-style: normal;
+}
+
+%font-bold--base-italic {
+  @extend %font-bold--base;
+  font-style: italic;
+}
+
+%font-base--mono {
+  @extend %font-size-normal;
+  font-family: $ff--mono;
+  font-weight: $fw--base;
+}
+
+// Small font size: ~14px.
+// Used in sub-headlines.
+%font-size-small {
+  font-size: $fs--small;
+  line-height: ($fs--small / ($fs--small * 0 + 1)) * $lh--base;
+}
+
+// Normal font size: ~16px.
+// Used in text, buttons.
+%font-size-base {
+  font-size: $fs--base;
+  line-height: ($fs--base / ($fs--base * 0 + 1)) * $lh--base;
+}
+
+// Large font size: ~22px.
+// Used in headlines.
+%font-size-large {
+  font-size: $fs--large;
+  line-height: ($fs--large / ($fs--large * 0 + 1)) * $lh--base;
+}
+
+// Extra large font size: ~35px.
+// Used in main headline.
+%font-size-xlarge {
+  font-size: $fs--xlarge;
+  line-height: ($fs--xlarge / ($fs--xlarge * 0 + 1)) * $lh--base;
+}
+
+.visually-hidden {
+  display: none;
+}

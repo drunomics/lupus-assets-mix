@@ -1,0 +1,85 @@
+.search-bar {
+  position: relative;
+
+  &__label {
+    display: none;
+  }
+
+  &__input {
+    width: 100%;
+    border-radius: $spacing__small;
+    border: 0;
+    padding: $spacing__half $spacing__half $spacing__half $spacing__double;
+    position: relative;
+    background-color: $c--background;
+    color: $c--primary;
+
+    // Remove background image from autocomplete field.
+    background-image: none !important;
+
+    // Color for placeholder text.
+    @include placeholder($c--primary__light);
+
+    // By default, all placeholders in Firefox have an opacity value applied to
+    // them, so in order to fix this we need to reset that value.
+    &::-moz-placeholder {
+      opacity: 1;
+    }
+  }
+
+  &__submit {
+    @include icon('search');
+    position: absolute;
+    left: $spacing--double + $spacing--base;
+    top: $spacing--base + $spacing--tiny;
+    color: $c--primary;
+    margin: 0;
+
+    // Use the HTML element as the "--button" class is not picked up.
+    &--button, input[type="submit"] {
+      text-indent: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      padding: 0;
+      background: transparent;
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      border: none;
+    }
+  }
+}
+
+// Autocomplete list.
+.ui-autocomplete.ui-front {
+  border: none;
+  border-color: $c--background;
+  background-color: $c--white;
+  border-top: none;
+  max-width: 400px;
+  @extend %font-normal--base;
+  box-shadow: 0px 3px 5px 0px $c--secondary__light;
+
+  li {
+    padding: $spacing--tiny $spacing--base $spacing--tiny ($spacing--double - rem(1));
+    padding-left: ($spacing--double - rem(1));
+    margin-left: 1px;
+    margin-right: 1px;
+    list-style-image: none;
+
+    &.ui-state-focus {
+      background-image: none;
+      background-color: $c--background;
+      padding: $spacing--tiny ($spacing--base - rem(1)) $spacing--tiny ($spacing--double - $spacing--tiny);
+      border: 1px solid transparent;
+      list-style-image: none;
+    }
+  }
+
+  a {
+    color: $c--primary;
+  }
+}

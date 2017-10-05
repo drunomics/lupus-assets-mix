@@ -1,0 +1,8 @@
+<div class="row teaser-wrapper">
+  {% for teaser in teasers %}
+    {% include '@content/teaser-box/teaser-box.twig' with {
+      'teaser': teaser,
+      'link_display': false,
+    } %}
+  {% endfor %}
+</div>

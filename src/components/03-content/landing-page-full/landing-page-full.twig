@@ -1,0 +1,58 @@
+{#
+/**
+ * @file
+ * A landing-page entry's header consisting of the node title, date, likes, comment count and tags.
+ *
+ * Available variables:
+ * - title: The landing-page node's title
+ * - authored on: The formatted date.
+ * - likes: A rendered (ajaxified) link to toggle liking and showing the current number of likes.
+ * - comments_count: The number of comments this landing-page entry has.
+ * - comments_open: (bool) Whether or not comments are open (and shown) for this entity.
+ * - tags: An array of links (see the link atom)
+ * - headline: An optional headline for this block.
+ * - content_left: Content to be rendered in the left column.
+ * - content_right: Content to be rendered in the right column.
+ */
+#}
+{% spaceless %}
+  {% embed '@layouts/two-columns/two-columns.twig' with {
+    classes: ['landing-page-full'],
+    content_left: content_left,
+    content_right: content_right,
+  } %}
+
+    {% block two_columns_messages %}
+      {% if language_available_translation_notice %}
+        <div class="landing-page-full__messages content__messages">
+          {{ language_available_translation_notice }}
+        </div>
+      {% endif %}
+    {% endblock %}
+
+    {% block two_columns_left %}
+      <div class="landing-page-full__top-image">
+        {{ top_image }}
+      </div>
+      <header class="landing-page-full__header">
+        <h1 class="landing-page-full__header__title">{{ title }}</h1>
+
+        <ul class="landing-page-full__header__items">
+          <li class="landing-page-full__header__item landing-page-full__header__item-submitted">{{ authored_on }}</li>
+          <li class="landing-page-full__header__item landing-page-full__header__item-likes">{{ likes }}</li>
+          {% if comments_open %}
+            <li class="landing-page-full__header__item landing-page-full__header__item-comments">
+              <a href="#new" class="landing-page-full__header__item-link" title="{{ 'Comments'|t }}">{% spaceless %}
+                <span class="landing-page-full__header__item-link-icon icon--commenting"></span>{{ comments_count }}
+              {% endspaceless %}</a>
+            </li>
+          {% endif %}
+        </ul>
+
+        {{ tags }}
+      </header>
+
+      {{ content_left }}
+    {% endblock %}
+  {% endembed %}
+{% endspaceless %}

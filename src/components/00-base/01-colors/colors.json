@@ -1,12 +1,582 @@
 {
   "items": [
     {
+      "name": "$c--scarpa-flow",
+      "value": "rgba(90, 83, 96, 1)",
+      "comment": ""
+    },
+    {
+      "name": "$c--scarpa-flow__75",
+      "value": "rgba(90, 83, 96, .75)",
+      "comment": ""
+    },
+    {
+      "name": "$c--scarpa-flow__50",
+      "value": "rgba(90, 83, 96, .5)",
+      "comment": ""
+    },
+    {
+      "name": "$c--scarpa-flow__25",
+      "value": "rgba(90, 83, 96, .25)",
+      "comment": ""
+    },
+    {
+      "name": "$c--mulled-wine",
+      "value": "rgba(93, 66, 109, 1)",
+      "comment": ""
+    },
+    {
+      "name": "$c--mulled-wine__75",
+      "value": "rgba(93, 66, 109, .75)",
+      "comment": ""
+    },
+    {
+      "name": "$c--mulled-wine__50",
+      "value": "rgba(93, 66, 109, .5)",
+      "comment": ""
+    },
+    {
+      "name": "$c--mulled-wine__25",
+      "value": "rgba(93, 66, 109, .25)",
+      "comment": ""
+    },
+    {
+      "name": "$c--costa-del-sol",
+      "value": "rgba(91, 93, 48, 1)",
+      "comment": ""
+    },
+    {
+      "name": "$c--costa-del-sol__75",
+      "value": "rgba(91, 93, 48, .75)",
+      "comment": ""
+    },
+    {
+      "name": "$c--costa-del-sol__50",
+      "value": "rgba(91, 93, 48, .5)",
+      "comment": ""
+    },
+    {
+      "name": "$c--costa-del-sol__25",
+      "value": "rgba(91, 93, 48, .25)",
+      "comment": ""
+    },
+    {
+      "name": "$c--breaker-bay",
+      "value": "rgba(78, 152, 137, 1)",
+      "comment": ""
+    },
+    {
+      "name": "$c--breaker-bay__75",
+      "value": "rgba(78, 152, 137, .75)",
+      "comment": ""
+    },
+    {
+      "name": "$c--breaker-bay__50",
+      "value": "rgba(78, 152, 137, .5)",
+      "comment": ""
+    },
+    {
+      "name": "$c--breaker-bay__25",
+      "value": "rgba(78, 152, 137, .25)",
+      "comment": ""
+    },
+    {
+      "name": "$c--kasmir-blue",
+      "value": "rgba(73, 100, 140, 1)",
+      "comment": ""
+    },
+    {
+      "name": "$c--kasmir-blue__75",
+      "value": "rgba(73, 100, 140, .75)",
+      "comment": ""
+    },
+    {
+      "name": "$c--kasmir-blue__50",
+      "value": "rgba(73, 100, 140, .5)",
+      "comment": ""
+    },
+    {
+      "name": "$c--kasmir-blue__25",
+      "value": "rgba(73, 100, 140, .25)",
+      "comment": ""
+    },
+    {
+      "name": "$c--cardinal",
+      "value": "rgba(183, 30, 63, 1)",
+      "comment": ""
+    },
+    {
+      "name": "$c--cardinal__75",
+      "value": "rgba(183, 30, 63, .75)",
+      "comment": ""
+    },
+    {
+      "name": "$c--cardinal__50",
+      "value": "rgba(183, 30, 63, .5)",
+      "comment": ""
+    },
+    {
+      "name": "$c--cardinal__25",
+      "value": "rgba(183, 30, 63, .25)",
+      "comment": ""
+    },
+    {
+      "name": "$c--surfie-green",
+      "value": "rgba(13, 112, 131, 1)",
+      "comment": ""
+    },
+    {
+      "name": "$c--surfie-green__75",
+      "value": "rgba(13, 112, 131, .75)",
+      "comment": ""
+    },
+    {
+      "name": "$c--surfie-green__50",
+      "value": "rgba(13, 112, 131, .5)",
+      "comment": ""
+    },
+    {
+      "name": "$c--surfie-green__25",
+      "value": "rgba(13, 112, 131, .25)",
+      "comment": ""
+    },
+    {
+      "name": "$c--surf",
+      "value": "rgba(181, 215, 186, 1)",
+      "comment": ""
+    },
+    {
+      "name": "$c--surf__75",
+      "value": "rgba(181, 215, 186, .75)",
+      "comment": ""
+    },
+    {
+      "name": "$c--surf__50",
+      "value": "rgba(181, 215, 186, .5)",
+      "comment": ""
+    },
+    {
+      "name": "$c--surf__25",
+      "value": "rgba(181, 215, 186, .25)",
+      "comment": ""
+    },
+    {
+      "name": "$c--eunry",
+      "value": "rgba(207, 171, 153, 1)",
+      "comment": ""
+    },
+    {
+      "name": "$c--eunry__75",
+      "value": "rgba(207, 171, 153, .75)",
+      "comment": ""
+    },
+    {
+      "name": "$c--eunry__50",
+      "value": "rgba(207, 171, 153, .5)",
+      "comment": ""
+    },
+    {
+      "name": "$c--eunry__25",
+      "value": "rgba(207, 171, 153, .25)",
+      "comment": ""
+    },
+    {
+      "name": "$c--biloba-flower",
+      "value": "rgba(164, 168, 238, 1)",
+      "comment": ""
+    },
+    {
+      "name": "$c--biloba-flower__75",
+      "value": "rgba(164, 168, 238, .75)",
+      "comment": ""
+    },
+    {
+      "name": "$c--biloba-flower__50",
+      "value": "rgba(164, 168, 238, .5)",
+      "comment": ""
+    },
+    {
+      "name": "$c--biloba-flower__25",
+      "value": "rgba(164, 168, 238, .25)",
+      "comment": ""
+    },
+    {
+      "name": "$c--jagged-ice",
+      "value": "rgba(207, 233, 238, 1)",
+      "comment": ""
+    },
+    {
+      "name": "$c--jagged-ice__75",
+      "value": "rgba(207, 233, 238, .75)",
+      "comment": ""
+    },
+    {
+      "name": "$c--jagged-ice__50",
+      "value": "rgba(207, 233, 238, .5)",
+      "comment": ""
+    },
+    {
+      "name": "$c--jagged-ice__25",
+      "value": "rgba(207, 233, 238, .25)",
+      "comment": ""
+    },
+    {
+      "name": "$c--raffia",
+      "value": "rgba(235, 225, 191, 1)",
+      "comment": ""
+    },
+    {
+      "name": "$c--raffia__75",
+      "value": "rgba(235, 225, 191, .75)",
+      "comment": ""
+    },
+    {
+      "name": "$c--raffia__50",
+      "value": "rgba(235, 225, 191, .5)",
+      "comment": ""
+    },
+    {
+      "name": "$c--raffia__25",
+      "value": "rgba(235, 225, 191, .25)",
+      "comment": ""
+    },
+    {
+      "name": "$c--vanilla-ice",
+      "value": "rgba(238, 204, 213, 1)",
+      "comment": ""
+    },
+    {
+      "name": "$c--vanilla-ice__75",
+      "value": "rgba(238, 204, 213, .75)",
+      "comment": ""
+    },
+    {
+      "name": "$c--vanilla-icet__50",
+      "value": "rgba(238, 204, 213, .5)",
+      "comment": ""
+    },
+    {
+      "name": "$c--vanilla-icet__25",
+      "value": "rgba(238, 204, 213, .25)",
+      "comment": ""
+    },
+    {
+      "name": "$c--alto",
+      "value": "rgba(221, 220, 219, 1)",
+      "comment": ""
+    },
+    {
+      "name": "$c--alto__75",
+      "value": "rgba(221, 220, 219, .75)",
+      "comment": ""
+    },
+    {
+      "name": "$c--alto__50",
+      "value": "rgba(221, 220, 219, .5)",
+      "comment": ""
+    },
+    {
+      "name": "$c--alto__25",
+      "value": "rgba(221, 220, 219, .25)",
+      "comment": ""
+    },
+    {
+      "name": "$c--earls-green",
+      "value": "rgba(187, 208, 52, 1)",
+      "comment": ""
+    },
+    {
+      "name": "$c--earls-green__75",
+      "value": "rgba(187, 208, 52, .75)",
+      "comment": ""
+    },
+    {
+      "name": "$c--earls-green__50",
+      "value": "rgba(187, 208, 52, .5)",
+      "comment": ""
+    },
+    {
+      "name": "$c--earls-green__25",
+      "value": "rgba(187, 208, 52, .25)",
+      "comment": ""
+    },
+    {
+      "name": "$c--malibu",
+      "value": "rgba(113, 203, 244, 1)",
+      "comment": ""
+    },
+    {
+      "name": "$c--malibu__75",
+      "value": "rgba(113, 203, 244, .75)",
+      "comment": ""
+    },
+    {
+      "name": "$c--malibu__50",
+      "value": "rgba(113, 203, 244, .5)",
+      "comment": ""
+    },
+    {
+      "name": "$c--malibu__25",
+      "value": "rgba(113, 203, 244, .25)",
+      "comment": ""
+    },
+    {
+      "name": "$c--wisteria",
+      "value": "rgba(158, 117, 178, 1)",
+      "comment": ""
+    },
+    {
+      "name": "$c--wisteria__75",
+      "value": "rgba(158, 117, 178, .75)",
+      "comment": ""
+    },
+    {
+      "name": "$c--wisteria__50",
+      "value": "rgba(158, 117, 178, .5)",
+      "comment": ""
+    },
+    {
+      "name": "$c--wisteria__25",
+      "value": "rgba(158, 117, 178, .25)",
+      "comment": ""
+    },
+    {
+      "name": "$c--red-ribbon",
+      "value": "rgba(228, 0, 58, 1)",
+      "comment": ""
+    },
+    {
+      "name": "$c--red-ribbon__75",
+      "value": "rgba(228, 0, 58, .75)",
+      "comment": ""
+    },
+    {
+      "name": "$c--red-ribbon__50",
+      "value": "rgba(228, 0, 58, .5)",
+      "comment": ""
+    },
+    {
+      "name": "$c--red-ribbon__25",
+      "value": "rgba(228, 0, 58, .25)",
+      "comment": ""
+    },
+    {
+      "name": "$c--fountain-blue",
+      "value": "rgba(102, 193, 191, 1)",
+      "comment": ""
+    },
+    {
+      "name": "$c--fountain-blue__75",
+      "value": "rgba(102, 193, 191, .75)",
+      "comment": ""
+    },
+    {
+      "name": "$c--fountain-blue__50",
+      "value": "rgba(102, 193, 191, .5)",
+      "comment": ""
+    },
+    {
+      "name": "$c--fountain-blue__25",
+      "value": "rgba(102, 193, 191, .25)",
+      "comment": ""
+    },
+    {
+      "name": "$c--confetti",
+      "value": "rgba(235, 210, 92, 1)",
+      "comment": ""
+    },
+    {
+      "name": "$c--confetti__75",
+      "value": "rgba(235, 210, 92, .75)",
+      "comment": ""
+    },
+    {
+      "name": "$c--confetti__50",
+      "value": "rgba(235, 210, 92, .5)",
+      "comment": ""
+    },
+    {
+      "name": "$c--confetti__25",
+      "value": "rgba(235, 210, 92, .25)",
+      "comment": ""
+    },
+    {
+      "name": "$c--jaffa",
+      "value": "rgba(244, 142, 75, 1)",
+      "comment": ""
+    },
+    {
+      "name": "$c--jaffa__75",
+      "value": "rgba(244, 142, 75, .75)",
+      "comment": ""
+    },
+    {
+      "name": "$c--jaffa__50",
+      "value": "rgba(244, 142, 75, .5)",
+      "comment": ""
+    },
+    {
+      "name": "$c--jaffa__25",
+      "value": "rgba(244, 142, 75, .25)",
+      "comment": ""
+    },
+    {
+      "name": "$c--denim",
+      "value": "rgba(18, 124, 179, 1)",
+      "comment": ""
+    },
+    {
+      "name": "$c--denim__75",
+      "value": "rgba(18, 124, 179, .75)",
+      "comment": ""
+    },
+    {
+      "name": "$c--denim__50",
+      "value": "rgba(18, 124, 179, .5)",
+      "comment": ""
+    },
+    {
+      "name": "$c--denim__25",
+      "value": "rgba(18, 124, 179, .25)",
+      "comment": ""
+    },
+    {
+      "name": "$c--denim__5",
+      "value": "rgba(18, 124, 179, .05)",
+      "comment": ""
+    },
+    {
+      "name": "$c--resolution-blue",
+      "value": "rgba(0, 55, 129, 1)",
+      "comment": ""
+    },
+    {
+      "name": "$c--resolution-blue__75",
+      "value": "rgba(0, 55, 129, .75)",
+      "comment": ""
+    },
+    {
+      "name": "$c--resolution-blue__50",
+      "value": "rgba(0, 55, 129, .5)",
+      "comment": ""
+    },
+    {
+      "name": "$c--resolution-blue__25",
+      "value": "rgba(0, 55, 129, .25)",
+      "comment": ""
+    },
+    {
+      "name": "$c--black-squeeze",
+      "value": "rgba(232, 241, 247, 1)",
+      "comment": ""
+    },
+    {
+      "name": "$c--black-squeeze__75",
+      "value": "rgba(232, 241, 247, .75)",
+      "comment": ""
+    },
+    {
+      "name": "$c--black-squeeze_50",
+      "value": "rgba(232, 241, 247, .5)",
+      "comment": ""
+    },
+    {
+      "name": "$c--black-squeeze_25",
+      "value": "rgba(232, 241, 247, .25)",
+      "comment": ""
+    },
+    {
+      "name": "$c--white",
+      "value": "rgba(255, 255, 255, 1)",
+      "comment": ""
+    },
+    {
+      "name": "$c--white__strong",
+      "value": "rgba(255, 255, 255, .95)",
+      "comment": ""
+    },
+    {
+      "name": "$c--white__light",
+      "value": "rgba(255, 255, 255, .5)",
+      "comment": ""
+    },
+    {
+      "name": "$c--white__dark",
+      "value": "rgba(220, 220, 220, 1)",
+      "comment": ""
+    },
+    {
+      "name": "$c--grey",
+      "value": "rgba(66, 66, 66, 1)",
+      "comment": ""
+    },
+    {
+      "name": "$c--grey__light",
+      "value": "rgba(115, 115, 115, 1)",
+      "comment": ""
+    },
+    {
+      "name": "$c--grey__lighter",
+      "value": "rgba(194, 194, 194, 1)",
+      "comment": ""
+    },
+    {
+      "name": "$c--grey__lighterer",
+      "value": "rgba(225, 225, 225, 1)",
+      "comment": ""
+    },
+    {
+      "name": "$c--grey__dark",
+      "value": "rgba(53, 53, 53, 1)",
+      "comment": ""
+    },
+    {
+      "name": "$c--sky-blue",
+      "value": "rgb(81, 157, 196)",
+      "comment": ""
+    },
+    {
+      "name": "$c--black",
+      "value": "rgba(0, 0, 0, 1)",
+      "comment": ""
+    },
+    {
+      "name": "$c--black__strong",
+      "value": "#353535",
+      "comment": ""
+    },
+    {
+      "name": "$c--black__light",
+      "value": "rgba(0, 0, 0, .5)",
+      "comment": ""
+    },
+    {
+      "name": "$c--black__lighter",
+      "value": "rgba(0, 0, 0, .25)",
+      "comment": ""
+    },
+    {
       "name": "$c--primary",
-      "value": "red",
+      "value": "rgba(0, 55, 129, 1)",
+      "comment": ""
+    },
+    {
+      "name": "$c--secondary",
+      "value": "rgba(18, 124, 179, 1)",
+      "comment": ""
+    },
+    {
+      "name": "$c--secondary__light",
+      "value": "rgba(18, 124, 179, .2)",
+      "comment": ""
+    },
+    {
+      "name": "$c--background",
+      "value": "rgba(232, 241, 247, 1)",
       "comment": ""
     }
   ],
   "meta": {
-    "description": "The project's main colors."
+    "description": "To add to these items, use Sass variables that start with <code>$c--</code> in <code>source/_patterns/00-base/01-colors/_colors.scss</code>"
   }
 }

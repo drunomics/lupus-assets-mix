@@ -1,0 +1,14 @@
+{% spaceless %}
+  {%
+    set classes = [
+      'sort-item',
+       active ? 'sort-' ~ order,
+       active ? 'is-active',
+      'sorts__link',
+    ]
+  %}
+  <a href="{{ url }}" {{ attributes.addClass(classes) }}>
+    {% if icon %}<span class="link__icon icon--{{ icon }}"></span>{% endif %}
+    {{ label }}{{ order_indicator }}
+  </a>
+{% endspaceless %}

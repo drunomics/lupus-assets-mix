@@ -1,0 +1,11 @@
+{% embed '@site-components/responsive-menu/responsive-menu.twig' with {
+  children: children
+}%}
+
+  {% block list_children %}
+    {% for child in children %}
+      <li class="responsive-menu__list-item responsive-menu__list-item__{{ child.classname }}">{{ child.tool }}</li>
+    {% endfor %}
+  {% endblock %}
+
+{% endembed %}

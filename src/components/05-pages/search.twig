@@ -1,0 +1,40 @@
+{#
+/**
+ * @file
+ * Search page template.
+#}
+{% embed '@layouts/site/site.twig' with {
+  sidebar_first: true,
+} %}
+
+  {% block header %}
+    {% include '@site-components/header/header.twig' %}
+  {% endblock %}
+
+  {% block sidebar_first %}
+    {% for facet in facets %}
+      {% include '@site-components/facet/facet.twig' with {
+      'title': facet.title,
+      'links': facet.links,
+      } %}
+    {% endfor %}
+  {% endblock %}
+
+  {% block content %}
+    {% include '@site-components/page-title/page-title.twig' with {
+      title: "Search",
+    } %}
+    {# @todo Replace it with a proper teasets list #}
+    {% include '@content/content/content.twig' %}
+    {% include '@site-components/pager/pager.twig' with {
+      items: pager.items,
+      ellipses: pager.ellipses,
+      current: pager.current,
+    } %}
+  {% endblock %}
+
+  {% block footer %}
+    {% include '@site-components/footer/footer.twig' %}
+  {% endblock %}
+
+{% endembed %}

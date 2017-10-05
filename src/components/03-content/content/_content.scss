@@ -1,0 +1,38 @@
+.content {
+  padding: 0;
+  margin: 0;
+
+  &__hr {
+    margin: $spacing__small 0;
+    padding: $spacing__base;
+  }
+  &__header {
+    text-align: left;
+    border-bottom: 2px solid $c--alto;
+  }
+
+  &__title-helper {
+    color: $c--sky-blue;
+  }
+
+  &__tags {
+    text-align: left;
+    padding: $spacing__small 0;
+  }
+
+  &__button-read-more {
+    display: block;
+    width: 100%;
+    background-color: $c--white;
+    border: 2px solid $c--sky-blue;
+    border-radius: $spacing__small;
+    padding: $spacing__small;
+    color: $c--sky-blue;
+  }
+
+  &__messages {
+    padding: $spacing--base $spacing--medium;
+    background-color: $c--jaffa__50;
+    margin-bottom: $spacing--base;
+  }
+}

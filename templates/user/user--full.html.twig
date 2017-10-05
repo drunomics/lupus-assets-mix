@@ -1,0 +1,39 @@
+{#
+/**
+ * @file
+ * Theme override to present all user data.
+ *
+ * This template is used when viewing a registered user's page,
+ * e.g., example.com/user/123. 123 being the user's ID.
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ *   print a subset such as 'content.field_example'. Fields attached to a user
+ *   such as 'user_picture' are available as 'content.user_picture'.
+ * - attributes: HTML attributes for the container element.
+ * - user: A Drupal User entity.
+ *
+ * @see template_preprocess_user()
+ */
+#}
+{% spaceless %}
+  {% include '@content/profile/profile.twig' with {
+  image: content.user_picture,
+  image_link: content.change_picture_link,
+  name: full_name,
+  position: content.field_position,
+  language: user.preferred_langcode.0.language.name,
+  phone: phone_string,
+  mobile: mobile_string,
+  email: email,
+  title_workplace: "Arbeitsort"|trans,
+  workplace_name: content.field_workplace_name,
+  workplace_street: content.field_workplace_street,
+  workplace_zip: content.field_workplace_zip,
+  workplace_location: content.field_location,
+  title_employer: "Organisationsstruktur"|trans,
+  employer_longname: content.field_employer_longname,
+  employer_shortname: content.field_employer_shortname,
+  password_reset_url: password_reset_url,
+  } %}
+{% endspaceless %}

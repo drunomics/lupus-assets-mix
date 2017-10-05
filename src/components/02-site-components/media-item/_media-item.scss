@@ -1,0 +1,12 @@
+.media-item {
+  margin-bottom: $spacing--base;
+
+  .media-video .field {
+    @extend .media-video__iframe;
+  }
+
+  video {
+    max-width: 100%;
+    height: auto;
+  }
+}

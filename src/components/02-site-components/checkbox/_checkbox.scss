@@ -1,0 +1,74 @@
+.form-checkbox {
+  &__label {
+    position: relative;
+    display: block;
+    margin-bottom: $spacing--medium;
+    padding-left: $spacing--double;
+    padding-top: $spacing--small;
+    cursor: pointer;
+
+    &:hover .form-checkbox__input ~ .form-checkbox__indicator,
+    &:hover .form-checkbox__input:not([disabled]):checked ~ .form-checkbox__indicator {
+      border-color: $c--primary__smooth;
+      &:after {
+        color: $c--primary__smooth;
+      }
+    }
+  }
+
+  &__input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+
+    &:disabled ~ .form-checkbox__indicator {
+      pointer-events: none;
+      opacity: .6;
+      border-color: $c--text__light;
+    }
+
+    &:checked ~ .form-checkbox__indicator {
+      @include icon('cross', 'after') {
+        display: block;
+        color: $c--primary;
+        font-size: $fs--small;
+        padding: 1px;
+      };
+    }
+
+    &:checked ~ .form-checkbox__title {
+      border: 1px solid $c--primary;
+      background-color: $c--primary;
+      color: $c--white;
+    }
+
+    &:disabled ~ .form-checkbox__indicator:after {
+      border-color: $c--text__light;
+    }
+
+    & ~ .form-checkbox__title,
+    &:disabled ~ .form-checkbox__title {
+      padding: $spacing--small $spacing--base;
+      border-radius: $spacing--small;
+      border: 1px solid $c--primary__smooth;
+      background-color: $c--white;
+      color: $c--primary;
+    }
+  }
+
+  &__indicator {
+    position: absolute;
+    top: $spacing--small;
+    left: 0;
+    width: ($spacing--base * 2);
+    height: ($spacing--base * 2);
+    background: $c--white;
+    border: 2px solid $c--primary;
+
+    &:after {
+      position: absolute;
+      display: none;
+      content: '';
+    }
+  }
+}

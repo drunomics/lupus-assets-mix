@@ -1,0 +1,26 @@
+configlink: '<a href="http://example.org">Configlink</a>'
+tools:
+  -
+    title: 'Taschenrechner'
+    url: '#'
+    classname: 'comparis'
+  -
+    title: 'Kalender'
+    url: '#'
+    classname: 'admintool'
+  -
+    title: 'Buchhaltung'
+    url: '#'
+    classname: 'bmc-remedy'
+  -
+    title: 'SMIA Passwörter'
+    url: '#'
+    classname: 'ecm-web-ui'
+  -
+    title: 'Voll langer Toolname'
+    url: '#'
+    classname: 'f-wiki'
+  -
+    title: 'Add tools'
+    url: '#'
+    classname: 'inactive'

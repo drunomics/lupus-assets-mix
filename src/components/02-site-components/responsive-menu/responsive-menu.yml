@@ -1,0 +1,4 @@
+children:
+  child1:
+    classname: 'test'
+    tool: 'Test'

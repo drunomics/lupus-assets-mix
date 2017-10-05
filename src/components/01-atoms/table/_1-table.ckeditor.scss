@@ -1,0 +1,16 @@
+// Style the CKEditor list with styles.
+// @see /modules/custom/ali_ckeditor/js/ali_ckeditor.js
+.cke_panel_listItem {
+  a {
+    @each $variant, $values in $table-colors {
+      &.cke_panel_list-option--#{$variant} {
+        @include apply-table-color($variant, 'th-background', 'background');
+        @include apply-table-color($variant, 'th-color', 'color', true);
+
+        &-zebra {
+          @include apply-table-color($variant, 'tr-odd-background', 'background');
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ * Start page content template.
+ *
+ * Available variables:
+ * - header: The header region content.
+ * - content: The content region.
+ * - teaser: The teaser region content.
+ */
+#}
+<div class="startpage">
+  <section class="startpage__header">
+    {% block header %}
+      {{ header }}
+    {% endblock %}
+  </section>
+  <section class="startpage__content">
+    {% block content %}
+      {{ content }}
+    {% endblock %}
+  </section>
+  <section class="startpage__teaser">
+    {% block teaser %}
+      {{ teaser }}
+    {% endblock %}
+  </section>
+</div>

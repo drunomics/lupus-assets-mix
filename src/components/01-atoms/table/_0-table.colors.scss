@@ -1,0 +1,94 @@
+$table-colors: (
+  allianz: (
+    th-background: rgba(0, 55, 129, 1),
+    th-color: $c--white,
+    tr-background: rgba(202, 212, 222, .75),
+    tr-odd-background: rgba(202, 212, 222, .5),
+  ),
+  green: (
+    th-background: rgb(204, 221, 97),
+    th-color: inherit,
+    tr-background: rgba(227, 235, 175, 1),
+    tr-odd-background: rgba(227, 235, 175, .75),
+  ),
+  teal: (
+    th-background: rgb(127, 228, 224),
+    th-color: inherit,
+    tr-background: rgba(195, 232, 231, 1),
+    tr-odd-background: rgba(195, 232, 231, .75),
+  ),
+  yellow: (
+    th-background: rgb(253, 210, 92),
+    th-color: inherit,
+    tr-background: rgba(255, 232, 176, 1),
+    tr-odd-background: rgba(255, 232, 176, .75),
+  ),
+  purple: (
+    th-background: rgb(138, 103, 156),
+    th-color: $c--white,
+    tr-background: rgba(225, 207, 235, 1),
+    tr-odd-background: rgba(225, 207, 235, .75),
+  ),
+  orange: (
+    th-background: rgb(255, 147, 79),
+    th-color: $c--white,
+    tr-background: rgba(247, 202, 171, 1),
+    tr-odd-background: rgba(247, 202, 171, .75),
+  ),
+  blue: (
+    th-background: rgb(73, 100, 140),
+    th-color: $c--white,
+    tr-background: rgba(202, 212, 222, 1),
+    tr-odd-background: rgba(202, 212, 222, .75),
+  ),
+  viridian: (
+    th-background: rgb(64, 125, 113),
+    th-color: $c--white,
+    tr-background: rgba(195, 216, 212, 1),
+    tr-odd-background: rgba(195, 216, 212, .75),
+  ),
+  white: (
+    th-background: $c--white,
+    th-color: $c--text,
+    tr-background: $c--white,
+  ),
+  dunkelgrau: (
+    th-background: rgba(115, 115, 115, 1),
+    th-color: $c--white,
+    tr-background: $c--white,
+    border-color: rgba(115, 115, 115, 1),
+  )
+);
+
+/// Gets table color property value.
+/// {$variant} Variant name.
+/// {$color} Color property.
+/// @see $table-colors
+@function get-table-color($variant, $color) {
+  @if map-has-key($table-colors, $variant) {
+    $colors-map: map-get($table-colors, $variant);
+    @if map-has-key($colors-map, $color) {
+      @return map-get($colors-map, $color);
+    }
+  }
+  @return null;
+}
+
+
+/// Applies table color property value.
+/// {$variant} Variant name.
+/// {$color} Color property.
+/// {$property} CSS property.
+/// {$important} Whether to use '!important'.
+/// @see $table-colors
+@mixin apply-table-color($variant, $color, $property, $important: false) {
+  $val: get-table-color($variant, $color);
+  @if ($val != null) {
+    @if ($important == true) {
+      #{$property}: $val !important;
+    }
+    @else {
+      #{$property}: $val;
+    }
+  }
+}

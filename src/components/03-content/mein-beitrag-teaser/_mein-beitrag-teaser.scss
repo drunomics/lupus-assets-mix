@@ -1,0 +1,90 @@
+@import "../../05-pages/mein-beitrag/mein-beitrag";
+
+.mein-beitrag-teaser {
+
+  &__items {
+    overflow: hidden;
+    padding: 0;
+    margin: 0 0 $spacing--small;
+    font-size: $fs--small;
+  }
+
+  &__item {
+    list-style-type: none;
+    display: block;
+    color: $c--grey__light;
+    float: left;
+
+    &-link {
+      color: $c--text__light;
+      text-decoration: none;
+      transition: all 0.3s ease 0s;
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: $c--grey;
+        text-decoration: none;
+      }
+
+      &-icon {
+        margin-right: $spacing--small;
+        margin-top: -$spacing--tiny;
+      }
+    }
+
+    &::before {
+      color: $c--grey__light;
+      content: "|";
+      margin: 0 $spacing--half;
+    }
+
+    &:first-child {
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  &__subject {
+    font-weight: bold;
+    text-rendering: optimizeLegibility;
+    margin-bottom: $spacing--base;
+  }
+
+  &__content {
+    display: flex;
+  }
+
+  &__answer {
+    margin: 0 0 $spacing--medium;
+    float:right;
+
+    p {
+      margin: 0 0 $spacing--medium;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    .field--name-field-teaser-text {
+      &::after {
+        clear: none;
+      }
+    }
+  }
+
+  &__image {
+    margin-right: $spacing--base;
+  }
+
+  @each $paragraph in $mein-beitrag__paragraph-list {
+    &__field_#{$paragraph} {
+      .mein-beitrag-teaser__image:before {
+        content: url('/assets/images/#{$paragraph}--mini.png');
+      }
+    }
+  }
+}

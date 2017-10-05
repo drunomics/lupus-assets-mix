@@ -1,0 +1,7 @@
+{% include '@content/iframe-content/iframe-content.twig' with {
+  top_news_image: content.field_top_news_image,
+  authored_on: node.getCreatedTime()|format_date('day_only'),
+  title: label,
+  content: content|without('field_top_news_image', 'flag_content_like', 'field_channel'),
+  language_available_translation_notice: language_available_translation_notice
+} %}

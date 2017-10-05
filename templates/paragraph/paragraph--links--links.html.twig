@@ -1,0 +1,14 @@
+{#
+/**
+ * @file
+ * Links paragraph.
+ */
+#}
+{% spaceless %}
+  {% if paragraph.field_link.value %}
+    {% include '@site-components/sidebar-item/sidebar-item.twig' with {
+      headline: "Links"|trans,
+      content: content,
+    } %}
+  {% endif %}
+{% endspaceless %}

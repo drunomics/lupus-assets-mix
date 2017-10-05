@@ -1,0 +1,44 @@
+{#
+/**
+ * @file
+ * Facet select search block template.
+ *
+ * Available variables:
+ * - links_selected
+ * - links
+ */
+#}
+<section class="facet-select-search">
+  <div class="facet-select-search__selected">
+
+    {% block links_selected %}
+
+        {% for link in links_selected %}
+          {% include '@site-components/facet/facet-link/facet-link.twig' with {
+          'is_active': link.is_active,
+          'value': link.value,
+          'count': link.count,
+          'show_count': link.show_count,
+          } %}
+        {% endfor %}
+
+    {% endblock %}
+
+  </div>
+  <div class="facet-select-search__options">
+
+    {% block links %}
+
+        {% for link in links %}
+          {% include '@site-components/facet/facet-link/facet-link.twig' with {
+            'is_active': link.is_active,
+            'value': link.value,
+            'count': link.count,
+            'show_count': link.show_count,
+          } %}
+        {% endfor %}
+
+    {% endblock %}
+
+  </div>
+</section>

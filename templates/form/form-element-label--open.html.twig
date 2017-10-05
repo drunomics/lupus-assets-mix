@@ -1,0 +1,8 @@
+{%
+set classes = [
+  'form-checkbox__label',
+]
+%}
+{% if title is not empty or required -%}
+  <label{{ attributes.addClass(classes) }}>
+{%- endif %}

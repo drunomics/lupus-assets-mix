@@ -1,0 +1,11 @@
+{%
+  set classes = [
+    'block-layout__element',
+    'block-layout__container'
+  ]
+%}
+<li {{ attributes.addClass(classes) }}>
+  <ul class="block-layout__container-inner">
+    {{ children }}
+  </ul>
+</li>

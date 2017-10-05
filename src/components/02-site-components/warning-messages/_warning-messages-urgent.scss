@@ -1,0 +1,57 @@
+.warning-messages-urgent__list {
+  padding: 0;
+  margin: 0;
+}
+
+.warning-messages-urgent__message {
+  @include icon('exclamation-triangle');
+  @extend %font-size-small;
+  list-style: none;
+  padding: $spacing--small $spacing--big;
+  margin-bottom: $spacing--tiny;
+
+  &::before {
+    margin-right: $spacing--half;
+    color: $c--white;
+  }
+
+  &, a {
+    color: $c--white;
+  }
+}
+
+// Alert - Ausser Betrieb
+.warning-messages-urgent__message--status-1,
+.warning-messages-urgent__message--status-2 {
+  background-color: $c--cardinal;
+}
+
+// Warning - Kritischer Betrieb
+.warning-messages-urgent__message--status-3 {
+  background-color: $c--jaffa;
+}
+
+// Warning - Eingeschränkter Betrieb
+.warning-messages-urgent__message--status-4 {
+  background-color: $c--secondary;
+}
+
+.warning-messages-urgent__hide-button {
+  @include icon('times');
+  background: none;
+  border: none;
+  padding: 0;
+  float: right;
+
+  &:hover {
+    background: none;
+  }
+
+  &::before {
+    color: $c--white;
+  }
+
+  span {
+    display: none;
+  }
+}

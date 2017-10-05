@@ -1,0 +1,125 @@
+{#
+/**
+ * @file
+ * News page template.
+#}
+{% extends "@layouts/site/site.twig" %}
+{% import _self as news_page %}
+
+{% block header %}
+  {% include '@site-components/header/header.twig' %}
+{% endblock %}
+
+{% block content %}
+
+  {% set rendered_comments %}
+    <div class="comment-headline">
+      <a id="comments"></a>
+      <span class="comment-headline__label">Kommentare</span>
+      (4)
+    </div>
+    <form>
+      <div class="form-item">
+        <textarea class="comment-form__body" placeholder="Add comment"></textarea>
+      </div>
+      <div class="form-actions">
+        <button>Save</button>
+      </div>
+    </form>
+
+    {% for comment in news.comments %}
+      {{ news_page.print_comment(comment) }}
+    {% endfor %}
+  {% endset %}
+
+  {% embed '@content/news-full/news-full.twig' with {
+    title: news.title,
+    authored_on: news.authored_on,
+    comments_count: news.comments_count,
+    content_left: news.content_left ~ rendered_comments,
+  } %}
+
+  {#
+   * We are not using a regular block statements as the blocks are nested in
+   * the news template
+  #}
+    {% set likes %}
+      {% include '@atoms/like/like.twig' with {
+      likes: news.likes.count,
+      action: news.likes.action,
+      } %}
+    {% endset %}
+
+    {% set tags %}
+      {% include '@content/list-links/list-links.twig' with {
+      links: news.tags,
+      classes: ['list-links--tags'],
+      } %}
+    {% endset %}
+
+    {% set content_right %}
+      {# Contact #}
+      {% include '@content/contact-card/contact-card.twig' with {
+      image: contact.image,
+      title: contact.title,
+      name: contact.name,
+      position: contact.position,
+      phone: contact.phone,
+      email: contact.email,
+      } %}
+
+      {# Documents #}
+      {% embed '@site-components/sidebar-item/sidebar-item.twig' with {
+      headline: news.documents.headline,
+      classes: [],
+      } %}
+        {% block content %}
+          {% include '@content/list-links/list-links.twig' with {
+          links: news.documents.links
+          } %}
+        {% endblock %}
+      {% endembed %}
+
+      {# Articles #}
+      {% embed '@site-components/sidebar-item/sidebar-item.twig' with {
+      headline: news.related_articles.headline,
+      } %}
+        {% block content %}
+          {% include '@content/list-links/list-links.twig' with {
+          links: news.related_articles.links
+          } %}
+        {% endblock %}
+      {% endembed %}
+    {% endset %}{# Sidebar content #}
+  {% endembed %}
+{% endblock %}{# (Site) Content #}
+
+{% block footer %}
+  {% include '@site-components/footer/footer.twig' %}
+{% endblock %}
+
+{% macro print_comment(comment) %}
+  {% import _self as news_page %}
+  {% set replies %}
+    {% if comment.replies is iterable %}
+      <div class="comment-indented">
+        {% for reply in comment.replies %}
+          {{ news_page.print_comment(reply) }}
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endset %}
+
+  {% embed '@content/comment/comment.twig' with {
+  author_name: comment.name,
+  submitted: comment.submitted,
+  content: comment.content ~ '<ul><li class="comment__links__item"><a href="/de/comment/reply/node/11/comment/5">Reply</a></li></ul>',
+  } %}
+    {% block user_picture %}
+      <div class="comment__user">
+        <a href="#"><img src="https://placeimg.com/42/42/people"></a>
+      </div>
+    {% endblock %}
+  {% endembed %}
+  {{ replies }}
+{% endmacro %}

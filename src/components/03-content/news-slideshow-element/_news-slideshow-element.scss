@@ -1,0 +1,133 @@
+.news-slideshow-element {
+  @include clearfix();
+  position: relative;
+  background-color: $c--white;
+  overflow: hidden;
+  min-height: $news-slideshow-height;
+
+  // Hide all elements until slick is initialized.
+  visibility: hidden;
+
+  .clearfix::after {
+    clear: none;
+  }
+
+  img {
+    max-width: none;
+    height: 100%;
+    width: auto;
+
+    @include breakpoint($bp--less-than-max) {
+      margin-left: -25%;
+    }
+  }
+
+  &__header {
+    h2 {
+      margin-bottom: $spacing--half;
+      font-weight: $fw--base;
+      font-size: $fs--larger;
+      
+      &, a {
+        color: $c--grey__dark;
+      }
+
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__meta {
+    margin-bottom: $spacing--medium;
+
+    &, a {
+      color: $c--grey__light;
+    }
+
+    span {
+      padding-left: $spacing--half;
+      padding-right: $spacing--half;
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+  }
+
+  &__wrapper {
+    position: absolute;
+    left: $spacing--half;
+    right: $spacing--base;
+    top: 0;
+    background-color: $c--white__strong;
+    bottom: $spacing--base;
+
+    @include breakpoint($bp--tablet-small) {
+      width: 63%;
+      left: $spacing--base;
+      right: auto;
+    }
+  }
+
+  &__content {
+    padding: $spacing--base;
+    line-height: 1.4;
+    color: $c--grey;
+
+    @include breakpoint($bp--tablet-small) {
+      padding: $spacing--double;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__title {
+    margin-top: 0;
+  }
+
+  &__likes-count {
+    @include icon('heart') {
+      font-size: $fs--small;
+      padding: 0 $spacing--small $spacing--small 0;
+    };
+  }
+
+  &__comments-count {
+    @include icon('commenting') {
+      font-size: $fs--small;
+      padding: 0 $spacing--small $spacing--small 0;
+    };
+  }
+
+  &__read-more {
+    margin-top: $spacing--medium;
+    margin-bottom: 0;
+
+    a {
+      text-decoration: none;
+      color: $c--secondary;
+    }
+
+    @include icon("angle-right", "after") {
+      padding: 0 0 $spacing--small $spacing--small;
+      color: $c--secondary;
+    };
+  }
+}
+
+// Show first element before slick is initialized.
+.slick__slide.slide--0 .news-slideshow-element {
+  visibility: visible;
+}
+
+// Show all elements when slick is initialized.
+.slick--initialized .news-slideshow-element {
+  visibility: visible;
+}

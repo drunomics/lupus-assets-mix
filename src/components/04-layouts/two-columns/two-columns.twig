@@ -1,0 +1,39 @@
+{% spaceless %}
+  {% set outer_classes = ['two-columns'] %}
+  {% set content_classes = [] %}
+  {% set extras_classes = [] %}
+
+  {% if classes is iterable %}
+    {% set outer_classes = outer_classes|merge(classes) %}
+  {% endif %}
+
+  {% for outer_class in outer_classes %}
+    {% set content_classes = content_classes|merge([outer_class ~ '__content']) %}
+    {% set extras_classes = extras_classes|merge([outer_class ~ '__extras']) %}
+    {% if content_right %}
+      {% set outer_classes = outer_classes|merge([outer_class ~ '--sidebar']) %}
+    {% endif %}
+  {% endfor %}
+
+  <section class="{{ outer_classes|join(' ') }}">
+    {% block two_columns_contextual %}
+    {% endblock %}
+
+    <section class="{{ content_classes|join(' ') }}">
+      {% block two_columns_messages %}
+      {% endblock %}
+
+      {% block two_columns_left %}
+        {{ content_left }}
+      {% endblock %}
+    </section>
+
+    {% if content_right %}
+    <section class="{{ extras_classes|join(' ') }}">
+      {% block two_columns_right %}
+        {{ content_right }}
+      {% endblock %}
+    </section>
+    {% endif %}
+  </section>
+{% endspaceless %}

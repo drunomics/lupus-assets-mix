@@ -1,0 +1,17 @@
+{#
+/**
+ * @file
+ * Teasers list.
+ */
+#}
+<section class="landing-page-full__list-teaser-box">
+{% embed '@content/list-teaser-box/list-teaser-box.twig' with {
+  'link_display': false,
+} %}
+  {% block teasers %}
+    {% spaceless %}
+      {% for item in items %}{{ item.content }}{% endfor %}
+    {% endspaceless %}
+  {% endblock %}
+{% endembed %}
+</section>

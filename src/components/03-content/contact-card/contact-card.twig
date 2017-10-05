@@ -1,0 +1,70 @@
+{#
+/**
+ * @file
+ * Short contact information about a user. This is used in the news template for
+ * the news extra contact block. The user's image is not part of the contact_card
+ * template because we want the news-extra site component to be able to add images
+ * above its content, which is what we use for contact.
+ *
+ * Available variables:
+ * - image: The person's profile image.
+ * - title: The card's title.
+ * - name: The person's name.
+ * - position: The job title.
+ * - phone: The person's phone number in the company.
+ * - mobile: The person's mobile number in the company.
+ * - email: The email address.
+ */
+#}
+<section class="contact-card">
+  {% if image %}
+    <div class="contact-card__image">{{ image }}</div>
+  {% endif %}
+
+  <div class="contact-card__content">
+    {% if title %}
+      <h3 class="contact-card__title">{{ title }}</h3>
+    {% endif %}
+
+    {% if name %}
+      <h4 class="contact-card__name">{{ name }}</h4>
+    {% endif %}
+
+    {% if position %}
+      <p class="contact-card__position">{{ position }}</p>
+    {% endif %}
+
+    {% spaceless %}
+    <ul class="contact-card__links">
+      {% if phone %}
+        <li class="contact-card__links-item">
+          {% include '@atoms/link/link.twig' with {
+          icon: 'phone',
+          title: phone,
+          url: 'tel:' ~ phone,
+          classes: ['contact-card__link'],
+          } %}
+        </li>
+      {% endif %}
+      {% if mobile %}
+        <li class="contact-card__links-item">
+          {% include '@atoms/link/link.twig' with {
+          icon: 'phone',
+          title: mobile,
+          url: 'tel:' ~ mobile,
+          classes: ['contact-card__link'],
+          } %}
+        </li>
+      {% endif %}
+      <li class="contact-card__links-item">
+        {% include '@atoms/link/link.twig' with {
+        icon: 'envelope',
+        title: email,
+        url: 'mailto:' ~ email,
+        classes: ['contact-card__link'],
+        } %}
+      </li>
+    </ul>
+    {% endspaceless %}
+  </div>
+</section>

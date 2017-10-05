@@ -1,0 +1,171 @@
+.warning-messages {
+  position: relative;
+
+  &__list {
+    clear: both;
+    padding: 0;
+    margin: 0;
+    background-color: $c--white;
+
+    &, a {
+      color: $c--grey__dark;
+    }
+  }
+
+  &__category {
+    border-top: 2px solid $c--grey;
+    list-style: none;
+  }
+
+  &__header {
+    @include clearfix();
+    font-weight: bold;
+    border-bottom: 1px solid #eee;
+
+    .warning-messages__column-2,
+    .warning-messages__column-3 {
+      display: none;
+
+      @include breakpoint($bp--mobile) {
+        display: block;
+      }
+    }
+  }
+
+  &__items {
+    padding: 0;
+    margin: 0;
+  }
+
+  &__item {
+    @include clearfix();
+    list-style: none;
+    border-bottom: 1px solid #eee;
+    padding-left: $spacing--big;
+
+    @include breakpoint($bp--mobile) {
+      display: block;
+      padding-left: 0;
+    }
+
+    .warning-messages__column-1 {
+      @include icon('circle');
+
+      &::before {
+        margin-left: -$spacing--big;
+        margin-right: $spacing--half;
+        font-size: 0.65rem;
+
+        @include breakpoint($bp--mobile) {
+          margin-left: 0;
+        }
+      }
+    }
+
+    .warning-messages__column-2,
+    .warning-messages__column-3 {
+      font-size: $fs--small;
+
+      @include breakpoint($bp--mobile) {
+        font-size: $fs--base;
+      }
+
+      span {
+        @include breakpoint($bp--mobile) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__column-1,
+  &__column-2,
+  &__column-3 {
+    padding-left: $spacing--big;
+    padding-right: $spacing--big;
+
+    @include breakpoint($bp--mobile) {
+      padding: $spacing--small $spacing--big;
+    }
+  }
+
+  &__column-1 {
+    padding-top: $spacing--small;
+
+    @include breakpoint($bp--mobile) {
+      width: 50%;
+      float: left;
+    }
+  }
+
+  &__column-2 {
+    float: left;
+    width: 50%;
+    padding-bottom: $spacing--small;
+
+    @include breakpoint($bp--mobile) {
+      width: 25%;
+    }
+  }
+
+  &__column-3 {
+    width: 50%;
+    float: left;
+    padding-bottom: $spacing--small;
+
+    @include breakpoint($bp--mobile) {
+      width: 25%;
+    }
+  }
+
+  &__category--status-1,
+  &__category--status-2 {
+    border-color: $c--cardinal;
+
+    .warning-messages__column-1 {
+      &::before {
+        color: $c--cardinal;
+      }
+    }
+  }
+
+  &__category--status-3 {
+    border-color: $c--jaffa;
+
+    .warning-messages__column-1 {
+      &::before {
+        color: $c--jaffa;
+      }
+    }
+  }
+
+  &__category--status-4 {
+    border-color: $c--secondary;
+
+    .warning-messages__column-1 {
+      &::before {
+        color: $c--secondary;
+      }
+    }
+  }
+
+  &__link {
+    overflow: hidden;
+
+    // Since there's a rule with a high specicivity  (&__list a) we need to be
+    // more specific than that.
+    a {
+      color: $c--white;
+      float: right;
+      display: inline-block;
+
+      // Thanks to drupal's/classy's .button:first-child rule, we need to get
+      // even more specific.
+      // FIY this is called specicivity hell...
+
+      &:first-child {
+        margin: $spacing--half * 2;
+      }
+    }
+  }
+}

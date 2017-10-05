@@ -1,0 +1,46 @@
+{#
+/**
+ * @file
+ * News page template.
+#}
+{% extends "@layouts/site/site.twig" %}
+
+{% block header %}
+  {% include '@site-components/header/header.twig' %}
+{% endblock %}
+
+{% block content %}
+
+  {% embed '@content/news-full/news-full.twig' with {
+    title: news.title,
+    authored_on: news.authored_on,
+    likes: news.likes,
+    comments_count: news.comments_count,
+    content_left: news.content_left,
+  } %}
+
+    {#
+     * We are not using a regular block statements as the blocks are nested in
+     * the news template
+    #}
+    {% set likes %}
+      {% include '@atoms/like/like.twig' with {
+        likes: news.likes.count,
+        action: news.likes.action,
+      } %}
+    {% endset %}
+
+    {% set tags %}
+      {% include '@content/list-links/list-links.twig' with {
+        links: news.tags,
+        classes: ['list-links--tags'],
+      } %}
+    {% endset %}
+
+  {% endembed %}
+
+{% endblock %}{# (Site) Content #}
+
+{% block footer %}
+  {% include '@site-components/footer/footer.twig' %}
+{% endblock %}

@@ -1,0 +1,23 @@
+<div class="news-full iframe-content">
+  {% if language_available_translation_notice %}
+    <div class="news-full__messages content__messages">
+      {{ language_available_translation_notice }}
+    </div>
+  {% endif %}
+
+  {{ top_news_image }}
+
+  <div class="news-full__content">
+
+    <header class="news-full__header">
+      <h1 class="news-full__header__title">{{ title }}</h1>
+
+      <ul class="news-full__header__items">
+        <li class="news-full__header__item news-full__header__item-submitted">{{ authored_on }}</li>
+      </ul>
+    </header>
+
+    {{ content }}
+
+  </div>
+</div>

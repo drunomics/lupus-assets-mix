@@ -1,0 +1,48 @@
+{#
+/**
+ * @file
+ * A single item in a sidebar.
+ *
+ * Available variables:
+ * - classes: An optional array of css classes to add to this block.
+ * - image: An optional image object handed over to the media-image atom.
+ * - headline: An optional headline for this block.
+ * - content: Content to be rendered in this block.
+ */
+#}
+{% if content %}
+  {% set container_classes = ['sidebar-item'] %}
+  {% set content_classes = [] %}
+  {% set headline_classes = [] %}
+
+  {% if classes is iterable %}
+    {% set container_classes = container_classes|merge(classes) %}
+  {% endif %}
+
+  {% for container_class in container_classes %}
+    {% set content_classes = content_classes|merge([container_class ~ '__content']) %}
+    {% set headline_classes = headline_classes|merge([container_class ~ '__headline']) %}
+  {% endfor %}
+
+  <div class="{{ container_classes|join(' ') }}">
+    {% if image %}
+      {% include '@atoms/media-image/media-image.twig' with {
+        image_mobile: image.mobile,
+        image_tablet: image.tablet,
+        image_desktop: image.desktop,
+        image_alt: image.alt,
+        image_title: image.title,
+      } %}
+    {% endif %}
+
+    <div class="{{ content_classes|join(' ') }}">
+      {% if headline %}
+        <h3 class="{{ headline_classes|join(' ') }}">{{ headline }}</h3>
+      {% endif %}
+
+      {% block content %}
+        {{ content }}
+      {% endblock %}
+    </div>
+  </div>
+{% endif %}

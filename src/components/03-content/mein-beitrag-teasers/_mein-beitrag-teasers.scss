@@ -1,0 +1,51 @@
+.mein-beitrag-teasers {
+  margin-top: $spacing--medium + $spacing--half;
+
+  &__feed-icon {
+    float: right;
+    margin: $spacing--tiny 0 0 $spacing--half;
+  }
+
+  &__subscriptions {
+    margin-bottom: $spacing--big;
+  }
+
+  .view-content {
+    border-top: 1px solid $c--grey__lighterer;
+  }
+
+
+  &__subscription-link {
+    color: $c--denim__50;
+    float: right;
+    font-size: $fs--small;
+    font-weight: normal;
+    transition: all 0.3s ease 0s;
+  }
+
+  .mein-beitrag-teaser {
+    border-bottom: 1px solid $c--white__dark;
+    padding: $spacing--medium 0;
+  }
+
+  .feed-icons {
+    margin-top: $spacing--medium;
+    overflow: hidden;
+  }
+
+  .feed-icon {
+    float: right;
+  }
+
+  .view-header {
+    font-size: $fs--small;
+    color: $c--grey;
+    margin-bottom: $spacing--tiny;
+  }
+
+  &__overview {
+    @extend .button-skeleton;
+    display: block;
+    margin-top: $spacing--base * 2;
+  }
+}

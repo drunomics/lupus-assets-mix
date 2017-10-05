@@ -1,0 +1,21 @@
+.paragraph-mein-beitrag {
+  border-bottom: dotted 1px $c--black;
+  display: flex;
+
+  &__image {
+    display: inline-block;
+    border-right: dotted 1px $c--black;
+    text-align: center;
+    min-width: 330px;
+  }
+
+  &__content {
+    float: right;
+    display: inline-block;
+    padding-left: $spacing--base;
+  }
+
+  &__label {
+    @extend %font-bold--base;
+  }
+}

@@ -1,0 +1,29 @@
+.facet-link {
+  margin-bottom: $spacing--half;
+
+  &--is_active {
+    @extend .facet-link;
+  }
+
+  &__value {
+    display: inline-block;
+    //vertical-align: top;
+    @include tag-link($link--tag__color);
+
+    font-size: $fs--small;
+    padding: ($spacing--tiny * .5) $spacing--small;
+
+    .facet-link--is_active & {
+      @include tag-link($link--tag__color);
+      @include tag-link-active($link--tag__color);
+    }
+  }
+
+  &__count {
+    color: $c--grey__light;
+    font-size: $fs--small;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: $spacing--small;
+  }
+}

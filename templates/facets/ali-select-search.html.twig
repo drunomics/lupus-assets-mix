@@ -1,0 +1,26 @@
+{#
+/**
+ * @file
+ * Facet select search block template.
+ *
+ * Available variables:
+ * - links_selected
+ * - links
+ */
+#}
+
+{% embed '@site-components/facet/facet-select-search/facet-select-search.twig' %}
+
+  {% block links_selected %}
+    {% for link in links_selected %}
+      {{ link }}
+    {% endfor %}
+  {% endblock %}
+
+  {% block links %}
+    {% for link in links %}
+      {{ link }}
+    {% endfor %}
+  {% endblock %}
+
+{% endembed %}

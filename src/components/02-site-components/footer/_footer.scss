@@ -1,0 +1,87 @@
+.footer {
+  background-color: $c--secondary;
+  color: $c--white;
+  @extend %font-size-base;
+
+  &__wrapper {
+    @extend .outer-container;
+    overflow: hidden;
+  }
+
+  &__item {
+    padding: 0 $spacing--base;
+
+    @include breakpoint($bp--desktop-large) {
+      padding: 0 $spacing--double;
+    }
+
+    margin: $spacing--double 0;
+    width: 100%;
+
+    // 1-column layout for mobile devices.
+    @include breakpoint(0 $bp--tablet-small) {
+      clear: both;
+    }
+
+    &:first-child {
+      // 2-column layout for tablets.
+      @include breakpoint($bp--tablet-small $bp--tablet-large) {
+        @include grid-span(6, 1);
+      }
+      // 4-column layout for large devices.
+      @include breakpoint($bp--tablet-large) {
+        @include grid-span(3, 1);
+      }
+    }
+    &:nth-child(2) {
+      // 2-column layout for tablets.
+      @include breakpoint($bp--tablet-small $bp--tablet-large) {
+        @include grid-span(6, 7);
+      }
+      // 4-column layout for large devices.
+      @include breakpoint($bp--tablet-large) {
+        @include grid-span(3, 4);
+      }
+    }
+    &:nth-child(3) {
+      // 2-column layout for tablets.
+      // Clear floating to display items in new row.
+      @include breakpoint($bp--tablet-small $bp--tablet-large) {
+        @include grid-span(6, 1);
+        clear: both;
+      }
+      // 4-column layout for large devices.
+      @include breakpoint($bp--tablet-large) {
+        @include grid-span(3, 7);
+      }
+    }
+    &:nth-child(4) {
+      // 2-column layout for tablets.
+      @include breakpoint($bp--tablet-small $bp--tablet-large) {
+        @include grid-span(6, 7);
+      }
+      // 4-column layout for large devices.
+      @include breakpoint($bp--tablet-large) {
+        @include grid-span(3, 10);
+      }
+    }
+  }
+
+  h2 {
+    @extend %font-size-base;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    color: $c--white;
+
+    &:not([class]) {
+      text-decoration: underline;
+    }
+  }
+}

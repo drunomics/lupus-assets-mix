@@ -1,0 +1,18 @@
+{#
+/**
+ * @file
+ * Facet link template.
+ *
+ * Available variables:
+ * - value: The item value.
+ * - show_count: If this facet provides count.
+ * - count: The amount of results.
+ * - is_active: The item is active.
+ */
+#}
+<div class="facet-link{{ is_active ? '--is_active' : '' }}">
+<span class="facet-link__value">{{ value }}</span>
+{% if show_count %}
+  <span class="facet-link__count">({{ count }})</span>
+{% endif %}
+</div>

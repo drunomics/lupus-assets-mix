@@ -1,0 +1,71 @@
+{#
+/**
+ * @file
+ * Display a menu.
+ *
+ * Available variables:
+ * - menu_name: The machine name of the menu.
+ * - menu_links: A nested list of menu items. Each menu item contains:
+ *   - attributes: HTML attributes for the menu item.
+ *   - below: The menu item child items.
+ *   - title: The menu link title.
+ *   - url: The menu link url, instance of \Drupal\Core\Url
+ *   - localized_options: Menu link localized options.
+ *   - is_expanded: TRUE if the link has visible children within the current
+ *     menu tree.
+ *   - is_collapsed: TRUE if the link has children within the current menu tree
+ *     that are not currently visible.
+ *   - in_active_trail: TRUE if the link is in the active trail.
+ */
+#}
+{% import _self as menus %}
+
+{#
+  We call a macro which calls itself to render the full tree.
+  @see http://twig.sensiolabs.org/doc/tags/macro.html
+#}
+{{ menus.menu_links(menu_links, attributes, 0) }}
+
+{% macro menu_links(menu_links, attributes, menu_level) %}
+  {% import _self as menus %}
+  {% if menu_links %}
+  {%
+    set classes = [
+     'navigation',
+     'menu--main',
+    ]
+  %}
+    <nav role="navigation" aria-labelledby="main-menu" class="navigation menu--main">
+      <ul class="main-menu main-menu__menu-{{ menu_level }}">
+        {% for item in menu_links %}
+          {%
+            set classes = [
+            'main-menu__item',
+            item.is_expanded ? 'main-menu__item--expanded',
+            item.is_collapsed ? 'main-menu__item--collapsed',
+            item.in_active_trail ? 'main-menu__item--active-trail',
+            'main-menu__link',
+            'main-menu__link-' ~ menu_level
+            ]
+          %}
+            <li class="main-menu__item main-menu__item-{{ menu_level }}{% if item.below %} more{% endif %}{% if not item.url and not item.below %} nolink{% endif %}">
+              {% include '@atoms/link/link.twig' with {
+                title: item.title,
+                url: item.url,
+                icon: item.icon,
+                classes: classes,
+                level: menu_level,
+              } %}
+              {% if item.below %}
+                {% include '@site-components/main-submenu/main-submenu.twig' with {
+                  'main_submenu_links': item.below,
+                  'menu_level': menu_level + 1,
+                  'attributes': attributes
+                } %}
+              {% endif %}
+            </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  {% endif %}
+{% endmacro %}

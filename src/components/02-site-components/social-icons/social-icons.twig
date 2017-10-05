@@ -1,0 +1,21 @@
+{#
+/**
+ * @file
+ * Display of social media platform links
+ *
+ * Available variables:
+ * - platform_links: The platform links
+ */
+#}
+<section class="social-icons">
+  <h2 class="social-icons__title">{{ social_icons_title }}</h2>
+  <ul class="social-icons__list">
+    {% for social_icon in social_icons %}
+      <li class="social-icons__item">
+        <a href="{{ social_icon.url }}" class="social-icons__link {{ social_icon.class }}">
+          <span class="is-hidden">{{ social_icon.title }}</span>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</section>

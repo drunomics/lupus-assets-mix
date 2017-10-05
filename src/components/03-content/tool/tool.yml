@@ -1,0 +1,5 @@
+tool:
+  title: 'Tool'
+  url: '#'
+  classname: 'tool'
+  icon: '<i class="tool--inactive" />'

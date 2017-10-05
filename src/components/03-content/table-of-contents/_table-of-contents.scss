@@ -1,0 +1,34 @@
+.table-of-contents {
+  display: inline-block;
+  min-width: grid-span(3, 1);
+  padding: 0;
+  padding: $spacing--base $spacing--medium;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid $c--jagged-ice;
+  border-right: 1px solid $c--jagged-ice;
+  border-left: 1px solid $c--jagged-ice;
+  border-top: $c--jagged-ice 3px solid;
+  float: none;
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: $spacing--half;
+    font-size: $fs--base;
+  }
+
+  &__links {
+    padding: 0;
+    margin: 0;
+  }
+
+  .item-list li {
+    list-style: none;
+    margin-bottom: $spacing--half;
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  .item-list li:last-child {
+    margin-bottom: 0;
+  }
+}
