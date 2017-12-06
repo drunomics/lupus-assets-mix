@@ -1,0 +1,9 @@
+name: 'Drush Drupalstar'
+image: '<img src="/assets/src/avatar_image.png" alt="uUer"/>'
+url: '#'
+years:
+  - year: 11
+  - year: 12
+  - year: 13
+  - year: 14
+position: 'Drupaler'

@@ -1,0 +1,12 @@
+.users-list-teaser {
+  @include clearfix;
+  width: auto;
+  margin-right: - $spacing--base;
+  margin-bottom: $spacing--big;
+
+  .user-teaser {
+    float: left;
+    margin: 0 $spacing--base $spacing--base 0;
+  }
+
+}

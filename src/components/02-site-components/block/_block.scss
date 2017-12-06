@@ -1,7 +1,0 @@
-.block--mobile-disabled {
-  display: none;
-
-  @include breakpoint($bp--tablet-small) {
-    display: block;
-  }
-}

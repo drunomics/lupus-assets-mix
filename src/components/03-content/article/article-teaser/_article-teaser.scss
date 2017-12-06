@@ -1,0 +1,44 @@
+.article-teaser {
+  @extend %font-size-small;
+  margin-bottom: $spacing--block;
+
+  &__image-link {
+    display: block;
+    margin-bottom: $spacing--base;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__content {
+    margin-bottom: $spacing--base;
+  }
+
+  &__more {
+    margin-bottom: $spacing--big;
+    display: block;
+  }
+
+  &__title {
+    @extend %font-size-larger;
+    color: $c--text;
+  }
+
+  @include breakpoint($bp--tablet) {
+    @include clearfix();
+
+    &__image-link {
+      float: left;
+      margin-right: $spacing--big;
+      max-width: 50%;
+    }
+  }
+
+  @include breakpoint($bp--desktop) {
+    &__image-link {
+      margin-right: $spacing--block;
+      max-width: rem(450);
+    }
+  }
+}

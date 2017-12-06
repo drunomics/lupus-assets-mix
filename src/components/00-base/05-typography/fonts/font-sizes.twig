@@ -1,8 +1,5 @@
-<ul style="list-style: none;">
-  {% for item in sizes %}
-    <p>
-      <div style="font-size: {{ item.value|trim(' !default') }};">{{ headline.short }}</div>
-      <div><code>{{item.name}}: {{item.value}}</code></div>
-    </p>
+<ul class="pl-font-sizes">
+  {% for font_size in font_sizes %}
+    <li class="pl-font-sizes__size--{{ font_size }}">{{ font_size }}: Aequalis galeae parte ambitae montes liquidum deerat caesa aberant.</li>
   {% endfor %}
 </ul>

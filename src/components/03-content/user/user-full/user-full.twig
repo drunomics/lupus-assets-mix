@@ -1,0 +1,19 @@
+{#
+/**
+ * @file
+ * Event full template.
+ *
+ * Available variables:
+ * - content
+ */
+#}
+<article class="user-full">
+  {% if image %}
+    <div class="user-full__image">{{ image }}</div>
+  {% endif %}
+  {% if content %}
+    <div class="user-full__content">
+      {% block content content %}
+    </div>
+  {% endif %}
+</article>

@@ -1,0 +1,27 @@
+{#
+/**
+ * @file
+ * User compact template.
+ *
+ * Available variables:
+ * - content
+ */
+#}
+<article class="user-compact">
+  <a class="user-compact__image" href="{{ url }}">{{ image }}</a>
+  <a class="user-compact__name" href="{{ url }}">{{ name }}</a>
+
+  {% if position %}
+    <div class="user-compact__position">{{ position }}</div>
+  {% endif %}
+
+  {% if years %}
+    <div class="user-compact__membership">
+      {% block membership %}
+        {% include '@atoms/year-tags-list/year-tags-list.twig' with {
+          years: years
+        } %}
+      {% endblock %}
+    </div>
+  {% endif %}
+</article>

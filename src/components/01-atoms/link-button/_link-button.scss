@@ -1,0 +1,47 @@
+.link-button {
+  line-height: get-font-property-value('xlarge', 'font-size');
+  color: $c--primary;
+  border: 1px solid $c--primary;
+  background: transparent;
+  padding: 0 $spacing--base;
+  display: inline-block;
+  text-align: center;
+
+  &--unactive {
+    color: $c--grey__lighter;
+    border-color: $c--grey__lighter;
+  }
+
+  &--size-big {
+    @extend %font-size-large;
+    line-height: get-font-property-value('xxlarge', 'font-size');
+  }
+
+  &--size-small {
+    @extend %font-size-small;
+    line-height: get-font-property-value('large', 'font-size');
+    padding: 0 $spacing--half;
+  }
+
+  &--size-xsmall {
+    @extend %font-size-xsmall;
+    line-height: get-font-property-value('base', 'font-size');
+    padding: 0 $spacing--half;
+  }
+
+  &--position-left {
+    float: left;
+    margin-right: $spacing--medium;
+    margin-bottom: $spacing--base;
+    position: relative;
+    top: -4px;
+  }
+
+  &--position-right {
+    float: right;
+    margin-left: $spacing--medium;
+    margin-bottom: $spacing--base;
+    position: relative;
+    top: -4px;
+  }
+}

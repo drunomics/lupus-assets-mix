@@ -1,0 +1,30 @@
+.pager {
+  clear: both;
+  margin: $spacing--double 0;
+
+  &__items {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    margin-right: $spacing--tiny;
+    border: 2px solid $c--primary;
+    border-radius: $spacing__small;
+    display: inline-block;
+    vertical-align: top;
+    padding: $spacing--small $spacing--medium;
+
+    &, a {
+      color: $c--primary;
+    }
+
+    &:hover,
+    &.is-active {
+      background: $c--primary;
+      &, a {
+        color: $c--white;
+      }
+    }
+  }
+}

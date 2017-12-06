@@ -1,4 +1,0 @@
-header: 'Titel'
-children:
-  child1: '<a href="test">Test</a>'
-  child2: '<a href="test">Test2</a>'

@@ -1,16 +1,10 @@
-.sg-font-sizes {
-  thead {
-    font-weight: bold;
-    text-transform: uppercase;
-    border-bottom: 2px solid black;
-  }
-  th,
-  td {
-    text-align: left;
-    white-space: nowrap;
-    line-height: 1.5em;
-    &:first-child {
-      padding-right: 12px;
+$font-sizes: 'xxsmall', 'xsmall', 'small', 'base', 'large', 'larger', 'xlarge', 'xxlarge';
+
+.pl-font-sizes {
+  @each $font-size in $font-sizes {
+    .pl-font-sizes__size--#{$font-size} {
+      @include apply-font-property($font-size, 'font-size');
+      @include apply-font-property($font-size, 'line-height');
     }
   }
 }

@@ -1,6 +1,4 @@
 html {
-  font-size: $fs--html;
-  line-height: $lh--html;
   margin: 0;
 }
 
@@ -9,10 +7,9 @@ body {
   background-color: $c--white;
   letter-spacing: $ls--base;
   color: $c--text;
-
-  min-width: $bp--min;
+  min-width: $width--min;
   width: auto !important;
-  width: $bp--min;
+  width: $width--min;
 }
 
 b, strong {
@@ -36,11 +33,9 @@ label {
 .label-above {
   display: block;
   @extend %font-bold--base;
-  margin-bottom: 1.5 * $lh--base;
 }
 .label-inline {
   display: inline;
-  margin-right: 0.2 * $lh--base;
 }
 
 th {
@@ -70,7 +65,7 @@ cite {
   &:before {
     content: "\201C"; /*Unicode for Left Double Quote*/
     font-family: $ff--base;
-    font-size: 6 * $fs--base;
+    font-size: 6 * get-font-property-value('base', 'font-size');
     font-weight: $fw--base;
     position: absolute;
     left: $spacing--small;
@@ -88,6 +83,7 @@ cite {
 
 /// Hidden and Shown elements.
 .is-hidden,
+.visually-hidden,
 .element-invisible {
   display: none;
 }

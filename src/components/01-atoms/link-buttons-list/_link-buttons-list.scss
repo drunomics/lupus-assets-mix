@@ -1,0 +1,12 @@
+.link-buttons-list {
+  &__title {
+    font-weight: bold;
+    display: inline-block;
+    padding-right: $spacing--half;
+    vertical-align: middle;
+  }
+
+  .link-button {
+    margin: 0 $spacing--base $spacing--base 0;
+  }
+}

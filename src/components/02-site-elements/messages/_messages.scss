@@ -1,0 +1,36 @@
+// Configuration variables.
+// Type name : color scheme.
+$messages-types: (
+  error   : #b94a48,
+  warning : #c09853,
+  status  : #468847,
+) !default;
+
+.messages {
+  padding: $spacing--medium;
+  @include margin-top-bottom;
+  border-radius: $spacing--half;
+  border: 1px solid;
+  overflow: hidden;
+  margin: $spacing--base 0 $spacing--block;
+
+  ul, li {
+    list-style-type: none;
+    list-style-position: inside;
+    margin: 0 0 $spacing--double;
+    padding: 0;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+}
+
+// Loop doing all the dumping.
+@each $type, $color in $messages-types {
+  .messages--#{$type} {
+    color: $color;
+    background: lighten($color, 38%);
+    border-color: lighten($color, 20%);
+  }
+}

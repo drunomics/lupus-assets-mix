@@ -1,23 +1,3 @@
-$spacing--tiny: rem(2);
-$spacing--small: rem(4);
-$spacing--half: rem(8);
-$spacing--base: rem(10);
-$spacing--medium: rem(12);
-$spacing--big: rem(24);
-$spacing--double: rem(32);
-$spacing--large: rem(64);
-
-$spacing-map: (
-  tiny: $spacing--tiny,
-  small: $spacing--small,
-  half: $spacing--half,
-  base: $spacing--base,
-  medium: $spacing--medium,
-  big: $spacing--big,
-  double: $spacing--double,
-  large: $spacing--large,
-);
-
 .spacing {
   float: left;
   display: inline-block;

@@ -1,18 +1,20 @@
 {#
 /**
  * @file
- * Home page template.
+ * Simple page template.
 #}
 {% extends "@layouts/site/site.twig" %}
 
 {% block header %}
-  {% include '@site-components/header/header.twig' %}
+  {% include '@site-elements/branding/branding.twig' with brading %}
 {% endblock %}
 
 {% block content %}
-  {{ html.text1 }}
+  {% include '@site-elements/page-title/page-title.twig' with page_title %}
+  {{ text_paragraph.text1 }}
+  {{ text_paragraph.text2 }}
 {% endblock %}
 
 {% block footer %}
-  {% include '@site-components/footer/footer.twig' %}
+  Footer is here!
 {% endblock %}

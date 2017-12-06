@@ -1,5 +1,5 @@
+// Register a global jQuery for Drupal.
+window.$ = window.jQuery = require('jquery');
 
-// Enable if jQuery is added.
-// window.$ = window.jQuery = require('jquery');
-
-window.Vue = require('vue');
+// Enable if Vue is enabled.
+// window.Vue = require('vue');

@@ -1,0 +1,18 @@
+{#
+/**
+ * @file
+ * Theme override for a field.
+ *
+ * @see template_preprocess_field()
+ */
+#}
+{% embed '@atoms/link-buttons-list/link-buttons-list.twig' %}
+  {% block content %}
+    {% for item in items %}
+      {% include '@atoms/link-button/link-button.twig' with {
+        text: item.content,
+        unactive: true,
+      } %}
+    {% endfor %}
+  {% endblock %}
+{% endembed %}

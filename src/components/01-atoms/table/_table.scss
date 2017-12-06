@@ -1,21 +1,14 @@
 table {
   margin-bottom: $spacing--medium;
-  min-width: $bp--tablet-small;
+  min-width: $bp--tablet;
   table-layout: fixed;
 
   .content-two-column & {
     min-width: 0;
   }
 
-  @include breakpoint(0 $bp--tablet-small) {
+  @include breakpoint(0 $bp--tablet) {
     width: 100% !important;
-  }
-
-  @include breakpoint(0 $bp--tablet-large) {
-    &, th, td {
-      font-size: $fs--small;
-      line-height: $lh--small;
-    }
   }
 
   th {

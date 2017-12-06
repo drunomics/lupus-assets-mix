@@ -1,22 +1,6 @@
-// Some libs.
-@import "../../node_modules/normalize.scss/normalize.scss";
-// Grid system, https://github.com/at-import/Singularity
-@import "../../node_modules/singularitygs/stylesheets/singularitygs";
-// A cleaner way to do breakpoints/media queries, http://breakpoint-sass.com/
-@import "../../node_modules/breakpoint-sass/stylesheets/breakpoint";
-// A cleaner way to do breakpoints/media queries, http://breakpoint-sass.com/
-// Helpful mixins, http://bourbon.io/docs/
-@import "../../node_modules/bourbon/app/assets/stylesheets/bourbon";
-// End libs.
-
-// Pattern-lab specific styles - see folder ./pattern-lab.
-
-@import "libs";
+@import "defaults";
+@import "libraries";
 @import "mixins/*.scss";
-
-// Pattern-lab styling relies on pattern-lab base config and mixins.
-//@import "../components/**/*.config.scss";
-//@import "../components/**/*.mixins.scss";
 @import "../components/**/*.scss";
-
-@import "pattern-lab/*.scss";
+// Include pattern-lab specific styles - see folder ./pattern-lab.
+@import "pattern-lab/**/*.scss";

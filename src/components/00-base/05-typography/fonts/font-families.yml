@@ -1,0 +1,10 @@
+---
+items:
+- name: "$ff--base"
+  value: "Roboto, sans-serif !default"
+  comment: ''
+- name: "$ff--mono"
+  value: "'Source Code Pro' !default"
+  comment: ''
+meta:
+  description: Font families used

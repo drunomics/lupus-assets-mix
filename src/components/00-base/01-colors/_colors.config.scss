@@ -120,6 +120,12 @@ $c--denim__50: rgba(18, 124, 179, .5);
 $c--denim__25: rgba(18, 124, 179, .25);
 $c--denim__5: rgba(18, 124, 179, .05);
 
+// Resolution blue
+$c--resolution-blue: rgba(0, 55, 129, 1);
+$c--resolution-blue__75: rgba(0, 55, 129, .75);
+$c--resolution-blue__50: rgba(0, 55, 129, .5);
+$c--resolution-blue__25: rgba(0, 55, 129, .25);
+
 // Black squeeze (this is a pastel like color - the terrible name is from name-that-color, see top of this file)
 $c--black-squeeze: rgba(232, 241, 247, 1);
 $c--black-squeeze__75: rgba(232, 241, 247, .75);
@@ -128,25 +134,29 @@ $c--black-squeeze_25: rgba(232, 241, 247, .25);
 
 // White, black and shades of grey colors
 $c--white: rgba(255, 255, 255, 1);
+$c--white__75: rgba(255, 255, 255, .75);
 $c--white__strong: rgba(255, 255, 255, .95);
 $c--white__light: rgba(255, 255, 255, .5);
 $c--white__dark: rgba(220, 220, 220, 1);
 $c--black: rgba(0, 0, 0, 1);
+$c--black__75: rgba(0, 0, 0, .75);
 $c--grey: rgba(66, 66, 66, 1);
 $c--grey__light: rgba(115, 115, 115, 1);
-$c--grey__lighter: rgba(194, 194, 194, 1);
+$c--grey__lighter: rgba(140, 140, 140, 1);
 $c--grey__lighterer: rgba(225, 225, 225, 1);
 $c--grey__dark: rgba(53, 53, 53, 1);
 $c--sky-blue: rgb(81, 157, 196);
 
-// Primary and secondary colors
-$c--primary: $c--denim;
-$c--secondary: $c--grey__light;
-$c--background: $c--white;
-$c--text: $c--black;
-$c--text__light: $c--grey__light;
+// Primary colors
+$c--primary: rgba(204, 13, 31, 1);
+$c--secondary: rgba(166, 0, 16, 1);
+$c--secondary__light: rgba(231, 50, 67, 1);
+$c--background: rgba(231, 50, 67, .2);
 
-// Brand colors
-$c--pinterest: rgba(189, 8, 28, 1);
-$c--facebook: rgba(59, 89, 152, 1);
-$c--twitter: rgb(29, 161, 242);
+// Primary colors
+$c--primary__smooth:  $c--denim__75;
+$c--primary__light:   $c--denim__50;
+//$c--secondary:        $c--surfie-green;
+$c--background:       $c--black-squeeze;
+$c--text:             $c--black;
+$c--text__light:      $c--grey__light;

@@ -1,0 +1,20 @@
+{#
+/**
+ * @file
+ * Content paragraph.
+ *
+ * Available variables:
+ * - content
+ */
+#}
+{% embed '@content/paragraph/paragraph.twig' with {
+  headline: content.field_headline,
+  paragraph_type: 'listing',
+} %}
+
+  {% block content %}
+    {{ content.field_views }}
+    {{ content.field_text }}
+  {% endblock %}
+
+{% endembed %}

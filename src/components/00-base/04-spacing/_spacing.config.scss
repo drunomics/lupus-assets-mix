@@ -3,12 +3,14 @@ $spacing--small: rem(4);
 $spacing--half: rem(8);
 $spacing--base: rem(10);
 $spacing--medium: rem(12);
-$spacing--gutter: rem(20);
 $spacing--big: rem(24);
 $spacing--double: rem(32);
 $spacing--large: rem(64);
+// Use for spacing between the blocks and regions.
+$spacing--block: rem(45);
+// The Drupal administration toolbar height.
+$spacing--toolbar: 39px;
 
-// A map for pattern-lab to show the spacings.
 $spacing-map: (
   tiny: $spacing--tiny,
   small: $spacing--small,

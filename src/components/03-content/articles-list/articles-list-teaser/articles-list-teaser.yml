@@ -1,0 +1,56 @@
+title: "Events list"
+events:
+  -
+    url: '#'
+    title: Example title
+    image: '<img src="/assets/src/content_half.png" alt="Image"/>'
+    content: |
+      <p>25-29 September 2017</p>
+      <p>Liquidum aer cinxit obsistitur quinta. Deorum os os sanctius.
+      Emicuit carentem aliis summaque. Grandia tractu aestu rerum tanta regat manebat.
+      Inposuit vix natura. Exemit flamma rectumque spectent ita semine perpetuum.</p>
+    more_text: Read more
+
+  -
+    url: '#'
+    title: Example title
+    image: '<img src="/assets/src/content_half.png" alt="Image"/>'
+    content: |
+      <p>25-29 September 2017</p>
+      <p>Liquidum aer cinxit obsistitur quinta. Deorum os os sanctius.
+      Emicuit carentem aliis summaque. Grandia tractu aestu rerum tanta regat manebat.
+      Inposuit vix natura. Exemit flamma rectumque spectent ita semine perpetuum.</p>
+    more_text: Read more
+
+  -
+    url: '#'
+    title: Example title
+    image: '<img src="/assets/src/content_half.png" alt="Image"/>'
+    content: |
+      <p>25-29 September 2017</p>
+      <p>Liquidum aer cinxit obsistitur quinta. Deorum os os sanctius.
+      Emicuit carentem aliis summaque. Grandia tractu aestu rerum tanta regat manebat.
+      Inposuit vix natura. Exemit flamma rectumque spectent ita semine perpetuum.</p>
+    more_text: Read more
+
+  -
+    url: '#'
+    title: Example title
+    image: '<img src="/assets/src/content_half.png" alt="Image"/>'
+    content: |
+      <p>25-29 September 2017</p>
+      <p>Liquidum aer cinxit obsistitur quinta. Deorum os os sanctius.
+      Emicuit carentem aliis summaque. Grandia tractu aestu rerum tanta regat manebat.
+      Inposuit vix natura. Exemit flamma rectumque spectent ita semine perpetuum.</p>
+    more_text: Read more
+
+  -
+    url: '#'
+    title: Example title
+    image: '<img src="/assets/src/content_half.png" alt="Image"/>'
+    content: |
+      <p>25-29 September 2017</p>
+      <p>Liquidum aer cinxit obsistitur quinta. Deorum os os sanctius.
+      Emicuit carentem aliis summaque. Grandia tractu aestu rerum tanta regat manebat.
+      Inposuit vix natura. Exemit flamma rectumque spectent ita semine perpetuum.</p>
+    more_text: Read more

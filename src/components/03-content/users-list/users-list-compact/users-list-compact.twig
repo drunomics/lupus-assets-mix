@@ -1,0 +1,16 @@
+{#
+/**
+ * @file
+ * User compact template.
+ *
+ * Available variables:
+ * - content
+ */
+#}
+<article class="users-list-compact">
+  {% block content %}
+    {% for user in users %}
+      {% include '@content/user/user-compact/user-compact.twig' with user %}
+    {% endfor %}
+  {% endblock %}
+</article>

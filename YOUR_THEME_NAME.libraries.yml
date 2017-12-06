@@ -1,0 +1,10 @@
+global:
+  version: VERSION
+  css:
+    base:
+      assets/main.css: {}
+  js:
+    assets/main.js: {}
+  dependencies:
+    # This includes jQuery and must be loaded first.
+    weight: -9999

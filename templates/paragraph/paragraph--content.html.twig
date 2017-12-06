@@ -1,0 +1,13 @@
+{#
+/**
+ * @file
+ * Content paragraph.
+ *
+ * Available variables:
+ * - content
+ */
+#}
+{% include '@content/paragraph/paragraph.twig' with {
+  headline: content.field_headline,
+  content: content.field_text,
+}%}

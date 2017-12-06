@@ -1,0 +1,59 @@
+/**
+ * @file
+ * Visual styles for fields.
+ */
+.field {
+  &__label {
+    font-weight: bold;
+  }
+
+  &--label-inline {
+    margin-bottom: $spacing--medium;
+
+    /* LTR */
+    .field__label,
+    .field__item,
+    .field__items {
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    .field__label,
+    .field__items {
+      padding-right: $spacing--half;
+    }
+
+    .field__label::after {
+      content: ':';
+    }
+
+    .field__items .field__item {
+      &:before {
+        content: ', ';
+      }
+
+      &:first-child::before {
+        content: '';
+      }
+    }
+  }
+
+  &--label-above {
+    margin-bottom: $spacing--medium;
+
+    .field__label::after {
+      content: ':';
+    }
+
+    .field__item {
+      margin-bottom: $spacing--medium;
+    }
+  }
+
+  /* RTL */
+  [dir="rtl"] &--label-inline .field__label,
+  [dir="rtl"] &--label-inline .field__items {
+    padding-left: $spacing--half;
+    padding-right: 0;
+  }
+}

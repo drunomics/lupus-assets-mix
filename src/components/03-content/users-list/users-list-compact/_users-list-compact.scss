@@ -1,0 +1,22 @@
+.users-list-compact {
+  @include clearfix;
+  margin-bottom: $spacing--big;
+
+  .user-compact {
+    overflow: hidden;
+    margin-bottom: $spacing--medium;
+  }
+
+  @include breakpoint($bp--tablet) {
+    @include grid-row();
+
+    .user-compact {
+      // Show 2 items in a row for tablet.
+      @include float-span(2, 1);
+
+      &:nth-child(2n) {
+        margin-right: 0;
+      }
+    }
+  }
+}

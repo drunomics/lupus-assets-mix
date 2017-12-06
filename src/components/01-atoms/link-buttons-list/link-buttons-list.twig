@@ -1,0 +1,23 @@
+{#
+/**
+ * @file
+ * Link button.
+ *
+ * Variables:
+ * - url.
+ * - blank (boolean): whether to open link in a new tab.
+ * - variant: available values: 'more', leave empty for the default value.
+ * - size: available values: big.
+ * - position: available values: left, right.
+ */
+#}
+<div class="link-buttons-list">{% spaceless %}
+  {% if title %}
+    <div class="link-buttons-list__title">{{ title }}:</div>
+  {% endif %}
+  {% block content %}
+    {% for link_button in link_buttons %}
+      {% include '@atoms/link-button/link-button.twig' with link_button %}
+    {% endfor %}
+  {% endblock %}
+{% endspaceless %}</div>
