@@ -1,0 +1,23 @@
+current: 2
+items:
+  pages:
+    1:
+      href: "#"
+    2:
+      href: "#"
+    3:
+      href: "#"
+    4:
+      href: "#"
+  first:
+    href: "#"
+    text: "« Anfang"
+  previous:
+    href: "#"
+    text: "‹‹"
+  next:
+    href: "#"
+    text: "››"
+  last:
+    href: "#"
+    text: "Ende »"

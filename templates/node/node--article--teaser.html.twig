@@ -1,0 +1,16 @@
+{#
+/**
+ * @file
+ * Article teaser template.
+ *
+ * Available variables:
+ * @see core/themes/bartik/templates/node.html.twig
+ */
+#}
+{% include '@content/article/article-teaser/article-teaser.twig' with {
+  title: label,
+  url: url,
+  image: content.field_teaser_image,
+  content: content.field_teaser_text,
+  more_text: 'Read more'|t,
+} %}

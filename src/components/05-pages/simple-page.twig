@@ -1,0 +1,20 @@
+{#
+/**
+ * @file
+ * Simple page template.
+#}
+{% extends "@layouts/site/site.twig" %}
+
+{% block header %}
+  {% include '@site-elements/branding/branding.twig' with brading %}
+{% endblock %}
+
+{% block content %}
+  {% include '@site-elements/page-title/page-title.twig' with page_title %}
+  {{ text_paragraph.text1 }}
+  {{ text_paragraph.text2 }}
+{% endblock %}
+
+{% block footer %}
+  Footer is here!
+{% endblock %}

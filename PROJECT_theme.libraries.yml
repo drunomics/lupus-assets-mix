@@ -1,6 +1,0 @@
-global-styling:
-  css:
-    base:
-      assets/main.css: {}
-  js:
-    assets/main.js: {}

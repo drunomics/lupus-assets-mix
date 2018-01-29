@@ -2,7 +2,22 @@
   "items": [
     {
       "name": "$c--primary",
-      "value": "red",
+      "value": "rgba(204, 13, 31, 1)",
+      "comment": ""
+    },
+    {
+      "name": "$c--secondary",
+      "value": "rgba(166, 0, 16, 1)",
+      "comment": ""
+    },
+    {
+      "name": "$c--secondary__light",
+      "value": "rgba(231, 50, 67, 1)",
+      "comment": ""
+    },
+    {
+      "name": "$c--background",
+      "value": "rgba(231, 50, 67, .2)",
       "comment": ""
     }
   ],

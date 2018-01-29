@@ -1,0 +1,25 @@
+{#
+/**
+ * @file
+ * Events teaser list.
+ *
+ * Availavle variables:
+ * - title
+ * - events
+ */
+#}
+{% set classes = [
+  'article-list-teaser',
+] %}
+<section class="{{ classes|join(' ')|trim }}">
+  {% if title %}
+    <h2 class="article-list-teaser__title">{{ title }}</h2>
+  {% endif %}
+  <div class="article-list-teaser__content">
+    {% block content %}
+      {% for event in events %}
+        {% include '@content/article/article-teaser/article-teaser.twig' with event %}
+      {% endfor %}
+    {% endblock %}
+  </div>
+</section>

@@ -1,0 +1,14 @@
+{#
+/**
+ * @file
+ * Theme override to display a menu.
+ *
+ */
+#}
+{% include "@site-elements/menu/menu.twig"
+  with {
+  "menu_links": items,
+  "attributes": attributes,
+  "menu_name": menu_name
+  }
+%}

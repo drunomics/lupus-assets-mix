@@ -5,6 +5,7 @@
  *
  * Available variables:
  * - menu_name: The machine name of the menu.
+ * - menu_level: menu depth, controlled from the 'configure block' page
  * - menu_links: A nested list of menu items. Each menu item contains:
  *   - attributes: HTML attributes for the menu item.
  *   - below: The menu item child items.
@@ -24,13 +25,13 @@
   We call a macro which calls itself to render the full tree.
   @see http://twig.sensiolabs.org/doc/tags/macro.html
 #}
-{{ menus.menu_links(menu_links, attributes, 0) }}
+{{ menus.menu_links(menu_links, attributes, 0, menu_name) }}
 
-{% macro menu_links(menu_links, attributes, menu_level) %}
+{% macro menu_links(menu_links, attributes, menu_level, menu_name) %}
   {% import _self as menus %}
   {% if menu_links %}
     {% if menu_level == 0 %}
-      <ul class="menu menu__root">
+      <ul class="menu menu--root menu--{{ menu_name }}">
     {% else %}
       <ul class="menu">
     {% endif %}
@@ -49,8 +50,8 @@
           'url': item.url,
         } %}
 
-        {% if item.below %}
-          {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+        {% if item['below'] %}
+          {{ menus.menu_links(item['below'], attributes, menu_level + 1) }}
         {% endif %}
       </li>
     {% endfor %}

@@ -1,0 +1,23 @@
+.user-compact {
+  @extend %font-size-xsmall;
+
+  &__image {
+    float: left;
+    margin-right: $spacing--base;
+  }
+
+  &__name {
+    @extend %font-size-base;
+    color: $c--text;
+    display: block;
+    margin-bottom: $spacing--small;
+  }
+
+  &__position {
+    margin-bottom: $spacing--small;
+  }
+
+  &__membership {
+    margin-top: $spacing--half;
+  }
+}

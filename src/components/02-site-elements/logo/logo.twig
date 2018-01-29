@@ -1,26 +1,3 @@
-{%
-set classes = [
-  'logo'
-]
-%}
-{% if attributes is defined %}
-<section{{ attributes.addClass(classes).removeClass('contextual-region') }}>
-{% else %}
-<section class="logo">
-{% endif %}
-  {% block content %}
-    {% if site_logo %}
-      <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home" class="logo__site-logo">
-        <img src="{{ site_logo }}" alt="{{ 'Home'|t }}" />
-      </a>
-    {% endif %}
-    {% if site_name %}
-      <div class="logo__site-name">
-        <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home">{{ site_name }}</a>
-      </div>
-    {% endif %}
-    {% if site_slogan %}
-      <div class="logo__site-slogan">{{ site_slogan }}</div>
-    {% endif %}
-  {% endblock %}
-</section>
+<a href="{{ url }}" class="logo">
+  <img class="logo__image" src="/assets/src/logo.png" alt="{{ title }}"/>
+</a>

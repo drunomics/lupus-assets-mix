@@ -1,0 +1,36 @@
+.spacing {
+  float: left;
+  display: inline-block;
+  box-sizing: border-box;
+  padding-left: $spacing--half;
+  padding-right: $spacing--half;
+  margin-bottom: $spacing--base;
+
+  &__container {
+    @include clearfix();
+  }
+
+  &__title {
+    padding-right: 0.5em;
+  }
+
+  &__example {
+    height: 3em;
+    background-color: $c--primary;
+  }
+
+  @each $name, $distance in $spacing-map {
+    &__#{$name}-example {
+      position: relative;
+      width: $distance;
+
+      &:after {
+        @include position(absolute, spacing() null null calc(100% + 0.5em));
+        content: quote(inspect($distance));
+
+        font-size: 1rem;
+        font-style: italic;
+      }
+    }
+  }
+}

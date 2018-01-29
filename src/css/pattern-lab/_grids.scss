@@ -86,7 +86,7 @@
     }
 
     @include breakpoint($bp--desktop) {
-      @for $i from 1 through 12 {
+      @for $i from 1 through 16 {
         .grid-demo-1-#{$i} {
           @include grid-span($i, 1);
           clear: both;

@@ -1,20 +1,4 @@
-{#
-  Component for buttons.
-
-  Component variables:
-   - button_url
-   - button_text
-   - variant: (optional) Name of the component variant to use.
-   - classes: (optional) Array of additional classes to set on the component.
-   - attributes: (optional) Attributes to set for the component.
-#}
-
-{# Handle component classes and attribtues #}
-{% set classes = classes|default([])|
-    merge(['button' ~ (variant ? ' button--' ~ variant)]) %}
-{% set attributes = attributes|default(create_attribute()).
-    addClass(classes).
-    setAttribute('href', button_url|default('#'))
-%}
-
-<a{{ attributes }}>{{ button_text }}</a>
+{% set button_classes = ['button'] | merge( button_classes|default([]) ) %}
+<a href="{{ button_url }}" class="{{ button_classes|join(' ') }}">{{ button_text }}</a>
+<br/>
+<input type="submit" class="{{ button_classes|join(' ') }}" value="{{ button_text }}"/>

@@ -1,0 +1,25 @@
+{#
+/**
+ * @file
+ * Link button.
+ *
+ * Variables:
+ * - url.
+ * - blank (boolean): whether to open link in a new tab.
+ * - variant: available values: 'more', leave empty for the default value.
+ * - size: available values: big, small, xsmall.
+ * - position: available values: left, right.
+ */
+#}
+{% set classes = [
+  'link-button',
+  variant ? 'link-button--' ~ variant,
+  size ? 'link-button--size-' ~ size,
+  position ? 'link-button--position-' ~ position,
+  not file and (not url or unactive)  ? 'link-button--unactive',
+] %}
+{% if url %}
+  <a href="{{ url }}" class="{{ classes|join(' ')|trim }}"{% if blank %} target="_blank"{% endif %}>{{ text }}</a>
+{% else %}
+  <span class="{{ classes|join(' ')|trim }}">{{ text }}</span>
+{% endif %}

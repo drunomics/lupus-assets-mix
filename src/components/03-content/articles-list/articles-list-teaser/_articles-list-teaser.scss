@@ -1,0 +1,10 @@
+.article-list-teaser {
+  &__title {
+    @extend %font-headline;
+  }
+
+  .article-teaser {
+    @include clearfix();
+    margin-bottom: $spacing--big;
+  }
+}

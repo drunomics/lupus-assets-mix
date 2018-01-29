@@ -1,10 +1,6 @@
-// Pattern-lab specific styles - see folder ./pattern-lab.
-
-@import "libs";
+@import "defaults";
+@import "libraries";
 @import "mixins/*.scss";
-
-// Pattern-lab styling relies on pattern-lab base config and mixins.
-@import "../components/**/*.config.scss";
-@import "../components/**/*.mixins.scss";
-
+@import "../components/**/*.scss";
+// Include pattern-lab specific styles - see folder ./pattern-lab.
 @import "pattern-lab/**/*.scss";

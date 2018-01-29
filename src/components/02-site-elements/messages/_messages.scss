@@ -6,14 +6,13 @@ $messages-types: (
   status  : #468847,
 ) !default;
 
-%messages {
-  //@extend %outer-container;
-
+.messages {
   padding: $spacing--medium;
   @include margin-top-bottom;
   border-radius: $spacing--half;
   border: 1px solid;
   overflow: hidden;
+  margin: $spacing--base 0 $spacing--block;
 
   ul, li {
     list-style-type: none;
@@ -30,6 +29,8 @@ $messages-types: (
 // Loop doing all the dumping.
 @each $type, $color in $messages-types {
   .messages--#{$type} {
-    @include messages($color);
+    color: $color;
+    background: lighten($color, 38%);
+    border-color: lighten($color, 20%);
   }
 }

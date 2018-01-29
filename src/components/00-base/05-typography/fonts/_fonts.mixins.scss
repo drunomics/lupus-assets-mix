@@ -1,0 +1,112 @@
+/// Gets font property value.
+/// {$font-name} Font name.
+/// {$property} Font property.
+/// @see $fonts
+@function get-font-property-value($font-name, $property) {
+  @if map-has-key($fonts, $font-name) {
+    $font-map: map-get($fonts, $font-name);
+    @if map-has-key($font-map, $property) {
+      @return map-get($font-map, $property);
+    }
+  }
+  @return null;
+}
+
+/// Applies font property value.
+/// {$font-name} Font name.
+/// {$property} Font property.
+/// @see $fonts
+@mixin apply-font-property($font-name, $property) {
+  $val: get-font-property-value($font-name, $property);
+  @if ($val != null) {
+    #{$property}: $val;
+  }
+}
+
+// Hides text. Useful for image-buttons.
+%hide-text {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+// Normal font size: ~16x.
+%font-size-normal {
+  @include apply-font-property('base', 'font-size');
+  @include apply-font-property('base', 'line-height');
+  letter-spacing: $ls--base;
+}
+
+%font-normal--base {
+  @extend %font-size-normal;
+  font-family: $ff--base;
+  font-weight: $fw--base;
+  font-style: normal;
+}
+
+%font-normal--base-italic {
+  @extend %font-normal--base;
+  font-style: italic;
+}
+
+%font-bold--base {
+  font-family: $ff--base-bold;
+  font-weight: $fw--base-bold;
+  font-style: normal;
+}
+
+%font-bold--base-italic {
+  @extend %font-bold--base;
+  font-style: italic;
+}
+
+%font-base--mono {
+  @extend %font-size-normal;
+  font-family: $ff--mono;
+  font-weight: $fw--base;
+}
+
+%font-size-xxsmall {
+  @include apply-font-property('xxsmall', 'font-size');
+  @include apply-font-property('xxsmall', 'line-height');
+}
+
+%font-size-xsmall {
+  @include apply-font-property('xsmall', 'font-size');
+  @include apply-font-property('xsmall', 'line-height');
+}
+
+%font-size-small {
+  @include apply-font-property('small', 'font-size');
+  @include apply-font-property('small', 'line-height');
+}
+
+%font-size-base {
+  @include apply-font-property('base', 'font-size');
+  @include apply-font-property('base', 'line-height');
+}
+
+%font-size-large {
+  @include apply-font-property('large', 'font-size');
+  @include apply-font-property('large', 'line-height');
+}
+
+%font-size-larger {
+  @include apply-font-property('larger', 'font-size');
+  @include apply-font-property('larger', 'line-height');
+}
+
+%font-size-xlarge {
+  @include apply-font-property('xlarge', 'font-size');
+  @include apply-font-property('xlarge', 'line-height');
+}
+
+%font-size-xxlarge {
+  @include apply-font-property('xxlarge', 'font-size');
+  @include apply-font-property('xxlarge', 'line-height');
+}
+
+%font-headline {
+  @extend %font-size-xxlarge;
+  font-weight: normal;
+}

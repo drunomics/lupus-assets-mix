@@ -1,0 +1,75 @@
+table {
+  margin-bottom: $spacing--medium;
+  min-width: $bp--tablet;
+  table-layout: fixed;
+
+  .content-two-column & {
+    min-width: 0;
+  }
+
+  @include breakpoint(0 $bp--tablet) {
+    width: 100% !important;
+  }
+
+  th {
+    padding: 5px 7px;
+    @include apply-table-color('allianz', 'th-background', 'background');
+    @include apply-table-color('allianz', 'th-color', 'color');
+  }
+
+  td {
+    padding: 5px 7px;
+  }
+
+  tr {
+    background: get-table-color('allianz', 'tr-background');
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+  }
+}
+
+table, th, td {
+  border: 1px solid $c--white;
+}
+
+table.table {
+  @each $variant, $values in $table-colors {
+
+    &--#{$variant} {
+      &, &-zebra {
+        &, th, td {
+          @include apply-table-color($variant, 'border-color', 'border-color');
+        }
+
+        th {
+          @include apply-table-color($variant, 'th-background', 'background');
+          @include apply-table-color($variant, 'th-color', 'color');
+        }
+
+        tr {
+          @include apply-table-color($variant, 'tr-background', 'background');
+        }
+      }
+
+      &-zebra {
+        tr:nth-child(odd) {
+          @include apply-table-color($variant, 'tr-odd-background', 'background');
+        }
+      }
+    }
+  }
+}
+
+// Make white table borders visible in the CKEditor.
+.cke_editable {
+  table.table {
+    &--white,
+    &--white-zebra  {
+      &, th, td {
+        border: 1px dashed $c--grey__light;
+      }
+    }
+  }
+}

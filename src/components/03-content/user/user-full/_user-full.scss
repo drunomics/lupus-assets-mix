@@ -1,0 +1,23 @@
+.user-full {
+  &__image {
+    float: left;
+    margin-right: $spacing--block;
+    margin-bottom: $spacing--block;
+  }
+
+  // User Name (first and last)
+  .field--name-field-profile-firstname,
+  .field--name-field-profile-surename{
+    display: inline-block;
+    @extend %font-size-xlarge;
+  }
+  .field--name-user-picture {
+    margin: 0px $spacing--double $spacing--base 0px;
+  }
+  // Google map field
+  .field--name-field-location-address {
+    iframe {
+      width: 100%;
+    }
+  }
+}

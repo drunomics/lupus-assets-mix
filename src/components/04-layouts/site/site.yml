@@ -1,0 +1,3 @@
+header: '<div class="pl-region-with-borders-dark">header</div>'
+content: '<div class="pl-region-with-borders-dark">content</div>'
+footer: '<div class="pl-region-with-borders-dark">footer</div>'

@@ -1,0 +1,43 @@
+.breadcrumb {
+  @extend %font-size-small;
+  @include apply-font-property('base', 'line-height');
+  color: $c--grey__lighter;
+  margin: rem(28) 0;
+  text-transform: uppercase;
+
+  &__list {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__list-item {
+    display: inline;
+    list-style-type: none;
+    margin: 0;
+    padding-left: $spacing--small;
+
+    &:after {
+      content: ' › ';
+      padding-left: $spacing--small;
+    }
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child:after {
+      content: '';
+      padding-left: 0;
+    }
+  }
+
+  &__link {
+    color: $c--grey__light;
+    text-decoration: none;
+  }
+}
+
+// This is required to win over specificity of [dir="rtl"] ol.
+[dir="rtl"] .breadcrumb .breadcrumb__list-item {
+  margin-right: 0;
+}

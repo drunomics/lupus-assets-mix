@@ -1,0 +1,21 @@
+{#
+/**
+ * @file
+ * Event teaser template.
+ *
+ * Available variables:
+ * - title
+ * - image
+ * - content
+ * - url
+ * - more_text
+ */
+#}
+<article class="article-teaser">
+  <a class="article-teaser__image-link" href="{{ url }}">
+    <div class="article-teaser__image">{{ image }}</div>
+  </a>
+  <h4 class="article-teaser__title">{{ title }}</h4>
+  <div class="article-teaser__content">{{ content }}</div>
+  <a class="article-teaser__more" href="{{ url }}">{{ more_text }}</a>
+</article>

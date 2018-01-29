@@ -1,0 +1,50 @@
+$branding__max-width: rem(360);
+
+.branding {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: $c--white;
+  padding: $spacing--base $spacing--block;
+  z-index: 1;
+  border-bottom: 5px solid $c--primary;
+
+  body.toolbar-fixed & {
+    top: $spacing--toolbar;
+  }
+
+  &__toggle-sidebar {
+    display: inline-block;
+    vertical-align: middle;
+
+    &:before {
+      font-size: 30px;
+      padding-right: $spacing--base;
+
+      @include breakpoint($bp--tablet) {
+        font-size: 40px;
+      }
+    }
+  }
+
+  @include breakpoint(0 $bp--tablet) {
+    .logo img {
+      max-width: rem(200);
+    }
+  }
+
+  @include breakpoint($bp--desktop) {
+    border-bottom: 0 none;
+    position: static;
+    max-width: $branding__max-width;
+
+    &__toggle-sidebar {
+      display: none;
+    }
+
+    .logo img {
+      width: 100%;
+    }
+  }
+}

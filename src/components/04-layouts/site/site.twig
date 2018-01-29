@@ -1,0 +1,31 @@
+{#
+/**
+ * @file
+ * Default site page template.
+ *
+ * Available variables:
+ * - header: Items for the header region.
+ * - content: The main content of the current page.
+ * - footer: Items for the footer region.
+ */
+#}
+
+<div id="site">
+
+  {# Header #}
+  <header class="site__header">
+    {% block header header %}
+  </header>
+
+  {# Main content #}
+  <main class="site__content" role="main">
+    <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+    {% block content content %}
+  </main>
+
+  {# Footer #}
+  <footer class="site__footer">
+    {% block footer footer %}
+  </footer>
+
+</div>

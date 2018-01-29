@@ -6,6 +6,6 @@
 #}
 {{ title_prefix }}
 {% if title %}
-  <h1 class="page-title">{{ title }}</h1>
+  <h1 class="page-title">{% spaceless %}{{ title }}{% endspaceless %}</h1>
 {% endif %}
 {{ title_suffix }}

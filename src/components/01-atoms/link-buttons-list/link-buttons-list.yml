@@ -1,0 +1,13 @@
+title: The title
+link_buttons:
+  -
+    text: Mehr lesen
+    url: '#'
+  -
+    text: Plain text
+  -
+    text: Link again
+    url: '#'
+  -
+    text: Read more
+    url: '#'

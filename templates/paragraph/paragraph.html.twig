@@ -1,0 +1,18 @@
+{#
+/**
+ * @file
+ * Paragraph.
+ *
+ * Available variables:
+ * - content
+ */
+#}
+{% embed '@content/paragraph/paragraph.twig' with {
+  headline: content.field_headline,
+} %}
+
+  {% block content %}
+    {{ content|without('field_headline') }}
+  {% endblock %}
+
+{% endembed %}

@@ -1,0 +1,154 @@
+users:
+  -
+    name: 'Drush Drupalstar'
+    url: '#'
+    image: '<img src="/assets/src/avatar_image.png" alt="uUer"/>'
+    links:
+     -
+       drupal: '#'
+     -
+       facebook: '#'
+    roles:
+     - 'Coder'
+     - 'Themer'
+     - 'Site builder'
+    membership:
+     - 14
+     - 15
+     - 16
+     - 17
+    organisation:
+      name: 'Blabla solutions GmbH'
+      url: '#'
+
+  -
+    name: 'Drush Drupalstar'
+    url: '#'
+    image: '<img src="/assets/src/avatar_image.png" alt="uUer"/>'
+    links:
+     -
+       drupal: '#'
+     -
+       facebook: '#'
+    roles:
+     - 'Coder'
+     - 'Themer'
+     - 'Site builder'
+    membership:
+     - 14
+     - 15
+     - 16
+     - 17
+    organisation:
+      name: 'Blabla solutions GmbH'
+      url: '#'
+
+  -
+    name: 'Drush Drupalstar'
+    url: '#'
+    image: '<img src="/assets/src/avatar_image.png" alt="uUer"/>'
+    links:
+     -
+       drupal: '#'
+     -
+       facebook: '#'
+    roles:
+     - 'Coder'
+     - 'Themer'
+     - 'Site builder'
+    membership:
+     - 14
+     - 15
+     - 16
+     - 17
+    organisation:
+      name: 'Blabla solutions GmbH'
+      url: '#'
+
+  -
+    name: 'Drush Drupalstar'
+    url: '#'
+    image: '<img src="/assets/src/avatar_image.png" alt="uUer"/>'
+    links:
+     -
+       drupal: '#'
+     -
+       facebook: '#'
+    roles:
+     - 'Coder'
+     - 'Themer'
+     - 'Site builder'
+    membership:
+     - 14
+     - 15
+     - 16
+     - 17
+    organisation:
+      name: 'Blabla solutions GmbH'
+      url: '#'
+
+  -
+    name: 'Drush Drupalstar'
+    url: '#'
+    image: '<img src="/assets/src/avatar_image.png" alt="uUer"/>'
+    links:
+     -
+       drupal: '#'
+     -
+       facebook: '#'
+    roles:
+     - 'Coder'
+     - 'Themer'
+     - 'Site builder'
+    membership:
+     - 14
+     - 15
+     - 16
+     - 17
+    organisation:
+      name: 'Blabla solutions GmbH'
+      url: '#'
+
+  -
+    name: 'Drush Drupalstar'
+    url: '#'
+    image: '<img src="/assets/src/avatar_image.png" alt="uUer"/>'
+    links:
+     -
+       drupal: '#'
+     -
+       facebook: '#'
+    roles:
+     - 'Coder'
+     - 'Themer'
+     - 'Site builder'
+    membership:
+     - 14
+     - 15
+     - 16
+     - 17
+    organisation:
+      name: 'Blabla solutions GmbH'
+      url: '#'
+
+  -
+    name: 'Drush Drupalstar'
+    url: '#'
+    image: '<img src="/assets/src/avatar_image.png" alt="uUer"/>'
+    links:
+     -
+       drupal: '#'
+     -
+       facebook: '#'
+    roles:
+     - 'Coder'
+     - 'Themer'
+     - 'Site builder'
+    membership:
+     - 14
+     - 15
+     - 16
+     - 17
+    organisation:
+      name: 'Blabla solutions GmbH'
+      url: '#'
