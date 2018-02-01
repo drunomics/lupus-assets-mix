@@ -1,115 +1,54 @@
-const { mix } = require('laravel-mix');
-const browser_support = ['last 2 versions', 'IE >= 10', 'Safari >= 8'];
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
-const child_process = require('child_process');
+let mix = require('laravel-mix');
 
-var project = 'NAME';
-
-/**
- * Assets are handled with laravel mix. See https://laravel.com/docs/5.4/mix.
+/*
+ |--------------------------------------------------------------------------
+ | Mix Asset Management
+ |--------------------------------------------------------------------------
+ |
+ | Mix provides a clean, fluent API for defining some Webpack build steps
+ | for your Laravel application. By default, we are compiling the Sass
+ | file for your application, as well as bundling up your JS files.
+ |
  */
 
-mix.js('src/js/main.js', '.')
-  .sass('src/css/main.scss', '.')
-  .sass('src/css/pattern-lab.scss', '.')
-  .setPublicPath('assets')
-  .setResourceRoot('/assets/');
-// @todo Find a way to properly enable source maps. Scripts with source maps
-//   are excluded in Drupal when aggregation is enabled.
-//   @see \Drupal\Core\Asset\JsOptimizer::clean()
-//.sourceMaps();
+mix.js('src/app.js', 'dist/')
+   .sass('src/app.scss', 'dist/');
 
-mix.options({
-  extractVueStyles: false,
-  processCssUrls: true,
-  uglify: {},
-  purifyCss: false,
-  postCss: [require('autoprefixer')( { browsers: browser_support})],
-  clearConsole: false
-});
+mix.js('src/app.js', 'dist')
+   .sass('src/app.scss', 'dist')
+   .setPublicPath('dist');
 
-var webpack_extra_config = {
-  module: {
-    rules: [
-      // Add support for sass import globbing.
-      {
-        test: /\.scss/,
-        enforce: "pre",
-        loader: "import-glob-loader"
-      },
-      // Add support for icon fonts.
-      {
-        test: /\.font\.js/,
-        exclude: ['node_modules', 'bower_components'],
-        loader: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            'css-loader?importLoaders=1',
-            'webfonts-loader'
-          ]
-        })
-      }
-    ]
-  },
-  plugins: []
-};
-
-/**
- * Builds pattern-lab.
- */
-function buildPatternLab() {
-  var result = child_process.spawnSync('php ' + __dirname + '/pattern-lab/core/console --generate --patterns-only', [], {
-    shell: true,
-    stdio: 'inherit'
-  });
-  if (result.status !== 0) {
-    var red = '\x1b[31m';
-    var bold = '\033[1m';
-    var reset = '\x1b[0m';
-    var resetBold = '\x1b[21m';
-    console.log(red + bold + '%s ' + resetBold + '%s' + reset, '[ERROR]', 'Pattern-lab build failed.', "\n\n");
-  }
-}
-
-/**
- * Configure browser sync depending on the passed SERVE environment variable.
- */
-var browser_sync_options = {
-  open: 'external',
-  host: 'localhost',
-  port: 8123,
-  files: [{
-    match: [
-      'src/components/**/*.md',
-      'src/components/**/*.twig',
-      'src/components/**/*.yml',
-      'src/components/**/*.json',
-      'src/components/**/*.(png|jpe?g|svg)'
-    ],
-    fn: function(event, file) {
-      const browserSync = require("browser-sync").get('bs-webpack-plugin');
-      if (event === 'change') {
-        buildPatternLab();
-        browserSync.reload();
-      }
-    }
-  }]
-};
-
-if (process.env.SERVE === 'patternlab') {
-  browser_sync_options.server = {
-    baseDir: ['']
-  };
-  browser_sync_options.startPath = '/pattern-lab/public/';
-  webpack_extra_config.plugins.push(new BrowserSyncPlugin(browser_sync_options));
-
-  // Build pattern-lab once so it's recent from the beginning.
-  buildPatternLab();
-}
-else if (process.env.SERVE === 'app') {
-  browser_sync_options.proxy = project + '.local';
-  webpack_extra_config.plugins.push(new BrowserSyncPlugin(browser_sync_options));
-}
-
-mix.webpackConfig(webpack_extra_config);
+// Full API
+// mix.js(src, output);
+// mix.react(src, output); <-- Identical to mix.js(), but registers React Babel compilation.
+// mix.ts(src, output); <-- Requires tsconfig.json to exist in the same folder as webpack.mix.js
+// mix.extract(vendorLibs);
+// mix.sass(src, output);
+// mix.standaloneSass('src', output); <-- Faster, but isolated from Webpack.
+// mix.fastSass('src', output); <-- Alias for mix.standaloneSass().
+// mix.less(src, output);
+// mix.stylus(src, output);
+// mix.postCss(src, output, [require('postcss-some-plugin')()]);
+// mix.browserSync('my-site.dev');
+// mix.combine(files, destination);
+// mix.babel(files, destination); <-- Identical to mix.combine(), but also includes Babel compilation.
+// mix.copy(from, to);
+// mix.copyDirectory(fromDir, toDir);
+// mix.minify(file);
+// mix.sourceMaps(); // Enable sourcemaps
+// mix.version(); // Enable versioning.
+// mix.disableNotifications();
+// mix.setPublicPath('path/to/public');
+// mix.setResourceRoot('prefix/for/resource/locators');
+// mix.autoload({}); <-- Will be passed to Webpack's ProvidePlugin.
+// mix.webpackConfig({}); <-- Override webpack.config.js, without editing the file directly.
+// mix.babelConfig({}); <-- Merge extra Babel configuration (plugins, etc.) with Mix's default.
+// mix.then(function () {}) <-- Will be triggered each time Webpack finishes building.
+// mix.options({
+//   extractVueStyles: false, // Extract .vue component styling to file, rather than inline.
+//   globalVueStyles: file, // Variables file to be imported in every component.
+//   processCssUrls: true, // Process/optimize relative stylesheet url()'s. Set to false, if you don't want them touched.
+//   purifyCss: false, // Remove unused CSS selectors.
+//   uglify: {}, // Uglify-specific options. https://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin
+//   postCss: [] // Post-CSS options: https://github.com/postcss/postcss/blob/master/docs/plugins.md
+// });

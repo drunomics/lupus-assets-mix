@@ -1,25 +1,25 @@
 {
-  "private": true,
+  "name": "lupus-assets-mix",
+  "version": "1.0.0",
+  "description": "(c) drunomics GmbH, hello@drunomics.com",
   "scripts": {
-    "build": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "build:pl": "php pattern-lab/core/console --generate",
-    "dev": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "dev:app": "cross-env NODE_ENV=development SERVE=app node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "dev:pl": "cross-env NODE_ENV=development SERVE=patternlab node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "dev-poll": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --watch-poll --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+    "dev": "NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "hot": "NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "production": "NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drunomics/lupus-assets-mix.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/drunomics/lupus-assets-mix/issues"
+  },
+  "homepage": "https://github.com/drunomics/lupus-assets-mix#readme",
   "devDependencies": {
-    "bourbon": "^4.3.4",
-    "breakpoint-sass": "^2.7.1",
-    "cross-env": "^3.2.3",
-    "import-glob-loader": "^1.1.0",
-    "jquery": "^2.2.4",
-    "laravel-mix": "^0.8.3",
-    "normalize.scss": "^0.1.0",
-    "singularitygs": "^1.8.0",
-    "vue": "^2.1.10",
-    "webfonts-loader": "^1.0.2"
+    "laravel-mix": "^2.0.0"
   }
 }
