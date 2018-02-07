@@ -35,7 +35,7 @@ mix
 
 /**
  * Customize webpack config.
-
+ */
 const webpackExtraConfig = {
   module: {
     rules: [
@@ -50,4 +50,3 @@ const webpackExtraConfig = {
   plugins: [],
 };
 mix.webpackConfig(webpackExtraConfig);
- */
