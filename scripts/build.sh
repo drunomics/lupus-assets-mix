@@ -1,7 +1,7 @@
 #!/bin/bash
 
 cd `dirname $0`/..
-NODE_MAJOR_VERSION=6
+NODE_MAJOR_VERSION=8
 # The npm script to run.
 SCRIPT=${SCRIPT:-build}
 
@@ -32,6 +32,6 @@ if [ ! $? -eq 0 ]; then
 fi
 
 # Finally start with the real work.
-composer install -d pattern-lab --no-interaction
+composer install -d styleguide --no-interaction
 npm install
 npm run $SCRIPT

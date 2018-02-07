@@ -1,0 +1,29 @@
+{
+  "name": "drunomics/styleguide",
+  "description": "A simple styleguide.",
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "Martin Wittmann",
+      "email": "me@martinwittmann.at",
+      "homepage": "https://martinwittmann.at",
+      "role": "Developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "drunomics\\Styleguide\\" : "src",
+      "Drupal\\": "../../../../core/lib/Drupal"
+    }
+  },
+  "require": {
+    "php": ">5.4",
+    "silex/silex": "~1.2",
+    "twig/twig": "~1.18",
+    "symfony/yaml": "3.*",
+    "symfony/twig-bridge": "~2.6",
+    "symfony/finder": "~2.6"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}

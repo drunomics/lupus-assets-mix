@@ -1,0 +1,14 @@
+component_paths:
+  atoms: ../src/components/01-atoms
+  site-elements: ../src/components/02-site-elements
+  layouts: ../src/components/03-layouts
+  site-regions: ../src/components/04-site-regions
+  content: ../src/components/05-content
+  pages: ../src/components/06-pages
+twig.options:
+  strict_variables: false
+  autoescape: false
+  debug: true
+asset_paths:
+  css_dir: assets
+  main_js: assets/main.js

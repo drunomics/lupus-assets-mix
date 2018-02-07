@@ -1,0 +1,5 @@
+<select class="{{ className }}" onchange="window.location.href=this[this.selectedIndex].value">
+  {% for option in options %}
+    <option value="{{ app.request.basepath }}{{ option.value }}"{% if option.id == selected %} selected='selected'{% endif %}>{{ option.label }}</option>
+  {% endfor %}
+</select>

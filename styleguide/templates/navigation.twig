@@ -1,0 +1,32 @@
+{% set current_url %}{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')) }}{% endset %}
+<ul class='styleguide__nav'>
+  <li class="styleguide__nav-item styleguide__nav-item--dropdown">
+    {% include 'select.twig' with {
+      options: styleguide.variants,
+      className: 'styleguide__nav-variants',
+      selected: styleguide.active_variant,
+    } %}
+  </li>
+  {% for page in styleguide.pages %}
+    <li class="styleguide__nav-item">
+      {% if page.pages %}
+        <a class="styleguide__nav-link" href="#">{{ page.title }}</a>
+        <ul class="styleguide__subnav">
+        {% for page in page.pages %}
+          <li class="styleguide__nav-item">
+            <a class="styleguide__nav-link" href="{{ app.request.basepath }}{{ page.url }}">{{ page.title }}</a>
+          </li>
+        {% endfor %}
+        </ul>
+      {% else %}
+        <a class="styleguide__nav-link{% if page.url == current_url %} active{% endif %}" href="{{ app.request.basepath }}{{ page.url }}">{{ page.title }}</a>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>
+<a class='styleguide__nav-toggle' title="Toggle Styleguide Navigation" onclick="jQuery('body').toggleClass('styleguide--hidden');">
+  <span class="styleguide__nav-toggle-icon">
+    <svg width="1792" height="1792" viewBox="0 0 1792 1792"><path d="M1408 1216q0 26-19 45t-45 19h-896q-26 0-45-19t-19-45 19-45l448-448q19-19 45-19t45 19l448 448q19 19 19 45z"/></svg>
+  </span>
+</a>
+

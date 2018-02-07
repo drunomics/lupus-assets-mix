@@ -1,0 +1,160 @@
+.styleguide {
+  padding: 0;
+  margin: 0;
+  transition: all 0.3s ease 0s;
+}
+
+.styleguide__nav {
+  list-style: none;
+  background: #f3f3f3;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  border-bottom: 1px solid #ddd;
+  padding: 0 .25em;
+  transition: all 0.3s ease 0s;
+  z-index: 9999;
+ }
+
+.styleguide__nav::after {
+   display: block;
+   clear: both;
+   content: "";
+ }
+
+.styleguide--hidden .styleguide__nav {
+  display: none;
+}
+
+.styleguide__nav-item {
+  position: relative;
+  width: 50%;
+  display: block;
+  float: left;
+}
+
+.styleguide__nav-item--dropdown {
+  width: 100%;
+}
+
+@media all and (min-width: 750px) {
+
+  .styleguide__nav-item {
+    padding: .25em 0;
+    display: inline-block;
+    float: none;
+    width: auto;
+  }
+}
+
+.styleguide__nav-item:hover {
+}
+
+.styleguide__nav-item:hover .styleguide__subnav {
+  display: block;
+}
+
+.styleguide__nav-link {
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+  padding: .5em 1em;
+  transition: all 0.3s ease 0s;
+  display: block;
+  border: 1px solid transparent;
+  line-height: 1em;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.styleguide__nav-link:hover,
+.styleguide__nav-link:active,
+.styleguide__nav-link:focus {
+  color: #333;
+}
+
+.styleguide__nav-link:hover,
+.styleguide__nav-link.active {
+  text-decoration: underline;
+}
+
+.styleguide__subnav {
+  display: none;
+  position: absolute;
+  z-index: 9999;
+  background: #f3f3f3;
+  top: 100%;
+  margin: 0;
+  padding: 0 0;
+  border: 1px solid #ddd;
+  border-top-style: none;
+  width: 200px;
+  box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 0 0 3px 3px;
+  left: -1px;
+}
+
+.styleguide__subnav .styleguide__nav-item {
+  list-style: none;
+  width: 100%;
+}
+
+.styleguide__subnav .styleguide__nav-item:hover {
+  background: #fff;
+}
+
+.styleguide__nav-toggle {
+  border: 1px solid #ddd;
+  width: 2em;
+  height: 2em;
+  position: fixed;
+  right: .6em;
+  bottom: .6em;
+  background: #fff;
+  text-align: center;
+  cursor: pointer;
+  z-index: 9999;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.styleguide--hidden .styleguide__nav-toggle {
+  position: fixed;
+  transform: rotate(180deg);
+  box-shadow: -2px -2px 2px rgba(0, 0, 0, 0.2);
+}
+
+
+.styleguide__nav-toggle-icon {
+  width: 2em;
+  display: inline-block;
+  max-width: 100%;
+  line-height: 1em;
+  vertical-align: text-top;
+  margin-top: -.2em;
+}
+
+.styleguide__nav-toggle-icon svg {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+  max-height: 100%;
+}
+
+.styleguide__nav-toggle-icon svg path {
+  fill: currentColor;
+  stroke: none;
+  stroke-width: 0;
+}
+
+.styleguide__content {
+  max-width: 1000px;
+  margin: 2em auto;
+}
+
+.styleguide__section {
+  margin-top: 4em;
+  margin-bottom: 4em;
+}
+
+.styleguide__list {
+  padding-left: 1em;
+}

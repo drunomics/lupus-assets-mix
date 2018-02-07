@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+  <head>
+    <title>{{ styleguide.page_title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% if styleguide.show_styleguide_nav %}
+      <link rel="stylesheet" href="{{ app.request.basepath }}{{ styleguide.styleguide_css }}" type="text/css">
+    {% endif %}
+    {% for font_css_url in styleguide.fonts_css %}
+      <link rel="stylesheet" href="{{ app.request.basepath }}{{ font_css_url }}" type="text/css">
+    {% endfor %}
+    <script src="{{ app.request.basepath }}{{ styleguide.js_path }}"></script>
+  </head>
+  <body class='styleguide'>
+    {% if styleguide.show_styleguide_nav %}
+      {% include 'navigation.twig' %}
+    {% endif %}
+    This page was not found. Http 404.
+  </body>
+</html>

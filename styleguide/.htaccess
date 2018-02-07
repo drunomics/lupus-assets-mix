@@ -1,0 +1,11 @@
+# When the styleguide is served via the main (apache) webserver, add in the
+# fallback so that sylex can handle URLs.
+<IfModule mod_rewrite.c>
+    Options -MultiViews
+
+    RewriteEngine On
+    RewriteBase /themes/custom/{{ project_name }}_theme/styleguide
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [QSA,L]
+</IfModule>
