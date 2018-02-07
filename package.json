@@ -20,11 +20,11 @@
   },
   "homepage": "https://github.com/drunomics/lupus-assets-mix#readme",
   "devDependencies": {
-    "import-glob-loader": "^1.1.0",
     "laravel-mix": "^2.0.0"
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
+    "import-glob-loader": "^1.1.0",
     "vue": "^2.5.13"
   }
 }

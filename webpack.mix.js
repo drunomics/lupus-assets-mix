@@ -45,6 +45,11 @@ const webpackExtraConfig = {
         enforce: "pre",
         loader: "import-glob-loader",
       },
+      {
+        test: /\.js/,
+        enforce: "pre",
+        loader: "import-glob-loader",
+      },
     ],
   },
   plugins: [],
