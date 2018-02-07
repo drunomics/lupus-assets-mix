@@ -24,6 +24,7 @@
     "laravel-mix": "^2.0.0"
   },
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "vue": "^2.5.13"
   }
 }
