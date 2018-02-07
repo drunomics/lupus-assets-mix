@@ -18,9 +18,6 @@ regions:
 # For compatibility with Pattern Lab templates; this list must always be the
 # folders immediately under src/components.
 component-libraries:
-  base:
-    paths:
-      - src/components/00-base
   atoms:
     paths:
       - src/components/01-atoms

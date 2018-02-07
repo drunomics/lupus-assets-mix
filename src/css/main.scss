@@ -1,4 +1,6 @@
-@import "defaults";
-@import "libs";
-@import "mixins/*.scss";
-@import "../components/**/*.scss";
+// @import "mixins/*.scss";
+// @import "../components/**/*.scss";
+
+body {
+  color: black;
+}

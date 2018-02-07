@@ -1,6 +1,0 @@
-/// Applies font awesome icon by name
-/// @param {$icon} icon name from http://fontawesome.io/icon.
-@mixin fa-icon-apply($icon) {
-  @extend .fa;
-  @extend .fa-#{$icon};
-}

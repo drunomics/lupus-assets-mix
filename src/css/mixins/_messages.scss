@@ -1,8 +1,0 @@
-// Mixin for dynamic values.
-// Extending messages.
-@mixin messages($color) {
-  @extend %messages;
-  color: $color;
-  background: lighten($color, 38%);
-  border-color: lighten($color, 20%);
-}
