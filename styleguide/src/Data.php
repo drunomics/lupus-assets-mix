@@ -19,7 +19,7 @@ class Data {
       'pages_dir' => Util::trailingSlash($this->config->get('component_paths')['pages'], TRUE),
       'styleguide_css' => '/css/styleguide.css',
       'variant_css' => $this->getVariantCssUrl(),
-      'js_path' => '/' . $this->config->get('assets_path')['main_js'],
+      'js_path' => '/' . $this->config->get('asset_paths')['main_js'],
       'page_title' => Util::getTitle($this->application['active_page']),
       'show_styleguide_nav' => isset($_GET['raw']) ? false : true,
     ];

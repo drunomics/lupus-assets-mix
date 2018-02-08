@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="{% if styleguide.page_title|lower != 'icons' %}iconset--{{ icon_set }}{% endif %}" lang="de">
+<html lang="de">
   <head>
     <title>{{ styleguide.page_title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,16 +11,15 @@
       <link rel="stylesheet" href="{{ app.request.basepath }}{{ font_css_url }}" type="text/css">
     {% endfor %}
     <style>{{ styleguide.design_settings_css }}</style>
-    <script src="{{ app.request.basepath }}{{ styleguide.js_path }}"></script>
   </head>
   <body class='styleguide'>
     {% if styleguide.show_styleguide_nav %}
       {% include 'navigation.twig' %}
     {% endif %}
-    {% if styleguide.active_page is not empty %}
-      {% include '@pages/' ~ styleguide.active_page ~ '.twig' %}
-    {% else %}
-      {% include 'index.twig' %}
-    {% endif %}
+
+    {% include '@pages/' ~ styleguide.active_page ~ '.twig' %}
+
+    <script src="{{ app.request.basepath }}{{ styleguide.js_path }}"></script>
+
   </body>
 </html>

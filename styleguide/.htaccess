@@ -4,7 +4,7 @@
     Options -MultiViews
 
     RewriteEngine On
-    RewriteBase /themes/custom/{{ project_name }}_theme/styleguide
+    RewriteBase /lupus-assets-mix/styleguide/
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [QSA,L]

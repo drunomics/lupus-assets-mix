@@ -12,3 +12,6 @@ twig.options:
 asset_paths:
   css_dir: assets
   main_js: assets/main.js
+defaults:
+  variant: main
+  page: base

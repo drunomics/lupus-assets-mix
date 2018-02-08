@@ -32,23 +32,14 @@ class Controller {
 
   public function handleRequest($variant = '', $page = '', $subpage = '') {
     if (!$variant) {
-      $variant = $this->config->get('default-variant');
+      $variant = $this->config->get('defaults')['variant'];
     }
 
     if (!$page) {
-      $page = $this->config->get('default-page');
+      $page = $this->config->get('defaults')['page'];
     }
 
     $this->application['active_variant'] = $variant;
-    if ($this->application->isDev) {
-      $defaultPort = $this->config->get('default-dev-port');
-      $currentPort = intval($_SERVER['SERVER_PORT']);
-      $currentPortOffset = $currentPort - $defaultPort;
-      $variants = $this->application->navigation->getVariants();
-      if (in_array($variant, $variants)) {
-        $this->application['active_variant'] = $variants[$currentPortOffset];
-      }
-    }
     $this->application['active_page'] = $page;
     if (!empty($subpage)) {
       $this->application['active_page'] .= '/' . $subpage;
@@ -56,7 +47,7 @@ class Controller {
     $this->application->data->addData(!empty($subpage) ? $subpage : $page);
 
     if ($this->application->isValidVariantAndPage()) {
-      return $this->view->render('styleguide');
+      return $this->view->render('html');
     }
     else {
       return $this->view->render('404');
