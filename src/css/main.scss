@@ -1,2 +1,4 @@
-@import "mixins/*.scss";
-@import "../components/**/*.scss";
+/* stylelint-disable scss/at-import-partial-extension-blacklist */
+@import 'mixins/*.scss';
+@import '../components/**/*.scss';
+/* stylelint-enable scss/at-import-partial-extension-blacklist */

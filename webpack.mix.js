@@ -1,4 +1,6 @@
-let mix = require('laravel-mix');
+const mix = require('laravel-mix');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
+const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 
 /**
  * Basic settings.
@@ -17,13 +19,13 @@ mix
           'last 2 versions',
           'IE >= 11',
           'Safari >= 8',
-        ]
-      }
+        ],
+      },
     },
     hmrOptions: {
       host: 'localhost',
-      port: '8889'
-    }
+      port: '8889',
+    },
   });
 
 /**
@@ -42,16 +44,38 @@ const webpackExtraConfig = {
       // Add support for sass import globbing.
       {
         test: /\.scss/,
-        enforce: "pre",
-        loader: "import-glob-loader",
+        enforce: 'pre',
+        loader: 'import-glob-loader',
       },
       {
         test: /\.js/,
-        enforce: "pre",
-        loader: "import-glob-loader",
+        enforce: 'pre',
+        loader: 'import-glob-loader',
+      },
+      {
+        test: /\.(js|vue)$/,
+        enforce: 'pre',
+        loader: 'eslint-loader',
+        exclude: /node_modules/,
+        options: {
+          failOnWarning: process.env.NODE_ENV === 'production',
+        },
       },
     ],
   },
-  plugins: [],
+  plugins: [
+    // Ensure any style errors are shown on build fails.
+    new FriendlyErrorsPlugin({
+      clearConsole: false
+    }),
+    new StyleLintPlugin({
+      context: 'src',
+      files: [
+        '**/*.scss',
+        '**/*.vue',
+      ],
+      failOnError: process.env.NODE_ENV === 'production',
+    }),
+  ],
 };
 mix.webpackConfig(webpackExtraConfig);

@@ -1,6 +1,6 @@
 {
   "name": "lupus-assets-mix",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "(c) drunomics GmbH, hello@drunomics.com",
   "scripts": {
     "build": "NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
@@ -20,11 +20,26 @@
   },
   "homepage": "https://github.com/drunomics/lupus-assets-mix#readme",
   "devDependencies": {
-    "laravel-mix": "^2.0.0"
+    "eslint": "^4.17.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-import-resolver-webpack": "^0.8.4",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.6.1",
+    "eslint-plugin-vue": "^4.2.2",
+    "friendly-errors-webpack-plugin": "^1.6.1",
+    "import-glob-loader": "^1.1.0",
+    "laravel-mix": "^2.0.0",
+    "stylelint": "^8.4.0",
+    "stylelint-config-sass-guidelines": "^4.1.0",
+    "stylelint-order": "^0.8.0",
+    "stylelint-processor-html": "^1.0.0",
+    "stylelint-scss": "^2.3.0",
+    "stylelint-webpack-plugin": "^0.10.1"
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
-    "import-glob-loader": "^1.1.0",
     "vue": "^2.5.13"
   }
 }
