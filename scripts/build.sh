@@ -65,7 +65,13 @@ fi
 
 # Finally start with the real work.
 composer install -d styleguide --no-interaction
-npm install
+
+# Only show progress if script is attached to a tty.
+if [[ -t 1 ]]; then
+  npm install
+else
+  npm install --no-progress
+fi
 
 # Be sure at least the CSS assets are cleaned before starting over. This is
 # necessary as the styleguide offers all built CSS files for display, so we need
