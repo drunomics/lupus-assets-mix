@@ -4,6 +4,7 @@
   "rules": {
     "color-hex-case": null,
     "color-hex-length": null,
-    "order/properties-alphabetical-order": null
+    "order/properties-alphabetical-order": null,
+    "max-nesting-depth": 3
   }
 }
