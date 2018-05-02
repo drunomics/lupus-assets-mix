@@ -13,15 +13,6 @@ mix
     uglify: {},
     purifyCss: false,
     clearConsole: false,
-    autoprefixer: {
-      options: {
-        browsers: [
-          'last 2 versions',
-          'IE >= 11',
-          'Safari >= 8',
-        ],
-      },
-    },
     hmrOptions: {
       host: 'localhost',
       port: '8889',
